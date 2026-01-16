@@ -1,0 +1,16 @@
+extends ./layouts/main-layout
+
+block content
+  h2 Leaderboard
+  p Top players will appear here.
+  
+  table.leaderboard
+    thead
+      tr
+        th Rank
+        th Player
+        th Score
+        th Games Played
+    tbody
+      tr
+        td(colspan="4") No scores yet - be the first to play!

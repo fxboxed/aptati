@@ -1,0 +1,24 @@
+extends ../layouts/main-layout
+
+block content
+  h2 Welcome to your Dashboard
+  p Hello #{user.displayName || 'Guest'}!
+  
+  .dashboard-grid
+    .card
+      h3 Your Stats
+      p Games Played: 0
+      p Average Score: 0
+      p Rank: Unranked
+    
+    .card
+      h3 Daily Challenge
+      p Today's game: Coming soon
+      a.button(href="#") Play Now
+    
+    .card
+      h3 Quick Actions
+      ul
+        li: a(href="/dashboard/profile") Edit Profile
+        li: a(href="/dashboard/history") View History
+        li: a(href="/leaderboard") View Leaderboard

@@ -1,0 +1,6 @@
+node_modules/
+.env
+*.log
+.DS_Store
+# public/css/*.css
+# Ignore compiled CSS if you are compiling Stylus separately

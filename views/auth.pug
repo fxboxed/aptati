@@ -1,0 +1,9 @@
+extends ./layouts/main-layout
+
+block content
+  h2 Authentication Required
+  p Please login to access the dashboard.
+  
+  .auth-buttons
+    a.button.google-login(href="/auth/google") Login with Google
+    a.button.secondary(href="/") Return Home

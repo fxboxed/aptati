@@ -1,22 +1,27 @@
 import express from 'express';
+import passport from 'passport';
 const router = express.Router();
 
-// Initiate Google OAuth
-router.get('/google', (req, res) => {
-  // This will redirect to Google OAuth
-  res.redirect('/'); // Placeholder
-});
+// Google OAuth initiation
+router.get('/google', passport.authenticate('google', {
+  scope: ['profile', 'email']
+}));
 
 // Google OAuth callback
-router.get('/google/callback', (req, res) => {
-  // This will handle the callback
-  res.redirect('/dashboard'); // Placeholder
-});
+router.get('/google/callback', 
+  passport.authenticate('google', { failureRedirect: '/auth' }),
+  (req, res) => {
+    // Successful authentication
+    res.redirect('/dashboard');
+  }
+);
 
 // Logout
 router.get('/logout', (req, res) => {
-  // This will handle logout
-  res.redirect('/'); // Placeholder
+  req.logout((err) => {
+    if (err) { return next(err); }
+    res.redirect('/');
+  });
 });
 
 export default router;

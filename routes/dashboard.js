@@ -1,33 +1,33 @@
 import express from 'express';
 const router = express.Router();
 
-// Middleware to check if user is authenticated (placeholder)
+// Middleware to check if user is authenticated
 const requireAuth = (req, res, next) => {
-  // For now, allow access - we'll implement real auth later
-  next();
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  res.redirect('/auth');
 };
 
-// User dashboard
+// Protected dashboard routes
 router.get('/', requireAuth, (req, res) => {
-  res.render('dashboard', {
+  res.render('dashboard/index', {
     title: 'Dashboard',
-    user: req.user || { displayName: 'Guest' }
+    user: req.user
   });
 });
 
-// User profile
 router.get('/profile', requireAuth, (req, res) => {
   res.render('dashboard/profile', {
     title: 'Profile',
-    user: req.user || { displayName: 'Guest' }
+    user: req.user
   });
 });
 
-// Game history
 router.get('/history', requireAuth, (req, res) => {
   res.render('dashboard/history', {
     title: 'Game History',
-    user: req.user || { displayName: 'Guest' }
+    user: req.user
   });
 });
 

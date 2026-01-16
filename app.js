@@ -1,9 +1,16 @@
-// app.js - Updated with modular routes
+// app.js - Updated with authentication
 import 'dotenv/config';
 import express from 'express';
+import session from 'express-session';
+import passport from 'passport';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import mongoose from 'mongoose';
 
+// Connect to MongoDB
+mongoose.connect(`mongodb://localhost:27017/${process.env.MONGO_DB || 'aptati'}`)
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.log('MongoDB connection error:', err));
 // ES modules equivalent of __dirname
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,12 +20,29 @@ import indexRouter from './routes/index.js';
 import authRouter from './routes/auth.js';
 import dashboardRouter from './routes/dashboard.js';
 
+// Import Passport configuration
+import './config/passport.js';
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Basic middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Session configuration
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 1000 * 60 * 60 * 24 // 1 day
+  }
+}));
+
+// Initialize Passport
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Set view engine (Pug)
 app.set('view engine', 'pug');
@@ -27,9 +51,8 @@ app.set('views', path.join(__dirname, 'views'));
 // Serve static files from public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Make user available to all templates (placeholder)
+// Make user available to all templates
 app.use((req, res, next) => {
-  // This will be replaced with real Passport authentication
   res.locals.user = req.user || null;
   next();
 });

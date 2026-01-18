@@ -1,0 +1,22 @@
+header.header-nav
+  nav.navbar
+    a.logo(href="/") Logo
+
+    ul.navlist
+      li.navitem: a(href="/") Home
+      li.navitem: a(href="/required/about") About
+      li.navitem: a(href="/games/daily-word") Daily Word
+      li.navitem: a(href="/games/game2") Game 2
+      li.navitem: a(href="/games/game3") Game 3
+      //- Auth-aware nav
+      if isAuthed
+        li.navitem: a(href="/dashboard") Dashboard
+        li.navitem
+          form(method="post" action="/logout")
+            button(type="submit") Logout
+      else
+        li.navitem: a(href="/login") Login
+
+      li.contact-li.navitem: button#contactToggle(type="button") Contact
+
+//-script(src="/js/nav-toggle.js")

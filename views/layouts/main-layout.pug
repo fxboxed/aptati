@@ -9,17 +9,18 @@ html(lang="en")
     block head
 
   body
-    header
-      .logo
-        h1 Aptati Games
-      p.subtitle Daily challenges for your pleasure
-      nav
-        a(href="/") Home
-        if user
-          a(href="/dashboard") Dashboard
-          a(href="/auth/logout") Logout
-        else
-          a(href="/auth/google") Login with Google
+    include ../partials/contact-modal.pug
+    include ../partials/header.header-nav.pug
+      //- .logo
+      //-   h1 Aptati Games
+      //- p.subtitle Daily challenges for your pleasure
+      //- nav
+      //-   a(href="/") Home
+      //-   if user
+      //-     a(href="/dashboard") Dashboard
+      //-     a(href="/auth/logout") Logout
+      //-   else
+      //-     a(href="/auth/google") Login with Google
 
     main.container
       block content
@@ -27,5 +28,6 @@ html(lang="en")
     footer
       p &copy; #{new Date().getFullYear()} Aptati Games
 
-    //- No JS scripts yet - you'll add them later
-    block scripts
+    //-script(src="/js/aptati-consent.js" defer)
+    //-script(src="/js/nav-toggle.js" defer)
+    //-script(src="/js/contact-modal.js" defer)

@@ -3,10 +3,44 @@
   "version": "1.0.0",
   "type": "module",
   "main": "app.js",
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "stylus": "stylus -w public/styls/main.styl -c -o public/css/main.css"
+    "dev:3001": "PORT=3001 nodemon app.js",
+    "dev:3002": "PORT=3002 nodemon app.js",
+    "stylus": "stylus -w public/styls/main.styl -c -o public/css/main.css",
+    
+
+    "docker:build": "podman build -t aptati-games .",
+    "docker:build:dev": "podman build --target development -t aptati-games:dev .",
+    "docker:run:dev": "podman run -d --name aptati-dev -e MONGODB_URI=mongodb://localhost:27017/aptati -p 3002:3001 aptati-games:dev",
+    "docker:run:prod": "podman run -d --name aptati-prod -e MONGODB_URI=mongodb://mongodb:27017/aptati -p 3001:3001 aptati-games",
+    "docker:logs": "podman logs -f aptati-dev",
+    "docker:logs:prod": "podman logs -f aptati-prod",
+    "docker:stop": "podman stop aptati-dev",
+    "docker:stop:prod": "podman stop aptati-prod",
+    "docker:rm": "podman rm aptati-dev",
+    "docker:rm:prod": "podman rm aptati-prod",
+    "docker:clean": "podman stop aptati-dev && podman rm aptati-dev",
+    "docker:clean:prod": "podman stop aptati-prod && podman rm aptati-prod",
+    "docker:restart": "npm run docker:clean && npm run docker:build:dev && npm run docker:run:dev",
+    "docker:restart:prod": "npm run docker:clean:prod && npm run docker:build && npm run docker:run:prod",
+    
+
+    "test:health": "curl http://localhost:3002/health",
+    "test:db": "curl http://localhost:3002/test-db",
+    "test:config": "curl http://localhost:3002/config",
+    "check:ports": "sudo lsof -i :3001 && sudo lsof -i :3002",
+    "env:setup": "echo 'PORT=3002\\nMONGODB_URI=mongodb://localhost:27017/aptati\\nNODE_ENV=development' > .env",
+    
+ 
+    "prod": "node app.js",
+    "prod:build": "podman build -t aptati-games:prod .",
+    "prod:run": "podman run -d --name aptati-prod -p 3001:3001 aptati-games:prod"
   },
   "dependencies": {
     "dotenv": "^16.0.0",

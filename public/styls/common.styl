@@ -1,18 +1,31 @@
 
 
-// * 
-//     margin 0
-//     padding 0
-//     box-sizing border-box
+* 
+    margin 0
+    padding 0
+    box-sizing border-box
 
-alpha = green
+alpha = #2d7f9d
+beta = #a4c9d9
+gamma =#eaf2f4
+delta = #dc7684
+epsilon = #e4ca99
 
-h1 
-    color red
-h2  
-    color blue
+
+.body-liner
+    width 100%
+    //min-height 100vh
+    //background linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 50%, rgba(0,0,0,0.05) 100%)
+    pointer-events none
+.blur {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+}
 body  
     font-family Arial, sans-serif
-    background-color green
+    //background linear-gradient(90deg, alpha 20%, beta 20%, beta 40%, gamma 40%, gamma 60%, delta 60%, delta 80%, epsilon 80%, epsilon 100%)
     width 100%
     min-height 100vh

@@ -1,22 +1,82 @@
 header.header-nav
-  nav.navbar
-    a.logo(href="/") Logo
-
-    ul.navlist
-      li.navitem: a(href="/") Home
-      li.navitem: a(href="/required/about") About
-      li.navitem: a(href="/games/daily-word") Daily Word
-      li.navitem: a(href="/games/game2") Game 2
-      li.navitem: a(href="/games/game3") Game 3
-      //- Auth-aware nav
-      if isAuthed
-        li.navitem: a(href="/dashboard") Dashboard
-        li.navitem
-          form(method="post" action="/logout")
-            button(type="submit") Logout
-      else
-        li.navitem: a(href="/login") Login
-
-      li.contact-li.navitem: button#contactToggle(type="button") Contact
-
-//-script(src="/js/nav-toggle.js")
+  .header-container
+    //- Top Announcement Bar (Optional)
+    //- .top-bar
+      .announcement
+        span.announcement-text 🎉 New: Daily Word Challenges!
+        a.announcement-link(href="/daily-challenges") Try Now →
+    
+    nav.navbar
+      //- Left Navigation
+      .nav-group.nav-left
+        button.menu-toggle(type="button" aria-label="Toggle menu")
+          span.menu-bar
+          span.menu-bar
+          span.menu-bar
+        
+        ul.navlist
+          li.navitem
+            a.nav-link(href="/") Home
+          li.navitem
+            a.nav-link(href="/required/about") About
+          li.navitem
+            a.nav-link(href="/games") Games
+              span.nav-badge Free
+      
+      //- Centered Logo
+      .logo-center
+        a.logo(href="/")
+          .logo-container
+            .logo-text APTAI
+            .logo-subtitle Word Games Hub
+          .logo-decoration
+            .logo-dot.dot-1
+            .logo-dot.dot-2
+            .logo-dot.dot-3
+      
+      //- Right Navigation
+      .nav-group.nav-right
+        ul.navlist
+          //- Search Bar
+          li.navitem.nav-search
+            .search-container
+              button.search-toggle(type="button" aria-label="Search")
+                span.search-icon 🔍
+              input.search-input(type="text" placeholder="Search games..." aria-label="Search games")
+          
+          //- Auth-aware navigation
+          if isAuthed
+            li.navitem
+              a.nav-link(href="/dashboard") 
+                span.nav-icon 👤
+                span.nav-text Dashboard
+            li.navitem
+              form.logout-form(method="post" action="/logout")
+                button.logout-btn(type="submit") Logout
+          else
+            li.navitem
+              a.nav-link.nav-highlight(href="/login")
+                span.nav-icon 🔐
+                span.nav-text Login
+        
+        //- Contact button
+        .contact-container
+          button#contactToggle.contact-btn(type="button")
+            span.contact-icon 💬
+            span.contact-text Contact
+    
+    //- Bottom Game Navigation (Optional)
+    .nav-bottom
+      .nav-bottom-container
+        a.bottom-link(href="/word-game")
+          span.bottom-icon 🧩
+          span.bottom-text Word Game
+        a.bottom-link(href="/puzzle")
+          span.bottom-icon 🎯
+          span.bottom-text Daily Puzzle
+        a.bottom-link(href="/leaderboard")
+          span.bottom-icon 🏆
+          span.bottom-text Leaderboard
+        a.bottom-link(href="/community")
+          span.bottom-icon 👥
+          span.bottom-text Community

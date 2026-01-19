@@ -1,25 +1,15 @@
 extends ./layouts/main-layout
 
 block content
-  section.hero
-    h2 Welcome to Aptati Games updated
-    p Challenge yourself daily with our collection of games
+  //- include ./mixins/responsive-grid-mixin.pug
+  include ./partials/hero-image.pug
 
-  section.games-overview
-    h3 Available Games
-    .games-grid
-      //- Game cards will be inserted here dynamically
-      p.games-message No games available yet - check back soon!
-
-  section.features
-    h3 Why Play?
-    .features-list
-      .feature
-        h4 Daily Challenges
-        p New puzzles every day
-      .feature
-        h4 Track Progress
-        p Monitor your improvement
-      .feature
-        h4 Compete
-        p Climb the leaderboards
+  //- #responsive-grid
+  //-   section.feature
+  //-     +game-tile("WORD GAME")
+  //-   section.feature
+  //-   section.feature
+  //-   section.feature
+  //-   section.feature
+  //-   section.feature
+  //-   section.feature

@@ -7,27 +7,20 @@ html(lang="en")
     //- No CSS links yet - you'll add them later
     link(rel="stylesheet" href="/css/main.css")
     block head
-
+  include ../mixins/game-tile.pug
   body
-    include ../partials/contact-modal.pug
-    include ../partials/header.header-nav.pug
-      //- .logo
-      //-   h1 Aptati Games
-      //- p.subtitle Daily challenges for your pleasure
-      //- nav
-      //-   a(href="/") Home
-      //-   if user
-      //-     a(href="/dashboard") Dashboard
-      //-     a(href="/auth/logout") Logout
-      //-   else
-      //-     a(href="/auth/google") Login with Google
+    .body-liner.blur
+      include ../partials/contact-modal.pug
+      include ../partials/header.pug
+   
+      
 
-    main.container
-      block content
+      main.container
+        block content
 
-    footer
-      p &copy; #{new Date().getFullYear()} Aptati Games
+      footer
+        //- p &copy; #{new Date().getFullYear()} Aptati Games
 
-    //-script(src="/js/aptati-consent.js" defer)
-    //-script(src="/js/nav-toggle.js" defer)
-    //-script(src="/js/contact-modal.js" defer)
+      //-script(src="/js/aptati-consent.js" defer)
+      //-script(src="/js/nav-toggle.js" defer)
+      //-script(src="/js/contact-modal.js" defer)

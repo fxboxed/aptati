@@ -1,0 +1,966 @@
+// Color Variables - ONLY THESE 5
+alpha = #2d7f9d
+beta = #a4c9d9
+gamma = #eaf2f4
+delta = #dc7684
+epsilon = #e4ca99
+
+// Animation Variables
+transition-speed = 0.3s
+hover-lift = 8px
+
+// Font Variables
+deco-font = 'Arial Rounded MT Bold', 'Arial', sans-serif
+
+// Hero Section Styles - Living Deep Space
+.hero-section
+  position: relative
+  width: 100%
+  height: 100vh
+  min-height: 600px
+  overflow: hidden
+  // GRADIENT BACKGROUND - From dark alpha to even darker
+  background: linear-gradient(135deg, 
+    darken(alpha, 85%) 0%, 
+    darken(alpha, 90%) 25%, 
+    darken(alpha, 95%) 50%, 
+    darken(alpha, 90%) 75%, 
+    darken(alpha, 85%) 100%
+  )
+  margin: 0
+  padding: 0
+
+// Deep Space Container
+.deep-space
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  pointer-events: none
+  z-index: 1
+  overflow: hidden
+
+// Remove old shapes completely
+.shape
+  display: none !important
+
+// ====== STAR LAYERS FOR DEPTH ======
+.star-field
+  position: absolute
+  width: 100%
+  height: 100%
+
+.star-layer-1, .star-layer-2, .star-layer-3
+  position: absolute
+  width: 100%
+  height: 100%
+
+// STAR BASE
+.star
+  position: absolute
+  background: gamma
+
+// Star Shapes
+.star-4point
+  width: 8px
+  height: 8px
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)
+  box-shadow: 0 0 12px rgba(gamma, 0.8), 0 0 24px rgba(gamma, 0.4)
+
+.star-5point
+  width: 10px
+  height: 10px
+  clip-path: polygon(50% 0%, 61% 38%, 98% 35%, 68% 57%, 83% 100%, 50% 75%, 17% 100%, 32% 57%, 2% 35%, 39% 38%)
+  box-shadow: 0 0 15px rgba(gamma, 0.9), 0 0 30px rgba(gamma, 0.5)
+
+.star-6point
+  width: 12px
+  height: 12px
+  clip-path: polygon(50% 0%, 61% 35%, 91% 30%, 69% 52%, 91% 70%, 61% 65%, 50% 100%, 39% 65%, 9% 70%, 31% 52%, 9% 30%, 39% 35%)
+  box-shadow: 0 0 20px rgba(gamma, 0.9), 0 0 40px rgba(gamma, 0.6)
+
+.star-8point
+  width: 14px
+  height: 14px
+  clip-path: polygon(50% 0%, 63% 38%, 100% 38%, 69% 58%, 82% 100%, 50% 75%, 18% 100%, 31% 58%, 0 38%, 37% 38%)
+  box-shadow: 0 0 25px rgba(gamma, 1), 0 0 50px rgba(gamma, 0.7)
+
+// Dwarf Star
+.dwarf-star
+  position: absolute
+  width: 20px
+  height: 20px
+  
+  .dwarf-core
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 6px
+    height: 6px
+    background: rgba(delta, 0.8)
+    border-radius: 50%
+    box-shadow: 0 0 15px rgba(delta, 0.6)
+    animation: gentlePulse 4s infinite ease-in-out
+  
+  .dwarf-glow
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 20px
+    height: 20px
+    border-radius: 50%
+    background: radial-gradient(circle, rgba(delta, 0.3) 0%, transparent 70%)
+    animation: expandGlow 6s infinite ease-in-out
+
+// Giant Star
+.giant-star
+  position: absolute
+  width: 40px
+  height: 40px
+  
+  .giant-core
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 12px
+    height: 12px
+    background: rgba(epsilon, 0.9)
+    border-radius: 50%
+    box-shadow: 0 0 30px rgba(epsilon, 0.8)
+    animation: giantPulse 8s infinite ease-in-out
+  
+  .giant-rings
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 40px
+    height: 40px
+    border-radius: 50%
+    border: 1px solid rgba(epsilon, 0.3)
+    animation: rotateRings 20s infinite linear
+    
+    &::before, &::after
+      content: ''
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      border-radius: 50%
+      border: 1px solid rgba(epsilon, 0.2)
+    
+    &::before
+      width: 30px
+      height: 30px
+    
+    &::after
+      width: 20px
+      height: 20px
+
+// Binary Star
+.binary-star
+  position: absolute
+  width: 30px
+  height: 30px
+  
+  .binary-star-1, .binary-star-2
+    position: absolute
+    background: rgba(gamma, 0.9)
+    border-radius: 50%
+  
+  .binary-star-1
+    width: 8px
+    height: 8px
+    top: 5px
+    left: 5px
+    animation: binaryOrbit1 12s infinite linear
+  
+  .binary-star-2
+    width: 6px
+    height: 6px
+    bottom: 5px
+    right: 5px
+    animation: binaryOrbit2 12s infinite linear
+
+// Shooting Stars
+.shooting-star
+  position: absolute
+  width: 120px
+  height: 2px
+  background: linear-gradient(90deg, transparent, rgba(gamma, 0.9), rgba(gamma, 1), rgba(gamma, 0.9), transparent)
+  transform: rotate(-45deg)
+  filter: blur(1px)
+  opacity: 0
+  z-index: 6
+
+.shooting-star-fast
+  animation: shootStarFast 8s infinite linear
+  animation-delay: 3s
+  height: 1px
+
+.shooting-star-medium
+  animation: shootStarMedium 12s infinite linear
+  animation-delay: 7s
+  height: 2px
+
+.shooting-star-slow
+  animation: shootStarSlow 20s infinite linear
+  animation-delay: 15s
+  height: 3px
+  background: linear-gradient(90deg, transparent, rgba(epsilon, 0.8), rgba(gamma, 1), rgba(epsilon, 0.8), transparent)
+
+// Nebula clouds
+.nebula
+  position: absolute
+  border-radius: 50%
+  filter: blur(80px)
+  opacity: 0.1
+  animation: nebulaDrift 200s infinite linear
+  z-index: 0
+
+.nebula-alpha
+  width: 400px
+  height: 400px
+  background: radial-gradient(circle at center, rgba(alpha, 0.2) 0%, transparent 70%)
+
+.nebula-beta
+  width: 500px
+  height: 500px
+  background: radial-gradient(circle at center, rgba(beta, 0.15) 0%, transparent 70%)
+  animation: nebulaDrift 250s infinite linear reverse
+
+.nebula-delta
+  width: 350px
+  height: 350px
+  background: radial-gradient(circle at center, rgba(delta, 0.1) 0%, transparent 70%)
+  animation: nebulaDrift 300s infinite linear
+
+// Distant Galaxy
+.distant-galaxy
+  position: absolute
+  width: 200px
+  height: 200px
+  z-index: 0
+  
+  .galaxy-core
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 20px
+    height: 20px
+    background: radial-gradient(circle, rgba(gamma, 0.4) 0%, transparent 70%)
+    border-radius: 50%
+    filter: blur(5px)
+  
+  .galaxy-arms
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 150px
+    height: 150px
+    background: conic-gradient(from 0deg, transparent 0%, rgba(beta, 0.1) 10%, transparent 20%, rgba(alpha, 0.1) 30%, transparent 40%, rgba(gamma, 0.1) 50%, transparent 60%, rgba(delta, 0.1) 70%, transparent 80%, rgba(epsilon, 0.1) 90%, transparent 100%)
+    border-radius: 50%
+    filter: blur(10px)
+    animation: rotateGalaxy 400s infinite linear
+
+// ====== ANIMATIONS ======
+
+// Star Twinkling Animations
+@keyframes twinkleBright
+  0%, 100%
+    opacity: 0.8
+    transform: scale(1)
+    filter: brightness(1)
+  50%
+    opacity: 1
+    transform: scale(1.2)
+    filter: brightness(1.5)
+
+@keyframes twinkleMedium
+  0%, 100%
+    opacity: 0.7
+    transform: scale(1)
+  25%, 75%
+    opacity: 0.9
+    transform: scale(1.1)
+  50%
+    opacity: 1
+    transform: scale(1.15)
+
+@keyframes twinkleSlow
+  0%, 100%
+    opacity: 0.6
+    transform: scale(1)
+  50%
+    opacity: 0.9
+    transform: scale(1.1)
+
+@keyframes twinkleFast
+  0%, 20%, 40%, 60%, 80%, 100%
+    opacity: 0.7
+    transform: scale(1)
+  10%, 30%, 50%, 70%, 90%
+    opacity: 1
+    transform: scale(1.1)
+
+@keyframes twinkleVerySlow
+  0%, 100%
+    opacity: 0.3
+    transform: scale(1)
+  50%
+    opacity: 0.6
+    transform: scale(1.05)
+
+// Special Star Animations
+@keyframes gentlePulse
+  0%, 100%
+    opacity: 0.6
+    transform: translate(-50%, -50%) scale(1)
+    box-shadow: 0 0 10px rgba(delta, 0.4)
+  50%
+    opacity: 0.9
+    transform: translate(-50%, -50%) scale(1.2)
+    box-shadow: 0 0 20px rgba(delta, 0.7)
+
+@keyframes expandGlow
+  0%, 100%
+    opacity: 0.3
+    transform: translate(-50%, -50%) scale(1)
+  50%
+    opacity: 0.6
+    transform: translate(-50%, -50%) scale(1.3)
+
+@keyframes giantPulse
+  0%, 100%
+    opacity: 0.8
+    transform: translate(-50%, -50%) scale(1)
+    box-shadow: 0 0 20px rgba(epsilon, 0.6)
+  50%
+    opacity: 1
+    transform: translate(-50%, -50%) scale(1.3)
+    box-shadow: 0 0 40px rgba(epsilon, 0.9)
+
+@keyframes rotateRings
+  0%
+    transform: translate(-50%, -50%) rotate(0deg)
+  100%
+    transform: translate(-50%, -50%) rotate(360deg)
+
+@keyframes binaryOrbit1
+  0%
+    transform: rotate(0deg) translateX(8px) rotate(0deg)
+  100%
+    transform: rotate(360deg) translateX(8px) rotate(-360deg)
+
+@keyframes binaryOrbit2
+  0%
+    transform: rotate(0deg) translateX(6px) rotate(0deg)
+  100%
+    transform: rotate(360deg) translateX(6px) rotate(-360deg)
+
+// Shooting Stars
+@keyframes shootStarFast
+  0%
+    transform: translateX(100vw) translateY(-100px) rotate(-45deg)
+    opacity: 0
+  5%
+    opacity: 1
+  15%
+    transform: translateX(-100px) translateY(200px) rotate(-45deg)
+    opacity: 0.8
+  100%
+    transform: translateX(-100px) translateY(200px) rotate(-45deg)
+    opacity: 0
+
+@keyframes shootStarMedium
+  0%
+    transform: translateX(100vw) translateY(-200px) rotate(-45deg)
+    opacity: 0
+  10%
+    opacity: 1
+  25%
+    transform: translateX(-150px) translateY(400px) rotate(-45deg)
+    opacity: 0.6
+  100%
+    transform: translateX(-150px) translateY(400px) rotate(-45deg)
+    opacity: 0
+
+@keyframes shootStarSlow
+  0%
+    transform: translateX(100vw) translateY(-300px) rotate(-45deg)
+    opacity: 0
+  15%
+    opacity: 1
+  40%
+    transform: translateX(-200px) translateY(600px) rotate(-45deg)
+    opacity: 0.4
+  100%
+    transform: translateX(-200px) translateY(600px) rotate(-45deg)
+    opacity: 0
+
+// Nebula Drift
+@keyframes nebulaDrift
+  0%
+    transform: translate(0, 0) rotate(0deg)
+  25%
+    transform: translate(100px, 50px) rotate(90deg)
+  50%
+    transform: translate(0, 100px) rotate(180deg)
+  75%
+    transform: translate(-100px, 50px) rotate(270deg)
+  100%
+    transform: translate(0, 0) rotate(360deg)
+
+// Galaxy Rotation
+@keyframes rotateGalaxy
+  0%
+    transform: translate(-50%, -50%) rotate(0deg)
+  100%
+    transform: translate(-50%, -50%) rotate(360deg)
+
+// ====== HERO 3D CUBE ======
+.hero-background
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  overflow: hidden
+  z-index: 2
+
+.hero-3d-container
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  width: 100%
+  height: 100%
+  perspective: 1200px
+  pointer-events: none
+  z-index: 3
+
+// Main 3D Cube
+.main-game-display
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  width: 200px
+  height: 200px
+  transform-style: preserve-3d
+  animation: rotateCube 20s infinite linear
+  
+
+.cube
+  position: relative
+  width: 100%
+  height: 100%
+  transform-style: preserve-3d
+  transform: rotateX(25deg) rotateY(25deg)
+
+//=================================================================================================
+.cube-face
+  position: absolute
+  width: 200px
+  height: 200px
+  background: linear-gradient(135deg, rgba(gamma, 0.9), rgba(beta, 0.9))
+  border: 4px solid rgba(beta, 0.4)
+  display: flex
+  align-items: center
+  justify-content: center
+  font-size: 80px
+  font-weight: 900
+  color:  rgba(beta, 0.4)
+  text-shadow: 1px 1px 2px rgba(delta, 0.3), 2px 2px 4px rgba(alpha, 0.2)
+  backface-visibility: visible
+  border-radius: 12px
+  box-shadow: inset 0 0 20px rgba(gamma, 0.6), 0 4px 15px rgba(alpha, 0.25)
+
+  &.front
+    transform: translateZ(100px)
+    background: linear-gradient(135deg, rgba(gamma - 70%, 0.9), rgba(epsilon - 70%, 0.9))
+    
+  &.back
+    transform: rotateY(180deg) translateZ(100px)
+    background: linear-gradient(135deg, rgba(gamma - 70%, 0.9), rgba(delta - 70%, 0.9))
+    
+  &.right
+    transform: rotateY(90deg) translateZ(100px)
+    background: linear-gradient(135deg, rgba(gamma - 70%, 0.9), rgba(beta - 70%, 0.9))
+    
+  &.left
+    transform: rotateY(-90deg) translateZ(100px)
+    background: linear-gradient(135deg, rgba(gamma - 70%, 0.9), rgba(epsilon - 70%, 0.9))
+    
+  &.top
+    transform: rotateX(90deg) translateZ(100px)
+    background: linear-gradient(135deg, rgba(gamma - 70%, 0.9), rgba(delta - 70%, 0.9))
+    
+  &.bottom
+    transform: rotateX(-90deg) translateZ(100px)
+    background: linear-gradient(135deg, rgba(gamma - 70%, 0.9), rgba(beta - 70%, 0.9))
+.cube-shadow
+  position: absolute
+  top: 120%
+  left: 50%
+  transform: translateX(-50%)
+  width: 250px
+  height: 60px
+  background: radial-gradient(ellipse at center, rgba(alpha, 0.25) 0%, transparent 70%)
+  filter: blur(10px)
+
+@keyframes rotateCube
+  0%
+    transform: translate(-50%, -50%) rotateX(0) rotateY(0)
+  100%
+    transform: translate(-50%, -50%) rotateX(360deg) rotateY(360deg)
+
+// ====== HERO CONTENT ======
+.hero-content
+  position: relative
+  z-index: 10
+  height: 100%
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  text-align: center
+  padding: 0 20px
+  max-width: 1200px
+  margin: 0 auto
+  padding-top: 60px
+
+// Title Container
+.hero-title-container
+  margin-bottom: 40px
+  width: 100%
+
+// APTATI and GAME HUB Titles
+.hero-title
+  font-family: deco-font
+  font-size: 72px
+  font-weight: 900
+  line-height: 1
+  margin: 0
+  color: gamma
+  text-shadow: 3px 3px 0 rgba(alpha, 0.2), 6px 6px 0 rgba(alpha, 0.1)
+  background: linear-gradient(135deg, gamma 0%, beta 50%, epsilon 100%)
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+  background-clip: text
+
+.hero-title:first-child
+  font-size: 48px
+  margin-bottom: 10px
+
+.hero-title:last-child
+  font-size: 72px
+
+.hero-subtitle
+  font-size: 24px
+  color: gamma
+  margin-top: 20px
+  font-weight: 300
+  letter-spacing: 1px
+  max-width: 600px
+
+.subtitle-highlight
+  color: epsilon
+  font-weight: 600
+  text-shadow: 0 2px 4px rgba(alpha, 0.3)
+  position: relative
+  display: inline-block
+  
+  &::after
+    content: ''
+    position: absolute
+    bottom: -4px
+    left: 0
+    right: 0
+    height: 3px
+    background: linear-gradient(90deg, transparent, delta, transparent)
+    border-radius: 2px
+
+// Features
+.hero-features
+  display: flex
+  gap: 30px
+  margin-bottom: 40px
+  max-width: 600px
+  flex-wrap: wrap
+  justify-content: center
+
+.feature
+  display: flex
+  align-items: center
+  gap: 12px
+  padding: 15px 25px
+  background: rgba(gamma, 0.1)
+  border-radius: 12px
+  backdrop-filter: blur(10px)
+  border: 1px solid rgba(gamma, 0.2)
+  transition: all transition-speed ease
+  
+  &:hover
+    transform: translateY(-5px)
+    background: rgba(gamma, 0.2)
+    border-color: rgba(delta, 0.3)
+    box-shadow: 0 10px 20px rgba(alpha, 0.15)
+
+.feature-icon
+  font-size: 24px
+  filter: drop-shadow(0 2px 4px rgba(alpha, 0.2))
+
+.feature-text
+  color: darken(delta, 15%)
+  font-size: 16px
+  font-weight: 600
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1)
+
+// Action Buttons
+.hero-actions
+  display: flex
+  gap: 20px
+  margin-bottom: 40px
+  flex-wrap: wrap
+  justify-content: center
+
+.hero-button
+  padding: 18px 36px
+  border: none
+  border-radius: 50px
+  font-family: inherit
+  font-size: 18px
+  font-weight: 600
+  cursor: pointer
+  display: flex
+  align-items: center
+  gap: 12px
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+  position: relative
+  overflow: hidden
+  
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: -100%
+    width: 100%
+    height: 100%
+    background: linear-gradient(90deg, transparent, rgba(gamma, 0.2), transparent)
+    transition: left 0.6s ease
+  
+  &:hover::before
+    left: 100%
+  
+  &:hover
+    transform: translateY(-3px) scale(1.02)
+    
+  &:active
+    transform: translateY(0) scale(0.98)
+
+.primary-button
+  background: linear-gradient(135deg, rgba(delta, 0.9), rgba(epsilon, 0.9))
+  color: darken(alpha, 90%)
+  box-shadow: 0 10px 30px rgba(delta, 0.25), inset 0 1px 0 rgba(gamma, 0.8)
+  
+  &:hover
+    box-shadow: 0 15px 40px rgba(delta, 0.35), inset 0 1px 0 rgba(gamma, 0.9)
+
+.secondary-button
+  background: linear-gradient(135deg, rgba(epsilon, 0.9), rgba(gamma, 0.9))
+  color: darken(alpha, 90%)
+  border: 2px solid epsilon
+  position: relative
+  overflow: hidden
+  
+  &::after
+    content: '🎁'
+    position: absolute
+    top: -8px
+    right: 10px
+    font-size: 16px
+    animation: sparklePulse 2s infinite
+  
+  &:hover
+    background: linear-gradient(135deg, rgba(gamma, 0.9), rgba(epsilon, 0.9))
+    border-color: delta
+    box-shadow: 0 15px 40px rgba(epsilon, 0.25)
+
+.button-text
+  position: relative
+  z-index: 1
+
+.button-arrow, .button-icon
+  font-size: 20px
+  position: relative
+  z-index: 1
+
+// Stats
+.hero-stats
+  display: flex
+  gap: 40px
+  max-width: 600px
+  flex-wrap: wrap
+  justify-content: center
+
+.stat
+  display: flex
+  flex-direction: column
+  align-items: center
+
+.stat-number
+  font-size: 36px
+  font-weight: 800
+  color: gamma
+  text-shadow: 0 2px 4px rgba(alpha, 0.25)
+  line-height: 1
+  margin-bottom: 4px
+
+.stat-label
+  font-size: 14px
+  color: beta
+  font-weight: 500
+  text-transform: uppercase
+  letter-spacing: 1px
+
+// Sparkle animation for button
+@keyframes sparklePulse
+  0%, 100%
+    opacity: 1
+    transform: scale(1)
+  50%
+    opacity: 0.7
+    transform: scale(1.2)
+
+// ====== ACCESSIBILITY ======
+
+// Reduced motion preference - CSS only
+@media (prefers-reduced-motion: reduce)
+  .star,
+  .dwarf-star,
+  .giant-star,
+  .binary-star,
+  .shooting-star,
+  .nebula,
+  .distant-galaxy,
+  .cube,
+  .main-game-display,
+  .hero-button::after
+    animation: none !important
+  
+  .hero-button:hover,
+  .feature:hover
+    transform: none !important
+
+// ====== RESPONSIVE DESIGN ======
+
+// Desktop layout
+@media (min-width: 1025px)
+  .hero-3d-container
+    display: block
+  
+  .hero-content
+    flex: 0 0 50%
+    max-width: 50%
+    padding-left: 10%
+    padding-right: 5%
+    padding-top: 80px
+    margin: 0
+    align-items: flex-start
+    text-align: left
+  
+  .hero-title-container
+    max-width: 600px
+  
+  .hero-features
+    max-width: 600px
+    justify-content: flex-start
+  
+  .hero-actions
+    max-width: 600px
+    justify-content: flex-start
+  
+  .hero-stats
+    max-width: 600px
+    justify-content: flex-start
+  
+  .stat
+    align-items: flex-start
+
+// Large Tablets
+@media (max-width: 1200px) and (min-width: 769px)
+  .hero-title:first-child
+    font-size: 40px
+  
+  .hero-title:last-child
+    font-size: 60px
+  
+  .hero-subtitle
+    font-size: 20px
+  
+  .cube
+    width: 160px
+    height: 160px
+    
+  .cube-face
+    width: 160px
+    height: 160px
+    font-size: 64px
+  
+  .hero-3d-container
+    display: none
+  
+  .hero-content
+    padding-left: 8%
+    padding-right: 5%
+    align-items: center
+    text-align: center
+
+// Tablets (768px and below)
+@media (max-width: 768px)
+  .hero-section
+    min-height: 100vh
+    height: auto
+    padding-bottom: 40px
+  
+  .hero-content
+    padding: 180px 20px 40px 20px
+    justify-content: flex-start
+    align-items: center
+    text-align: center
+    width: 100%
+    max-width: 100%
+  
+  .hero-3d-container
+    display: none
+  
+  .hero-title:first-child
+    font-size: 32px
+    margin-bottom: 5px
+  
+  .hero-title:last-child
+    font-size: 48px
+    line-height: 1.2
+  
+  .hero-subtitle
+    font-size: 20px
+    margin-top: 15px
+    margin-bottom: 30px
+  
+  .hero-features
+    flex-direction: column
+    align-items: center
+    gap: 15px
+    margin-bottom: 30px
+  
+  .hero-actions
+    flex-direction: column
+    align-items: center
+    gap: 15px
+    margin-bottom: 30px
+  
+  .hero-stats
+    flex-wrap: wrap
+    gap: 20px
+    margin-top: 30px
+    justify-content: center
+    align-items: center
+  
+  .stat
+    align-items: center
+  
+  .hero-button
+    width: 100%
+    max-width: 300px
+    justify-content: center
+  
+  .feature-text
+    color: darken(delta, 15%)
+    font-weight: 600
+
+// Small Mobile Devices (480px and below)
+@media (max-width: 480px)
+  .hero-content
+    padding: 200px 15px 30px 15px
+  
+  .hero-title:first-child
+    font-size: 28px
+  
+  .hero-title:last-child
+    font-size: 36px
+  
+  .hero-subtitle
+    font-size: 18px
+  
+  .feature
+    padding: 12px 20px
+    width: 100%
+    max-width: 280px
+  
+  .stat-number
+    font-size: 28px
+  
+  .hero-button
+    padding: 15px 25px
+    font-size: 16px
+  
+  .feature-text
+    font-size: 15px
+
+// High DPI screens
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+  .star-4point
+    width: 4px
+    height: 4px
+  
+  .star-5point
+    width: 5px
+    height: 5px
+  
+  .star-6point
+    width: 6px
+    height: 6px
+  
+  .star-8point
+    width: 7px
+    height: 7px
+
+// Print styles
+@media print
+  .deep-space,
+  .hero-3d-container
+    display: none !important
+  
+  .hero-section
+    background: white !important
+    min-height: auto
+    height: auto
+  
+  .hero-content
+    position: relative
+    z-index: 1
+    color: black
+  
+  .hero-title,
+  .hero-subtitle,
+  .feature-text,
+  .stat-number,
+  .stat-label
+    color: black !important
+    text-shadow: none !important
+  
+  .feature
+    background: #f0f0f0 !important
+    border: 1px solid #ddd !important
+  
+  .hero-button
+    background: #ddd !important
+    color: black !important
+    border: 1px solid #999 !important

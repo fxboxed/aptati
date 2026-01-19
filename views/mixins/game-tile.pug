@@ -1,0 +1,22 @@
+//- components/game-tile.pug
+mixin game-tile(gameName="WordGame")
+  a.game-tile(href="#", aria-label=`Play ${gameName}`)
+    .tile-visual
+      .color-grid
+        - let rows = 4
+        - let cols = 4
+        - for(let r = 0; r < rows; r++)
+          .grid-row
+            - for(let c = 0; c < cols; c++)
+              .grid-dot(class=`row-${r} col-${c}`)
+      .center-icon
+        .question-mark
+        .icon-dot
+      .corner-elements
+        .corner.corner-tl
+        .corner.corner-tr
+        .corner.corner-bl
+        .corner.corner-br
+    .tile-text
+      span.game-name= gameName
+      span.play-hint Play

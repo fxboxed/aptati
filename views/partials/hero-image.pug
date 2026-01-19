@@ -1,0 +1,112 @@
+//- Hero section in your main page
+section.hero-section
+  .deep-space
+    .star-field
+      .star-layer-1
+        //- Far background stars
+        .star.star-4point(style="top: 10%; left: 15%; background: rgba(gamma, 0.3); animation: twinkleSlow 7s infinite ease-in-out;")
+        .star.star-4point(style="top: 25%; left: 85%; background: rgba(gamma, 0.2); animation: twinkleMedium 8s infinite ease-in-out; animation-delay: 3s;")
+        .star.star-4point(style="top: 40%; left: 65%; background: rgba(gamma, 0.4); animation: twinkleVerySlow 10s infinite ease-in-out;")
+        .star.star-4point(style="top: 60%; left: 25%; background: rgba(gamma, 0.3); animation: twinkleSlow 9s infinite ease-in-out; animation-delay: 4s;")
+        .star.star-4point(style="top: 75%; left: 45%; background: rgba(gamma, 0.2); animation: twinkleMedium 5s infinite ease-in-out;")
+        .star.star-4point(style="top: 85%; left: 75%; background: rgba(gamma, 0.3); animation: twinkleFast 4s infinite ease-in-out;")
+      
+      .star-layer-2
+        //- Medium distance stars
+        .star.star-5point(style="top: 15%; left: 25%; background: rgba(gamma, 0.5); animation: twinkleMedium 5s infinite ease-in-out;")
+        .star.star-5point(style="top: 30%; left: 70%; background: rgba(gamma, 0.6); animation: twinkleSlow 6s infinite ease-in-out; animation-delay: 1.5s;")
+        .star.star-6point(style="top: 45%; left: 40%; background: rgba(gamma, 0.7); animation: twinkleFast 4s infinite ease-in-out;")
+        .star.star-6point(style="top: 55%; left: 85%; background: rgba(gamma, 0.5); animation: twinkleMedium 5.5s infinite ease-in-out; animation-delay: 2s;")
+        .star.star-5point(style="top: 70%; left: 35%; background: rgba(gamma, 0.6); animation: twinkleMedium 4s infinite ease-in-out; animation-delay: 1s;")
+        
+        //- Dwarf stars
+        .dwarf-star(style="top: 20%; left: 80%;")
+          .dwarf-core
+          .dwarf-glow
+        .dwarf-star(style="top: 65%; left: 60%;")
+          .dwarf-core
+          .dwarf-glow
+      
+      .star-layer-3
+        //- Near stars and special features
+        .star.star-8point(style="top: 25%; left: 50%; background: rgba(gamma, 0.9); animation: twinkleBright 3s infinite ease-in-out; box-shadow: 0 0 15px rgba(gamma, 0.7), 0 0 30px rgba(gamma, 0.4);")
+        .giant-star(style="top: 40%; left: 20%;")
+          .giant-core
+          .giant-rings
+        .binary-star(style="top: 70%; left: 70%;")
+          .binary-star-1
+          .binary-star-2
+        .star.star-8point(style="top: 85%; left: 40%; background: rgba(epsilon, 0.8); animation: gentlePulse 7s infinite ease-in-out;")
+        
+        //- Shooting stars
+        .shooting-star.shooting-star-fast(style="top: 15%; left: 5%;")
+        .shooting-star.shooting-star-medium(style="top: 30%; left: 15%;")
+        .shooting-star.shooting-star-slow(style="top: 50%; left: 25%;")
+        .shooting-star.shooting-star-fast(style="top: 75%; left: 10%;")
+    
+    //- Nebula clouds
+    .nebula.nebula-alpha(style="top: 20%; left: 30%;")
+    .nebula.nebula-beta(style="top: 60%; left: 70%;")
+    .nebula.nebula-delta(style="top: 40%; left: 80%;")
+    
+    //- Distant galaxy
+    .distant-galaxy(style="top: 10%; left: 5%;")
+      .galaxy-core
+      .galaxy-arms
+  
+  .hero-background
+    .hero-3d-container
+      .main-game-display
+        .cube
+          .cube-face.front A
+          .cube-face.back P
+          .cube-face.right T
+          .cube-face.left A
+          .cube-face.top T
+          .cube-face.bottom I
+        .cube-shadow
+      .shape.shape-1
+      .shape.shape-2
+      .shape.shape-3
+      .shape.shape-4
+      .shape.shape-5
+      .shape.shape-6
+    
+  .hero-content
+    .hero-title-container
+      h1.hero-title APTATI
+      h1.hero-title GAME HUB
+      p.hero-subtitle
+        | Your Ultimate 
+        span.subtitle-highlight Fun Game
+        |  Destination
+    
+    .hero-features
+      .feature
+        .feature-icon 🎯
+        .feature-text Daily Challenges
+      .feature
+        .feature-icon 🏆
+        .feature-text Leaderboards
+      .feature
+        .feature-icon 🔄
+        .feature-text Multiple Games
+    
+    .hero-actions
+      button.hero-button.primary-button
+        span.button-text Play Now
+        span.button-arrow →
+      button.hero-button.secondary-button
+        span.button-text Free Forever Membership Goodies
+        span.button-icon 🎁
+    
+    .hero-stats
+      .stat
+        .stat-number 10K+
+        .stat-label Active Players
+      .stat
+        .stat-number 50+
+        .stat-label Word Games
+      .stat
+        .stat-number 24/7
+        .stat-label Live Updates

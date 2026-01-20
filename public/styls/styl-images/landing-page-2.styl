@@ -12,11 +12,7 @@ transition-speed = 0.3s
 hover-lift = 8px
 deco-font = 'Arial Rounded MT Bold', 'Arial', sans-serif
 
-html, body
-  height 100%
 
-body
-  margin 0
 
 // ===== HERO SECTION =====
 // Starts at 0 (no top padding/margin). Kept behind navigation by staying on a low z-index.
@@ -545,7 +541,10 @@ body
 .hero-title-container
   margin 11rem 0 40px 0
   width 100%
-
+@media(min-width: 1025px)
+    .hero-title-container
+      margin 1rem 0 40px 0
+      width auto
 .hero-title
   font-family deco-font
   font-size 72px

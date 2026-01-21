@@ -64,13 +64,25 @@ const PORT = process.env.PORT || 3001;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Trust proxy setting for proper cookie handling
+if (process.env.NODE_ENV === 'production') {
+  // Production: behind Cloudflare and nginx
+  app.set('trust proxy', 2);
+} else {
+  // Development: trust local proxy
+  app.set('trust proxy', 1);
+}
+
 // Session configuration
 app.use(session({
   secret: process.env.SESSION_SECRET || 'default-secret-change-in-production',
   resave: false,
   saveUninitialized: false,
   cookie: {
-    maxAge: 1000 * 60 * 60 * 24 // 1 day
+    maxAge: 1000 * 60 * 60 * 24, // 1 day
+    secure: process.env.NODE_ENV === 'production' ? true : 'auto',
+    httpOnly: true,
+    sameSite: process.env.NODE_ENV === 'production' ? 'lax' : 'lax'
   }
 }));
 
@@ -134,9 +146,10 @@ app.set('views', path.join(__dirname, 'views'));
 // Serve static files from public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Make user available to all templates
+// Make user and authentication status available to all templates
 app.use((req, res, next) => {
   res.locals.user = req.user || null;
+  res.locals.isAuthed = req.isAuthenticated ? req.isAuthenticated() : false;
   next();
 });
 
@@ -203,5 +216,5 @@ app.listen(PORT, () => {
   console.log(`   Network: http://0.0.0.0:${PORT}`);
   console.log(`\nHealth check: http://localhost:${PORT}/health`);
   console.log(`DB test: http://localhost:${PORT}/test-db`);
-  console.log(`Config: http://localhost:${PORT}/config\n`);
+  console.log(`Config: http://localhost:${PORT}/config`);
 });

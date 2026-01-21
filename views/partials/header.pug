@@ -1,4 +1,4 @@
-cat > views/partials/header.pug << 'EOF'
+
 //- views/partials/header.pug - Clean & Simple
 header.header-nav
   .header-container
@@ -17,14 +17,13 @@ header.header-nav
       //- Right: Auth & Contact Only
       .nav-right
         ul.navlist
-          a.nav-link(href="/dashboard/") DASH
           if isAuthed
             li.navitem
               a.nav-link(href="/dashboard")
                 span.user-icon 👤
                 span.user-text Dashboard
             li.navitem
-              form.logout-form(method="post" action="/logout")
+              form.logout-form(method="post" action="/auth/logout")
                 button.logout-btn(type="submit") Logout
           else
             li.navitem
@@ -32,4 +31,3 @@ header.header-nav
           
           li.navitem
             button#contactToggle.contact-btn(type="button") Contact
-EOF

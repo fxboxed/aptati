@@ -1,3 +1,4 @@
+// models/User.js
 import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
@@ -15,10 +16,8 @@ const userSchema = new mongoose.Schema({
     required: true,
     unique: true
   },
-  tier: {
-    type: String,
-    enum: ['free', 'premium'],
-    default: 'free'
+  profilePicture: {
+    type: String
   },
   createdAt: {
     type: Date,
@@ -28,4 +27,4 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model('User', userSchema);
 
-export { User };
+export default User;

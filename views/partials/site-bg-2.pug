@@ -1,0 +1,103 @@
+//- landing-page.pug
+
+section.hero-section.site-bg-2
+  //- Deep space visuals (behind everything)
+  .deep-space(aria-hidden="true")
+    .star-field
+      .star-layer-1
+        span.star.star-4point.star--dim.twinkle--slow(style="top:10%;left:15%;animation-delay:0s")
+        span.star.star-4point.star--dim.twinkle--medium(style="top:25%;left:85%;animation-delay:3s")
+        span.star.star-4point.star--dim.twinkle--veryslow(style="top:40%;left:65%;animation-delay:0s")
+        span.star.star-4point.star--dim.twinkle--slow(style="top:60%;left:25%;animation-delay:4s")
+        span.star.star-4point.star--dim.twinkle--medium(style="top:75%;left:45%;animation-delay:0s")
+        span.star.star-4point.star--dim.twinkle--fast(style="top:85%;left:75%;animation-delay:0s")
+
+      .star-layer-2
+        span.star.star-5point.star--mid.twinkle--medium(style="top:15%;left:25%;animation-delay:0s")
+        span.star.star-5point.star--mid.twinkle--slow(style="top:30%;left:70%;animation-delay:1.5s")
+        span.star.star-6point.star--mid.twinkle--fast(style="top:45%;left:40%;animation-delay:0s")
+        span.star.star-6point.star--mid.twinkle--medium(style="top:55%;left:85%;animation-delay:2s")
+        span.star.star-5point.star--mid.twinkle--medium(style="top:70%;left:35%;animation-delay:1s")
+
+        .dwarf-star(style="top:20%;left:80%")
+          .dwarf-core
+          .dwarf-glow
+        .dwarf-star(style="top:65%;left:60%")
+          .dwarf-core
+          .dwarf-glow
+
+      .star-layer-3
+        span.star.star-8point.star--bright.twinkle--bright(style="top:25%;left:50%;animation-delay:0s")
+        .giant-star(style="top:40%;left:20%")
+          .giant-core
+          .giant-rings
+        .binary-star(style="top:70%;left:70%")
+          .binary-star-1
+          .binary-star-2
+        span.star.star-8point.star--warm.twinkle--pulse(style="top:85%;left:40%;animation-delay:0s")
+
+        //- Asteroids (NO animation)
+        .asteroid.asteroid-fast(style="top:15%;left:5%")
+        .asteroid.asteroid-medium(style="top:30%;left:15%")
+        .asteroid.asteroid-slow(style="top:50%;left:25%")
+        .asteroid.asteroid-fast(style="top:75%;left:10%")
+
+    .nebula.nebula-alpha(style="top:20%;left:30%")
+    .nebula.nebula-beta(style="top:60%;left:70%")
+    .nebula.nebula-delta(style="top:40%;left:80%")
+
+    .distant-galaxy(style="top:10%;left:5%")
+      .galaxy-core
+      .galaxy-arms
+
+  //- 3D Cube layer (hidden on small screens via CSS)
+  .hero-background(aria-hidden="true")
+    .hero-3d-container
+      .main-game-display
+        .cube
+          .cube-face.front A
+          .cube-face.back P
+          .cube-face.right T
+          .cube-face.left A
+          .cube-face.top T
+          .cube-face.bottom I
+        .cube-shadow
+
+  //- Foreground content
+  .hero-content
+    .hero-title-container
+      h1.hero-title APTATI 2.0
+      h1.hero-title GAME HUB
+      p.hero-subtitle
+        | Your Ultimate
+        span.subtitle-highlight Fun Game
+        |  Destination
+
+    .hero-features
+      .feature
+        .feature-icon 🎯
+        .feature-text Daily Challenges
+      .feature
+        .feature-icon 🏆
+        .feature-text Leaderboards
+      .feature
+        .feature-icon 🔄
+        .feature-text Multiple Games
+
+    .hero-actions
+      button.hero-button.primary-button(type="button")
+        span.button-text Play Now
+        span.button-arrow →
+      button.hero-button.secondary-button(type="button")
+        span.button-text Free Forever Membership Goodies
+
+    .hero-stats
+      .stat
+        .stat-number 10K+
+        .stat-label Active Players
+      .stat
+        .stat-number 50+
+        .stat-label Word Games
+      .stat
+        .stat-number 24/7
+        .stat-label Live Updates

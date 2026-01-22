@@ -7,6 +7,7 @@ router.get('/', (req, res) => {
   res.render('games', {
     title: 'Aptati Games Collection',
     subtitle: 'The complete list of Aptati daily challenges',
+    currentPage: 'games',
     user: req.user || null
   });
 });

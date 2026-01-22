@@ -7,11 +7,15 @@ html(lang="en")
     //- No CSS links yet - you'll add them later
     link(rel="stylesheet" href="/css/main.css")
     block head
-  include ../mixins/game-tile.pug
+  //-include ../mixins/game-tile.pug
   body
+    //- .burger#burger
+    //-   span.bar
+    //-   span.bar
+    //-   span.bar
     .body-liner.site-bg
       include ../partials/contact-modal.pug
-      include ../partials/header.pug
+      include ../partials/fixed-nav.pug
       include ../partials/site-bg-2.pug
 
 
@@ -22,5 +26,5 @@ html(lang="en")
         //- p &copy; #{new Date().getFullYear()} Aptati Games
 
       //-script(src="/js/aptati-consent.js" defer)
-      //-script(src="/js/nav-toggle.js" defer)
+      //-0script(src="/js/nav-toggle.js" defer)
       //-script(src="/js/contact-modal.js" defer)

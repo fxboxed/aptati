@@ -1,15 +1,47 @@
 extends ./layouts/main-layout
 
 block content
-  //- include ./mixins/responsive-grid-mixin.pug
-  include ./partials/landing-page-2.pug
 
-  //- #responsive-grid
-  //-   section.feature
-  //-     +game-tile("WORD GAME")
-  //-   section.feature
-  //-   section.feature
-  //-   section.feature
-  //-   section.feature
-  //-   section.feature
-  //-   section.feature
+
+  section.hero-section.index-hero
+
+    .hero-content
+      .hero-title-container
+        h1.hero-title APTATI
+        h1.hero-title GAME 
+          span.title-highlight.hero-title HUB
+        p.hero-subtitle
+          | Your Ultimate
+          span.subtitle-highlight Fun Game
+          |  Destination
+
+      .hero-actions
+        a.hero-button.primary-button(href="/games") Play Now
+          span.button-arrow →
+        button.hero-button.secondary-button(type="button")
+          span.button-text Free Forever Membership Goodies
+
+      .hero-features
+        .feature
+          .feature-icon 🎯
+          .feature-text Daily Challenges
+        .feature
+          .feature-icon 🏆
+          .feature-text Leaderboards
+        .feature
+          .feature-icon 🔄
+          .feature-text Multiple Games
+      .hero-stats
+        .stat
+          .stat-number 10K+
+          .stat-label Active Players
+        .stat
+          .stat-number 50+
+          .stat-label Word Games
+        .stat
+          .stat-number 24/7
+          .stat-label Live Updates
+      img.saturn(src="/images/saturn.png", alt="")
+    .cube-wrap
+      //- include ./partials/rotating-cube.pug
+      img(src="/images/planet-3d.png", alt="")

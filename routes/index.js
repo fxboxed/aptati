@@ -6,6 +6,7 @@ router.get('/', (req, res) => {
   res.render('index', {
     title: 'Aptati Games Hub',
     subtitle: 'Daily challenges for your pleasure',
+    currentPage: 'home',  // This should be 'home'
     user: req.user || null
   });
 });

@@ -48,6 +48,7 @@ const ensureAuthenticated = (req, res, next) => {
 router.get('/', ensureAuthenticated, (req, res) => {
   res.render('dashboard', {
     title: 'Dashboard',
+    currentPage: 'dashboard',
     user: req.user
   });
 });

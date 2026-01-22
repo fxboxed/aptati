@@ -1,102 +1,325 @@
-//- landing-page.pug
+// Color Variables - ONLY THESE 5
+alpha = #2d7f9d
+beta = #a4c9d9
+gamma = #eaf2f4
+delta = #dc7684
+epsilon = #e4ca99
 
-section.hero-section
-  //- Deep space visuals (behind everything)
-  .deep-space(aria-hidden="true")
-    .star-field
-      .star-layer-1
-        span.star.star-4point.star--dim.twinkle--slow(style="top:10%;left:15%;animation-delay:0s")
-        span.star.star-4point.star--dim.twinkle--medium(style="top:25%;left:85%;animation-delay:3s")
-        span.star.star-4point.star--dim.twinkle--veryslow(style="top:40%;left:65%;animation-delay:0s")
-        span.star.star-4point.star--dim.twinkle--slow(style="top:60%;left:25%;animation-delay:4s")
-        span.star.star-4point.star--dim.twinkle--medium(style="top:75%;left:45%;animation-delay:0s")
-        span.star.star-4point.star--dim.twinkle--fast(style="top:85%;left:75%;animation-delay:0s")
+// Non-color variables
+transition-speed = 0.3s
+hover-lift = 8px
+deco-font = 'Arial Rounded MT Bold', 'Arial', sans-serif
 
-      .star-layer-2
-        span.star.star-5point.star--mid.twinkle--medium(style="top:15%;left:25%;animation-delay:0s")
-        span.star.star-5point.star--mid.twinkle--slow(style="top:30%;left:70%;animation-delay:1.5s")
-        span.star.star-6point.star--mid.twinkle--fast(style="top:45%;left:40%;animation-delay:0s")
-        span.star.star-6point.star--mid.twinkle--medium(style="top:55%;left:85%;animation-delay:2s")
-        span.star.star-5point.star--mid.twinkle--medium(style="top:70%;left:35%;animation-delay:1s")
-
-        .dwarf-star(style="top:20%;left:80%")
-          .dwarf-core
-          .dwarf-glow
-        .dwarf-star(style="top:65%;left:60%")
-          .dwarf-core
-          .dwarf-glow
-
-      .star-layer-3
-        span.star.star-8point.star--bright.twinkle--bright(style="top:25%;left:50%;animation-delay:0s")
-        .giant-star(style="top:40%;left:20%")
-          .giant-core
-          .giant-rings
-        .binary-star(style="top:70%;left:70%")
-          .binary-star-1
-          .binary-star-2
-        span.star.star-8point.star--warm.twinkle--pulse(style="top:85%;left:40%;animation-delay:0s")
-
-        //- Asteroids (NO animation)
-        .asteroid.asteroid-fast(style="top:15%;left:5%")
-        .asteroid.asteroid-medium(style="top:30%;left:15%")
-        .asteroid.asteroid-slow(style="top:50%;left:25%")
-        .asteroid.asteroid-fast(style="top:75%;left:10%")
-
-    .nebula.nebula-alpha(style="top:20%;left:30%")
-    .nebula.nebula-beta(style="top:60%;left:70%")
-    .nebula.nebula-delta(style="top:40%;left:80%")
-
-    .distant-galaxy(style="top:10%;left:5%")
-      .galaxy-core
-      .galaxy-arms
-
-  //- 3D Cube layer (hidden on small screens via CSS)
-  .hero-background(aria-hidden="true")
-    .hero-3d-container
-      .main-game-display
-        .cube
-          .cube-face.front A
-          .cube-face.back P
-          .cube-face.right T
-          .cube-face.left A
-          .cube-face.top T
-          .cube-face.bottom I
-        .cube-shadow
-
-  //- Foreground content
-  .hero-content
-    .hero-title-container
-      h1.hero-title APTATI 2.0
-      h1.hero-title GAME HUB
+// ===== BASE MOBILE STYLES (0px - 479px) =====
+.hero-grid.pad-1
+  .content 
+    .titles
+      h1.hero-title:first-child
+        font-size 28px
+        margin-bottom 8px
+      
+      h1.hero-title
+        font-family deco-font
+        font-size 36px
+        font-weight 900
+        line-height 1
+        margin 0
+        color gamma
+        text-shadow 2px 2px 0 rgba(alpha, .18), 10px 18px 40px rgba(alpha, .25)
+      
       p.hero-subtitle
-        | Your Ultimate
-        span.subtitle-highlight Fun Game
-        |  Destination
+        font-size 18px
+        color rgba(gamma, .92)
+        margin 15px 0 0 0
+        font-weight 300
+        letter-spacing 1px
+        max-width 600px
+        
+        .subtitle-highlight
+          color epsilon
+          font-weight 600
+          text-shadow 0 2px 4px rgba(alpha, .3)
+          position relative
+          display inline-block
 
-    .hero-features
+          &:after
+            content ''
+            position absolute
+            bottom -4px
+            left 0
+            right 0
+            height 3px
+            background linear-gradient(90deg, rgba(alpha, 0), delta, rgba(alpha, 0))
+            border-radius 2px
+    
+    .features
+      display flex
+      flex-direction column
+      gap 15px
+      margin 20px 0 30px 0
+      max-width 600px
+      
       .feature
-        .feature-icon 🎯
-        .feature-text Daily Challenges
-      .feature
-        .feature-icon 🏆
-        .feature-text Leaderboards
-      .feature
-        .feature-icon 🔄
-        .feature-text Multiple Games
+        display flex
+        align-items center
+        gap 12px
+        padding 12px 20px
+        background rgba(gamma, .1)
+        border-radius 12px
+        backdrop-filter blur(10px)
+        border 1px solid rgba(gamma, .2)
+        transition all transition-speed ease
 
+        &:hover
+          transform translateY(-5px)
+          background rgba(gamma, .2)
+          border-color rgba(delta, .3)
+          box-shadow 0 10px 20px rgba(alpha, .15)
+        
+        .feature-icon
+          font-size 20px
+          filter drop-shadow(0 2px 4px rgba(alpha, .2))
+        
+        .feature-text
+          color darken(delta, 15%)
+          font-size 14px
+          font-weight 600
+          text-shadow 0 1px 2px rgba(0, 0, 0, .1)
+    
     .hero-actions
-      a.hero-button.primary-button(href="/games") Play Now
-        span.button-arrow →
-      button.hero-button.secondary-button(type="button")
-        span.button-text Free Forever Membership Goodies
+      display flex
+      flex-direction column
+      gap 15px
+      margin 0 0 30px 0
+      align-items center
+      
+      .hero-button
+        padding 16px 30px
+        border none
+        border-radius 50px
+        font-family inherit
+        font-size 16px
+        font-weight 600
+        cursor pointer
+        display flex
+        align-items center
+        gap 10px
+        transition all .3s cubic-bezier(.4, 0, .2, 1)
+        position relative
+        overflow hidden
+        width 100%
+        max-width 300px
+        justify-content center
 
+        &:before
+          content ''
+          position absolute
+          top 0
+          left -100%
+          width 100%
+          height 100%
+          background linear-gradient(90deg, rgba(alpha, 0), rgba(gamma, .2), rgba(alpha, 0))
+          transition left .6s ease
+
+        &:hover:before
+          left 100%
+
+        &:hover
+          transform translateY(-3px) scale(1.02)
+
+        &:active
+          transform translateY(0) scale(.98)
+        
+        .button-text
+          position relative
+          z-index 1
+        
+        .button-arrow
+          font-size 18px
+          position relative
+          z-index 1
+      
+      .primary-button
+        background linear-gradient(135deg, rgba(delta, .9), rgba(epsilon, .9))
+        color darken(alpha, 90%)
+        box-shadow 0 10px 30px rgba(delta, .25), inset 0 1px 0 rgba(gamma, .8)
+
+      .secondary-button
+        background linear-gradient(135deg, rgba(epsilon, .9), rgba(gamma, .9))
+        color darken(alpha, 90%)
+        border 2px solid epsilon
+    
     .hero-stats
+      display flex
+      flex-direction column
+      gap 25px
+      max-width 600px
+      margin 0
+      align-items center
+      
       .stat
-        .stat-number 10K+
-        .stat-label Active Players
-      .stat
-        .stat-number 50+
-        .stat-label Word Games
-      .stat
-        .stat-number 24/7
-        .stat-label Live Updates
+        display flex
+        flex-direction column
+        align-items center
+        
+        .stat-number
+          font-size 30px
+          font-weight 800
+          color gamma
+          text-shadow 0 2px 4px rgba(alpha, .25)
+          line-height 1
+          margin 0 0 4px 0
+        
+        .stat-label
+          font-size 13px
+          color beta
+          font-weight 500
+          text-transform uppercase
+          letter-spacing 1px
+
+// ===== TABLET SMALL (480px - 767px) =====
+@media (min-width: 480px)
+  .hero-grid.pad-1
+    .content 
+      .titles
+        h1.hero-title:first-child
+          font-size 32px
+          margin-bottom 10px
+        
+        h1.hero-title
+          font-size 48px
+        
+        p.hero-subtitle
+          font-size 20px
+          margin 20px 0 0 0
+      
+      .features
+        .feature
+          padding 15px 25px
+          
+          .feature-icon
+            font-size 22px
+          
+          .feature-text
+            font-size 15px
+      
+      .hero-actions
+        .hero-button
+          font-size 17px
+          padding 17px 32px
+        
+      .hero-stats
+        flex-direction row
+        justify-content center
+        gap 30px
+        
+        .stat
+          .stat-number
+            font-size 32px
+          
+          .stat-label
+            font-size 13px
+
+// ===== TABLET LARGE (768px - 1024px) =====
+@media (min-width: 768px)
+  .hero-grid.pad-1
+    .content 
+      .titles
+        h1.hero-title:first-child
+          font-size 48px
+          margin-bottom 12px
+        
+        h1.hero-title
+          font-size 72px
+        
+        p.hero-subtitle
+          font-size 24px
+          margin 20px 0 0 0
+      
+      .features
+        flex-direction row
+        flex-wrap wrap
+        justify-content center
+        gap 20px
+        margin 25px 0 40px 0
+        
+        .feature
+          .feature-icon
+            font-size 24px
+          
+          .feature-text
+            font-size 16px
+      
+      .hero-actions
+        flex-direction row
+        gap 20px
+        justify-content center
+        margin 0 0 40px 0
+        
+        .hero-button
+          width auto
+          max-width none
+          padding 18px 36px
+          font-size 18px
+          
+          .button-arrow
+            font-size 20px
+      
+      .hero-stats
+        gap 40px
+        justify-content center
+        
+        .stat
+          .stat-number
+            font-size 36px
+          
+          .stat-label
+            font-size 14px
+
+// ===== DESKTOP (1025px and up) =====
+@media (min-width: 1025px)
+  .hero-grid.pad-1
+    .content 
+      .titles
+        h1.hero-title:first-child
+          font-size 48px
+          margin-bottom 10px
+        
+        h1.hero-title
+          font-size 72px
+        
+        p.hero-subtitle
+          font-size 24px
+      
+      .features
+        justify-content flex-start
+        margin 25px 0 40px 0
+      
+      .hero-actions
+        justify-content flex-start
+        margin 0 0 40px 0
+      
+      .hero-stats
+        justify-content flex-start
+        
+        .stat
+          align-items flex-start
+          .stat-number
+            font-size 36px
+          
+          .stat-label
+            font-size 14px
+
+// ===== ACCESSIBILITY =====
+@media (prefers-reduced-motion: reduce)
+  .hero-grid.pad-1
+    .content 
+      .features
+        .feature:hover
+          transform none !important
+      
+      .hero-actions
+        .hero-button:hover
+          transform none !important
+          &:before
+            display none

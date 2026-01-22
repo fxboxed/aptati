@@ -1,0 +1,16 @@
+nav.fixed-nav
+    if currentPage !== 'home'
+        a(href="/") Home
+    .spacer
+    .nav-main
+        if currentPage !== 'games'
+            a(href="/games") Games
+        if isAuthed
+            if currentPage !== 'dashboard'
+                a(href="/dashboard")
+                    span.user-text Dashboard
+            form.logout-form(method="post" action="/auth/logout")
+                button(type="submit") Logout
+        else
+            a(href="/auth/google") Login
+        button#contactToggleX(type="button") Contact

@@ -1,0 +1,108 @@
+// ===== 3D CUBE LAYER =====
+.rotating-cube
+  position absolute
+  right 0
+  inset 0
+  overflow hidden
+  z-index 0
+  pointer-events none
+  border 4px solid blue
+  width 400px
+  height 400px
+
+// Default: hidden (small screens)
+.rotating-cube__container
+  display none
+  position absolute
+  top 50%
+  left 50%
+  transform translate(-50%, -50%)
+  width 100%
+  height 100%
+  perspective 1200px
+  z-index 0
+
+.rotating-cube__display
+  position absolute
+  top 50%
+  left 50%
+  width 200px
+  height 200px
+  transform translate(-50%, -50%)
+  transform-style preserve-3d
+  animation rotateCube 20s infinite linear
+
+.rotating-cube__cube
+  //position relative
+  width 100%
+  height 100%
+  transform-style preserve-3d
+  transform rotateX(25deg) rotateY(25deg)
+
+.rotating-cube__face
+  position absolute
+  width 200px
+  height 200px
+  background linear-gradient(135deg, rgba(gamma, .9), rgba(beta, .9))
+  border 4px solid rgba(beta, .4)
+  display flex
+  align-items center
+  justify-content center
+  font-size 80px
+  font-weight 900
+  color rgba(beta, .4)
+  text-shadow 1px 1px 2px rgba(delta, .3), 2px 2px 4px rgba(alpha, .2)
+  backface-visibility visible
+  border-radius 12px
+  box-shadow inset 0 0 20px rgba(gamma, .6), 0 4px 15px rgba(alpha, .25)
+
+  &.front
+    transform translateZ(100px)
+    background linear-gradient(135deg, rgba(darken(gamma, 70%), .9), rgba(darken(epsilon, 70%), .9))
+
+  &.back
+    transform rotateY(180deg) translateZ(100px)
+    background linear-gradient(135deg, rgba(darken(gamma, 70%), .9), rgba(darken(delta, 70%), .9))
+
+  &.right
+    transform rotateY(90deg) translateZ(100px)
+    background linear-gradient(135deg, rgba(darken(gamma, 70%), .9), rgba(darken(beta, 70%), .9))
+
+  &.left
+    transform rotateY(-90deg) translateZ(100px)
+    background linear-gradient(135deg, rgba(darken(gamma, 70%), .9), rgba(darken(epsilon, 70%), .9))
+
+  &.top
+    transform rotateX(90deg) translateZ(100px)
+    background linear-gradient(135deg, rgba(darken(gamma, 70%), .9), rgba(darken(delta, 70%), .9))
+
+  &.bottom
+    transform rotateX(-90deg) translateZ(100px)
+    background linear-gradient(135deg, rgba(darken(gamma, 70%), .9), rgba(darken(beta, 70%), .9))
+
+.rotating-cube__shadow
+  position absolute
+  top 120%
+  left 50%
+  transform translateX(-50%)
+  width 250px
+  height 60px
+  background radial-gradient(ellipse at center, rgba(alpha, .25) 0%, rgba(alpha, 0) 70%)
+  filter blur(10px)
+
+@keyframes rotateCube
+  0%
+    transform translate(-50%, -50%) rotateX(0) rotateY(0)
+  100%
+    transform translate(-50%, -50%) rotateX(360deg) rotateY(360deg)
+
+// ===== ACCESSIBILITY =====
+@media (prefers-reduced-motion: reduce)
+  .rotating-cube__display
+    animation none !important
+    border 4px solid pink
+// Desktop: show the cube
+@media (min-width: 1025px)
+  .rotating-cube__container
+    display block
+    border 3px solid yellow

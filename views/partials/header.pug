@@ -6,7 +6,7 @@ header.header-nav
       //- Left: Logo
       .nav-left
         a.logo(href="/") 
-          span.logo-text APTATI
+          span.logo-text Home
 
         
         button.menu-toggle(type="button" aria-label="Toggle menu")
@@ -19,15 +19,15 @@ header.header-nav
         ul.navlist
           if isAuthed
             li.navitem
-              a.nav-link(href="/dashboard")
+              a.nav-link.btn-3d(href="/dashboard")
                 span.user-icon 👤
                 span.user-text Dashboard
             li.navitem
               form.logout-form(method="post" action="/auth/logout")
-                button.logout-btn(type="submit") Logout
+                button.logout-btn.btn-3d(type="submit") Logout
           else
             li.navitem
-              a.nav-link.nav-highlight(href="/auth/google") Login
+              a.nav-link.login-link.btn-3d(href="/auth/google") Login
           
           li.navitem
-            button#contactToggle.contact-btn(type="button") Contact
+            button#contactToggle.btn-3d(type="button") Contact

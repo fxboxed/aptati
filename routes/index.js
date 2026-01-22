@@ -4,7 +4,7 @@ const router = express.Router();
 // Home page
 router.get('/', (req, res) => {
   res.render('index', {
-    title: 'Aptati Games',
+    title: 'Aptati Games Hub',
     subtitle: 'Daily challenges for your pleasure',
     user: req.user || null
   });
@@ -25,5 +25,7 @@ router.get('/leaderboard', (req, res) => {
     user: req.user || null
   });
 });
+
+
 
 export default router;

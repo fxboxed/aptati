@@ -53,6 +53,7 @@ const __dirname = path.dirname(__filename);
 import indexRouter from './routes/index.js';
 import authRouter from './routes/auth.js';
 import dashboardRouter from './routes/dashboard.js';
+import gamesRouter from './routes/games.js'
 
 // Import Passport configuration
 import './config/passport.js';
@@ -157,6 +158,7 @@ app.use((req, res, next) => {
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/dashboard', dashboardRouter);
+app.use('/games', gamesRouter)
 
 // Health check endpoint (enhanced)
 app.get('/health', (req, res) => {

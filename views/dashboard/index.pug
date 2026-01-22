@@ -4,21 +4,23 @@ block content
   h2 Welcome to your Dashboard
   p Hello #{user.displayName || 'Guest'}!
   
-  .dashboard-grid
-    .card
-      h3 Your Stats
-      p Games Played: 0
-      p Average Score: 0
-      p Rank: Unranked
+  .dashboard-grid.pad-1
+    //- .card
+    //-   h3 Your Stats
+    //-   p Games Played: 0
+    //-   p Average Score: 0
+    //-   p Rank: Unranked
     
-    .card
-      h3 Daily Challenge
-      p Today's game: Coming soon
-      a.button(href="#") Play Now
+    //- .card
+    //-   h3 Daily Challenge
+    //-   p Today's game: Coming soon
+    //-   a.button(href="#") Play Now
     
-    .card
-      h3 Quick Actions
-      ul
-        li: a(href="/dashboard/profile") Edit Profile
-        li: a(href="/dashboard/history") View History
-        li: a(href="/leaderboard") View Leaderboard
+    .card.dashboard-nav-card
+      ul.dashboard-nav
+        li 
+          a(href="/dashboard/profile").btn-3d Edit Profile
+        li 
+          a(href="/dashboard/history").btn-3d History
+        li 
+          a(href="/leaderboard").btn-3d Leaderboard

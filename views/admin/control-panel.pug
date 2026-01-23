@@ -4,23 +4,26 @@ block content
   h2 Welcome to your Dashboard
   p Hello #{user.displayName || 'Guest'}!
   
-  .dashboard-grid.pad-1
-    .card
-      h3 Your 
-      p Games Played: 0
-      p Average Score: 0
-      p Rank: Unranked
-    
-    .card
-      h3 Daily Challenge
-      p Today's game: Coming soon
-      a.button(href="#") Play Now
-    
-    .card.dashboard-nav-card
-      ul.dashboard-nav
-        li 
-          a(href="/dashboard/profile").btn-3d Edit Profile
-        li 
-          a(href="/dashboard/history").btn-3d History
-        li 
-          a(href="/leaderboard").btn-3d Leaderboard admin
+  .control-panel
+    .buttons
+      button Card 1
+      button Card 2
+      button Card 3
+    .control-panel-cards
+      .card.card-1
+        if users && users.length > 0
+          p Name 
+          p Email
+
+            each userItem in users
+              p= userItem.name || 'N/A'
+              p= userItem.email
+
+        else
+          p No users found.     
+      .card.card-2 
+        h3 System Logs
+        p No logs available.
+      .card.card-3
+        h3 Settings
+        p No settings available.

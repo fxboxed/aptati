@@ -1,51 +1,33 @@
-// import express from 'express';
-// const router = express.Router();
-
-// // Middleware to check if user is authenticated
-// const requireAuth = (req, res, next) => {
-//   if (req.isAuthenticated()) {
-//     return next();
-//   }
-//   res.redirect('/auth');
-// };
-
-// // Protected dashboard routes
-// router.get('/', requireAuth, (req, res) => {
-//   res.render('dashboard/index', {
-//     title: 'Dashboard',
-//     user: req.user
-//   });
-// });
-
-// router.get('/profile', requireAuth, (req, res) => {
-//   res.render('dashboard/profile', {
-//     title: 'Profile',
-//     user: req.user
-//   });
-// });
-
-// router.get('/history', requireAuth, (req, res) => {
-//   res.render('dashboard/history', {
-//     title: 'Game History',
-//     user: req.user
-//   });
-// });
-
-// export default router;
 // routes/dashboard.js
 import express from 'express';
 const router = express.Router();
+
+// Hardcoded admin email
+const ADMIN_EMAIL = 'dfg@boxedfx.com';
 
 // Ensure user is authenticated middleware
 const ensureAuthenticated = (req, res, next) => {
   if (req.isAuthenticated()) {
     return next();
   }
-  res.redirect('/auth');
+  res.redirect('/auth/google');
 };
 
 // Dashboard route
 router.get('/', ensureAuthenticated, (req, res) => {
+  // Normalize the email for comparison
+  const userEmail = req.user.email.toLowerCase().trim();
+  
+  if (userEmail === ADMIN_EMAIL) {
+    // Render the admin dashboard
+    return res.render('admin/control-panel', {
+      title: 'Admin Control Panel',
+      currentPage: 'admin',
+      user: req.user
+    });
+  }
+  
+  // Regular user dashboard
   res.render('dashboard', {
     title: 'Dashboard',
     currentPage: 'dashboard',

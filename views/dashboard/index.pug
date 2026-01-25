@@ -4,23 +4,61 @@ block content
   h2 Welcome to your Dashboard
   p Hello #{user.displayName || 'Guest'}!
   
-  .dashboard-grid
-    .card
-      h3 Your Stats
-      p Games Played: 0
-      p Average Score: 0
-      p Rank: Unranked
-    
-    .card
-      h3 Daily Challenge
-      p Today's game: Coming soon
-      a.button(href="#") Play Now
-    
-    .card.dashboard-nav-card
-      ul.dashboard-nav
-        li 
-          a(href="/dashboard/profile").btn-3d Edit Profile
-        li 
-          a(href="/dashboard/history").btn-3d History
-        li 
-          a(href="/leaderboard").btn-3d Leaderboard
+  .dashboard-panel 
+    .cards
+      .game
+        h3.game-header  Your Stats
+        .card.card-1
+          p Games Played: 
+            span 0
+          p Average Score: 
+            span 0
+          p Rank:
+            span N/A
+      .game
+        h3.game-header  Game 1     
+        .card.card-2
+          p Games Played: 
+            span 0
+          p Average Score: 
+            span 0
+          p Rank:
+            span N/A
+
+      .game
+        h3.game-header  Game 2
+        .card.card-2
+          p Games Played: 
+            span 0
+          p Average Score: 
+            span 0
+          p Rank:
+            span N/A     
+
+      .game  
+        h3.game-header  Game 3
+        .card.card-3
+          p Games Played: 
+            span 0
+          p Average Score: 
+            span 0
+          p Rank:
+            span N/A    
+
+      .game  
+        h3.game-header  Game 4
+        .card.card-4
+          p Games Played: 
+            span 0
+          p Average Score: 
+            span 0
+          p Rank:
+            span N/A     
+      //- .card.card-3
+      //-   ul.dashboard-nav
+      //-     li 
+      //-       a(href="/dashboard/profile").btn-3d Edit Profile
+      //-     li 
+      //-       a(href="/dashboard/history").btn-3d History
+      //-     li 
+      //-       a(href="/leaderboard").btn-3d Leaderboard

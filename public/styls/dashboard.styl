@@ -1,49 +1,71 @@
-.dashboard-grid
+.dashboard-panel
     //border 1px solid alpha + 40%
     max-width 420px
     width 
     margin 2rem auto 0
     min-height 600px
     border 1px solid alpha + 20%
-    background red
+    //background red
     position relative
     //top 50%
     left 50%
     transform translate(-50%)
-
     z-index 1
-.card
-    background pink
-    display flex
-    justify-content space-around
-    gap 1rem
-    border-radius 8px
-    list-style none
-    padding 0
-    margin 0
-    position: relative
-    li
-        a
-            color alpha + 80%
+    .game 
+        border-bottom 1px solid alpha - 40%
+    h3.game-header  
+        text-align center
+        padding .8rem 1rem
+        background rgba(alpha, 0.3)
+        width fit-content
+        padding .6rem 3rem .2rem
+        margin .6rem auto 0
+        border-radius 1.8rem 1.8rem 0 0 
+        //border-bottom 1px solid alpha - 40%
+    .cards
+        //margin-top 2rem
+        //background red
+        //display flex
+        flex-direction column
+        justify-content start
+        border-radius 0
+        gap 0 // 2rem
+        * 
+            margin 0
+
+    .card  //.card-1
+        display flex // grid
+        //grid-template-columns 1fr 1fr
+        text-align: center
+        gap 1rem
+        background rgba(alpha, 0.2)
+        padding 1rem
+        p
+            flex: 1
             font-weight bold
-            &:hover
-                text-decoration underline
-.btn-3d
-    position relative
-    padding 10px 12px
-    border none
-    border-radius 16px
-    font-weight bold
-    cursor pointer
-    transition all 0.3s ease
-    background linear-gradient(135deg, alpha - 40% 0%, delta - 40% 100%)
-    color alpha + 60%
-    box-shadow 0 8px 15px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2)
-    
-    &:hover
-        transform translateY(-2px)
-        box-shadow 0 12px 20px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)
-    
-    &:active
-        transform translateY(0)
-        box-shadow 0 4px 8px rgba(0, 0, 0, 0.2), inset 0 2px 4px rgba(0, 0, 0, 0.1)
+            span  
+                display block
+
+        .card-1 p:nth-child(-n+2)
+           background rgba(alpha, 0.6)
+
+
+    .btn-3d
+        position relative
+        padding 10px 12px
+        border none
+        border-radius 16px
+        font-weight bold
+        cursor pointer
+        transition all 0.3s ease
+        background linear-gradient(135deg, alpha - 40% 0%, delta - 40% 100%)
+        color alpha + 60%
+        box-shadow 0 8px 15px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2)
+        
+        &:hover
+            transform translateY(-2px)
+            box-shadow 0 12px 20px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)
+        
+        &:active
+            transform translateY(0)
+            box-shadow 0 4px 8px rgba(0, 0, 0, 0.2), inset 0 2px 4px rgba(0, 0, 0, 0.1)

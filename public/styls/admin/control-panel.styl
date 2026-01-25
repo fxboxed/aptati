@@ -12,7 +12,7 @@
         max-width 420px
         margin auto
         //margin-bottom 2rem
-        border 1px solid alpha + 20%
+        //border 1px solid alpha + 20%
         //background red
         button
             flex-grow 1
@@ -21,16 +21,23 @@
         margin-top 2rem
         display flex
         flex-direction column
-
+        border-radius 0
         gap 2rem
-    .card-1
+    .card.card-2, .card.card-3 
+        background alpha
+    .card.card-1
         display grid
         grid-template-columns 1fr 1fr
         text-align: center
         gap .6rem
         background rgba(alpha, 0.2)
         padding 1rem
-        p  
-    
-            background rgba(alpha, 0.4)
+        p   
+            background rgba(alpha, 0.3)
             padding .4rem
+        p:nth-child(-n+2)
+            background rgba(alpha, 0.6)
+            padding .4rem
+            text-transform uppercase
+            font-size 1.2rem
+

@@ -12,15 +12,13 @@ block content
     .control-panel-cards
       .card.card-1
         if users && users.length > 0
-          p Name 
+          p Username 
           p Email
 
             each userItem in users
               p= userItem.name || 'N/A'
               p= userItem.email
-
-        else
-          p No users found.     
+   
       .card.card-2 
         h3 System Logs
         p No logs available.

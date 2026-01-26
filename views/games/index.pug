@@ -1,1 +1,16 @@
 extends ../layouts/main-layout
+include ../mixins/responsive-grid-mixin.pug
+
+
+block content
+    .games-wrap
+        h1 Aptati Games List
+
+        +responsiveGrid("380px", 3, "1rem", "grid-item grid-item-card-link")
+            a(href="/games/the-word")
+                img(
+                    src="/images/tiles/word-tile_1200x1200.webp"
+                    alt="The Word Game"
+                    loading="lazy"
+                    decoding="async"
+                )

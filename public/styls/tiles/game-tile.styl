@@ -1,0 +1,471 @@
+// variables.styl
+// Color Variables
+primary = #2d7f9d
+secondary = #a4c9d9
+background = #eaf2f4
+accent1 = #dc7684
+accent2 = #e4ca99
+
+// Animation Variables
+transition-speed = 0.3s
+hover-lift = 8px
+
+// Font Variables
+deco-font = 'Arial Rounded MT Bold', 'Arial', sans-serif
+
+// components/game-tile.styl
+.game-tile
+  display: block
+  color gamma
+  width: 130px
+  height: 130px
+  border-radius: 20px
+  position: relative
+  overflow: hidden
+  text-decoration: none
+  background: linear-gradient(135deg, accent2 0%, primary 100%)
+  box-shadow: 
+    0 6px 16px rgba(primary, 0.25),
+    inset 0 1px 0 rgba(background, 0.3)
+  transition: all transition-speed cubic-bezier(0.34, 1.56, 0.64, 1)
+  cursor: pointer
+  a  
+    text-decoration none
+  &:hover
+    //transform: translateY({hover-lift}) scale(1.02)
+    box-shadow: 
+      0 16px 32px rgba(primary, 0.4),
+      inset 0 1px 0 rgba(background, 0.4)
+    
+    .center-icon
+      transform: scale(1.15) rotate(5deg)
+      
+    .color-grid .grid-dot
+      animation: pulse 1.5s infinite alternate
+    
+    .word-game-title .letter
+      animation: letterPop 0.8s ease-out
+      animation-fill-mode: both
+      
+    .play-hint
+      opacity: 1
+      transform: translateY(0)
+      letter-spacing: 4px
+    
+    .arrow-symbol
+      animation: arrowBounce 1s infinite
+  
+  &:active
+    //transform: translateY(-#{hover-lift / 2}) scale(0.98)
+    transition-duration: 0.1s
+
+.tile-visual
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 50px
+  display: flex
+  align-items: center
+  justify-content: center
+
+.color-grid
+  position: absolute
+  display: flex
+  flex-direction: column
+  gap: 8px
+  opacity: 0.8
+  
+  .grid-row
+    display: flex
+    gap: 8px
+    
+  .grid-dot
+    width: 14px
+    height: 14px
+    border-radius: 50%
+    transition: all 0.6s ease
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1)
+    
+    // Row 0
+    &.row-0
+      background: primary
+      
+    // Row 1 - pattern
+    &.row-1.col-0
+      background: accent1
+    &.row-1.col-1
+      background: primary
+    &.row-1.col-2
+      background: accent2
+    &.row-1.col-3
+      background: secondary
+    
+    // Row 2 - pattern
+    &.row-2.col-0
+      background: secondary
+    &.row-2.col-1
+      background: accent2
+    &.row-2.col-2
+      background: primary
+    &.row-2.col-3
+      background: accent1
+    
+    // Row 3
+    &.row-3
+      background: accent2
+
+.center-icon
+  position: relative
+  z-index: 2
+  transition: all transition-speed ease
+
+.question-mark
+  width: 48px
+  height: 72px
+  position: relative
+  
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 18px
+    width: 12px
+    height: 18px
+    border-radius: 6px 6px 0 0
+    background: primary
+    box-shadow: 
+      0 0 0 3px background,
+      0 2px 4px rgba(primary, 0.3)
+    
+  &::after
+    content: ''
+    position: absolute
+    top: 18px
+    left: 0
+    width: 48px
+    height: 36px
+    border: 3px solid background
+    border-radius: 24px 24px 24px 0
+    border-right: none
+    border-bottom: none
+    box-shadow: 0 2px 4px rgba(primary, 0.2)
+
+.icon-dot
+  position: absolute
+  bottom: 6px
+  left: 50%
+  transform: translateX(-50%)
+  width: 10px
+  height: 10px
+  border-radius: 50%
+  background: accent1
+  box-shadow: 
+    0 0 0 3px background,
+    0 2px 4px rgba(accent1, 0.3)
+
+.corner-elements
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  pointer-events: none
+
+.corner
+  position: absolute
+  width: 24px
+  height: 24px
+  
+  &.corner-tl
+    top: 15px
+    left: 15px
+    border-top: 3px solid accent1
+    border-left: 3px solid accent1
+    border-radius: 10px 0 0 0
+    box-shadow: -2px -2px 4px rgba(accent1, 0.2)
+    
+  &.corner-tr
+    top: 15px
+    right: 15px
+    border-top: 3px solid accent2
+    border-right: 3px solid accent2
+    border-radius: 0 10px 0 0
+    box-shadow: 2px -2px 4px rgba(accent2, 0.2)
+    
+  &.corner-bl
+    bottom: 65px
+    left: 15px
+    border-bottom: 3px solid secondary
+    border-left: 3px solid secondary
+    border-radius: 0 0 0 10px
+    box-shadow: -2px 2px 4px rgba(secondary, 0.2)
+    
+  &.corner-br
+    bottom: 65px
+    right: 15px
+    border-bottom: 3px solid primary
+    border-right: 3px solid primary
+    border-radius: 0 0 10px 0
+    box-shadow: 2px 2px 4px rgba(primary, 0.2)
+
+.tile-text
+  position: absolute
+  bottom: 0
+  left: 0
+  right: 0
+  height: 50px
+  background: linear-gradient(to top, rgba(primary, 0.95), rgba(primary, 0.85))
+  backdrop-filter: blur(8px)
+  border-radius: 0 0 20px 20px
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  padding: 8px 0
+  overflow: hidden
+
+.word-game-title
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  width: 100%
+  margin-bottom: 4px
+
+.word-deco, .game-deco
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: 2px
+
+.letter
+  font-family: deco-font
+  font-weight: 900
+  font-size: 20px
+  color: background
+  text-transform: uppercase
+  text-shadow: 
+    0 2px 4px rgba(primary, 0.5),
+    0 0 10px rgba(background, 0.2)
+  position: relative
+  transition: all 0.3s ease
+  line-height: 1
+
+// Individual letter styling for variation
+.w-letter
+  font-size: 22px
+  color: accent2
+  transform: rotate(-5deg)
+  text-shadow: 
+    0 2px 4px rgba(primary, 0.6),
+    0 0 12px rgba(accent2, 0.3)
+
+.o-letter
+  color: background
+  &::after
+    content: '●'
+    position: absolute
+    top: -8px
+    right: -4px
+    font-size: 8px
+    color: accent1
+    opacity: 0.8
+
+.r-letter
+  font-size: 21px
+  transform: rotate(2deg)
+
+.d-letter
+  color: accent2
+  font-size: 22px
+
+.g-letter
+  font-size: 21px
+  color: background
+  transform: rotate(-2deg)
+
+.a-letter
+  font-size: 20px
+
+.m-letter
+  font-size: 22px
+  color: accent2
+  &::before
+    content: 'ᴹ'
+    position: absolute
+    top: -6px
+    right: -2px
+    font-size: 10px
+    color: accent1
+    opacity: 0.7
+
+.e-letter
+  color: background
+  &::after
+    content: '!'
+    position: absolute
+    bottom: -10px
+    right: -6px
+    font-size: 12px
+    color: accent1
+    font-weight: bold
+
+.deco-line
+  width: 4px
+  height: 24px
+  background: linear-gradient(to bottom, accent1, accent2)
+  margin: 0 3px
+  border-radius: 2px
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2)
+
+.play-hint
+  color: accent2
+  font-family: deco-font
+  font-size: 10px
+  font-weight: 700
+  letter-spacing: 2px
+  text-transform: uppercase
+  opacity: 0.8
+  transform: translateY(5px)
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)
+  text-shadow: 0 1px 2px rgba(primary, 0.5)
+  display: flex
+  align-items: center
+  gap: 6px
+
+.arrow-symbol
+  font-size: 14px
+  color: accent1
+  display: inline-block
+  transition: all 0.3s ease
+
+// Animations
+@keyframes pulse
+  0%
+    transform: scale(1)
+    opacity: 0.8
+  100%
+    transform: scale(1.25)
+    opacity: 1
+
+@keyframes letterPop
+  0%
+    transform: translateY(0) scale(1)
+  50%
+    transform: translateY(-3px) scale(1.1)
+  100%
+    transform: translateY(0) scale(1)
+
+@keyframes arrowBounce
+  0%, 100%
+    transform: translateX(0)
+  50%
+    transform: translateX(4px)
+
+// Stagger letter animations on hover
+.game-tile:hover
+  .w-letter
+    animation-delay: 0s
+  .o-letter
+    animation-delay: 0.1s
+  .r-letter
+    animation-delay: 0.2s
+  .d-letter
+    animation-delay: 0.3s
+  .g-letter
+    animation-delay: 0.1s
+  .a-letter
+    animation-delay: 0.2s
+  .m-letter
+    animation-delay: 0.3s
+  .e-letter
+    animation-delay: 0.4s
+
+// Responsive adjustments
+@media (max-width: 768px)
+  .game-tile
+    width: 180px
+    height: 180px
+    
+  .tile-visual
+    bottom: 45px
+    
+  .grid-dot
+    width: 11px
+    height: 11px
+    
+  .question-mark
+    width: 36px
+    height: 54px
+    
+    &::before
+      left: 13px
+      width: 9px
+      height: 13px
+      
+    &::after
+      top: 13px
+      width: 36px
+      height: 27px
+    
+  .letter
+    font-size: 16px
+    
+  .w-letter, .d-letter, .m-letter
+    font-size: 18px
+    
+  .deco-line
+    height: 20px
+    width: 3px
+    
+  .corner
+    width: 18px
+    height: 18px
+    
+    &.corner-bl,
+    &.corner-br
+      bottom: 55px
+
+@media (max-width: 480px)
+  .game-tile
+    width: 160px
+    height: 160px
+    
+  .tile-visual
+    bottom: 40px
+    
+  .grid-dot
+    width: 9px
+    height: 9px
+    
+  .question-mark
+    width: 30px
+    height: 45px
+    
+    &::before
+      left: 10px
+      width: 7px
+      height: 11px
+      
+    &::after
+      top: 11px
+      width: 30px
+      height: 22px
+    
+  .letter
+    font-size: 14px
+    
+  .w-letter, .d-letter, .m-letter
+    font-size: 15px
+    
+  .deco-line
+    height: 18px
+    width: 2px
+    
+  .play-hint
+    font-size: 9px
+    letter-spacing: 1px
+    
+  .arrow-symbol
+    font-size: 12px

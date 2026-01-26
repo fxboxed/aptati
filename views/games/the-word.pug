@@ -1,0 +1,79 @@
+extends ../layouts/main-layout
+
+block content
+    .game-wrap  
+        h1 The Word
+        p.attempts Remaining: 6
+        .word-grid
+            .tile-row 
+                .tile 
+                .tile 
+                .tile 
+                .tile
+                .tile
+            .tile-row 
+                .tile 
+                .tile 
+                .tile 
+                .tile
+                .tile
+            .tile-row 
+                .tile 
+                .tile 
+                .tile 
+                .tile
+                .tile
+            .tile-row 
+                .tile 
+                .tile 
+                .tile 
+                .tile
+                .tile
+            .tile-row
+                .tile 
+                .tile 
+                .tile 
+                .tile
+                .tile
+            .tile-row 
+                .tile 
+                .tile 
+                .tile 
+                .tile
+                .tile
+        .keyboard
+            .key-row
+                .key Q
+                .key W
+                .key E
+                .key R
+                .key T
+                .key Y
+                .key U
+                .key I
+                .key O
+                .key P
+            .key-row
+                .key A
+                .key S
+                .key D
+                .key F
+                .key G
+                .key H
+                .key J
+                .key K
+                .key L
+            .key-row.last-row
+                
+                .lr Z
+                .lr X
+                .lr C
+                .lr V
+                .lr B
+                .lr N
+                .lr M
+            .key-row.spacer-row 
+                .key.enter Enter
+                .key.spacer Space
+                .key.backspace Back                
+    script(src="/js/games/the-word.js" defer)

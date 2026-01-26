@@ -12,7 +12,14 @@ router.get('/', (req, res) => {
   });
 });
 
-
+router.get('/the-word', (req, res) => {
+  res.render('games/the-word', {
+    title: 'The Word Game',
+    subtitle: 'Test your vocabulary skills!',
+    currentPage: 'the-word',
+    user: req.user || null
+  });
+});
 
 
 export default router;

@@ -1,4 +1,3 @@
-// app.js - Updated with authentication and flexible MongoDB connection
 import 'dotenv/config';
 import express from 'express';
 import session from 'express-session';
@@ -54,7 +53,7 @@ import indexRouter from './routes/index.js';
 import authRouter from './routes/auth.js';
 import dashboardRouter from './routes/dashboard.js';
 import gamesRouter from './routes/games.js'
-
+import contactRouter from "./routes/contact.js";
 // Import Passport configuration
 import './config/passport.js';
 
@@ -72,6 +71,15 @@ if (process.env.NODE_ENV === 'production') {
 } else {
   // Development: trust local proxy
   app.set('trust proxy', 1);
+}
+
+// testing contact form route
+const GOOGLE_CLIENT_ID = String(process.env.GOOGLE_CLIENT_ID || "").trim();
+const GOOGLE_CLIENT_SECRET = String(process.env.GOOGLE_CLIENT_SECRET || "").trim();
+
+if (!GOOGLE_CLIENT_ID || !GOOGLE_CLIENT_SECRET) {
+  console.error("❌ Missing GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET. Check your .env file.");
+  process.exit(1);
 }
 
 // Session configuration
@@ -158,7 +166,8 @@ app.use((req, res, next) => {
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/dashboard', dashboardRouter);
-app.use('/games', gamesRouter)
+app.use('/games', gamesRouter);
+app.use("/contact", contactRouter); // This is the correct contact route
 
 // Health check endpoint (enhanced)
 app.get('/health', (req, res) => {

@@ -9,14 +9,11 @@ html(lang="en")
     block head
   //-include ../mixins/game-tile.pug
   body
-    //- .burger#burger
-    //-   span.bar
-    //-   span.bar
-    //-   span.bar
+
     .body-liner
       include ../partials/contact-modal.pug
       include ../partials/fixed-nav.pug
-      include ../partials/site-bg-2.pug
+      //- include ../partials/site-bg-2.pug
 
 
       main.container
@@ -26,5 +23,6 @@ html(lang="en")
         //- p &copy; #{new Date().getFullYear()} Aptati Games
 
       //-script(src="/js/aptati-consent.js" defer)
-      //-0script(src="/js/nav-toggle.js" defer)
-      //-script(src="/js/contact-modal.js" defer)
+      //- script(src="/js/nav-toggle.js" defer)
+      script(src="/js/contact-modal.js" defer)
+      //-script(src="/js/modal-contact.js" defer)

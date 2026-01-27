@@ -1,34 +1,18 @@
 /* The Word Game - Stylus */
-empty = #a4c9d9 
-correct = #80ef80 
-present = #e4ca99 
-incorrect = #dc7684 
-
-// Alpha versions
-empty-alpha = rgba(164, 201, 217, 0.4)
-correct-alpha = rgba(128, 239, 128, 0.4)
-present-alpha = rgba(228, 202, 153, 0.4)
-incorrect-alpha = rgba(220, 118, 132, 0.4)
-
-// Darker versions for backgrounds
-empty-dark = darken(empty, 20%)
-correct-dark = darken(correct, 20%)
-present-dark = darken(present, 20%)
-incorrect-dark = darken(incorrect, 20%)
-
-// Lighter versions for text/hover
-empty-light = lighten(empty, 20%)
-correct-light = lighten(correct, 20%)
-present-light = lighten(present, 20%)
-incorrect-light = lighten(incorrect, 20%)
+alpha = #2d7f9d
+beta = #a4c9d9
+gamma = #007f00
+delta = #dc7684
+epsilon = #e4ca99
 
 .game-wrap
-    max-width: 400px
+    max-width: 420px
     margin: 1rem auto
-    border: 2px solid empty-alpha
+    //border: 2px solid rgba(alpha, 0.4)
     min-height: 750px
     position: relative
-    background: empty-alpha
+    background: darken(beta, 80%)
+    border-radius: 1rem
     padding-top: 1.2rem
     width: 100%
 
@@ -37,21 +21,30 @@ incorrect-light = lighten(incorrect, 20%)
         line-height: 1
         margin-bottom: 0.5rem
     
-    p.attempts 
+    .game-info
+        background: darken(beta, 80%)
         text-align: center
-        margin-bottom: 1rem  
-        font-size: 1rem
-        font-weight: bold
-    
-    .message
-        text-align: center
-        min-height: 1.5rem
-        font-weight: bold
-        margin-bottom: 0.5rem
-        color: incorrect
+        margin-bottom: 1rem
+        
+        p
+            margin: 0.3rem 0
+            font-size: 0.9rem
+            font-weight: bold
+        
+        .previous-word
+            color: epsilon
+        
+        #yesterdays-word
+        
+        .attempts
+            color: alpha
+        
+        .message
+            min-height: 1.5rem
+            color: delta
 
 .word-grid
-    background: empty-dark
+    background: darken(beta, 80%)
     display: flex
     flex-direction: column
     gap: 0.5rem
@@ -61,13 +54,13 @@ incorrect-light = lighten(incorrect, 20%)
     box-sizing: border-box
 
 .tile-row
-    display: flex
-    gap: 0.5rem
-    width: 100%
-    position: relative
+    display flex
+    gap 0.5rem
+    width 100%
+    position relative
 
 .tile
-    background: empty
+    background: beta
     height: auto
     aspect-ratio: 1 / 1
     display: flex
@@ -77,24 +70,25 @@ incorrect-light = lighten(incorrect, 20%)
     font-size: 1.8rem
     font-weight: bold
     text-transform: uppercase
-    border: 2px solid empty-alpha
+    border: 2px solid rgba(alpha, 0.4)
     border-radius: 4px
     transition: all 0.3s ease
+    color: alpha
 
     &.filled
         animation: pop 0.1s ease
     
     &.correct
-        background: correct
-        border-color: correct
+        background: gamma
+        border-color: gamma
     
     &.present
-        background: present
-        border-color: present
+        background: epsilon
+        border-color: epsilon
     
     &.incorrect
-        background: incorrect
-        border-color: incorrect
+        background: delta
+        border-color: delta
     
     &.shake
         animation: shake 0.5s ease
@@ -120,7 +114,7 @@ incorrect-light = lighten(incorrect, 20%)
     flex-direction: column
     gap: 0.5rem
     padding: 1rem 0.5rem
-    background: empty-dark
+    background: darken(beta, 80%)
     width: 100%
     box-sizing: border-box
 
@@ -132,7 +126,7 @@ incorrect-light = lighten(incorrect, 20%)
         justify-content: center
 
         .key
-            background: darken(empty, 40%)
+            background: darken(beta, 40%)
             border-radius: 4px
             flex: 1
             height: 50px
@@ -155,22 +149,22 @@ incorrect-light = lighten(incorrect, 20%)
                 transform: scale(0.95)
             
             &.correct
-                background: correct
+                background: gamma
             
             &.present
-                background: present
+                background: epsilon
             
             &.incorrect
-                background: incorrect
+                background: delta
             
             &.enter
-                background: darken(correct, 60%)
+                background: darken(gamma, 60%)
                 flex: 1.5
                 text-transform: none
                 font-size: 1.3rem
             
             &.backspace
-                background: darken(incorrect, 60%)
+                background: darken(delta, 60%)
                 flex: 1.5
                 text-transform: none
                 font-size: 1.3rem
@@ -189,24 +183,6 @@ incorrect-light = lighten(incorrect, 20%)
             &.enter, &.backspace
                 flex: 1.2
                 font-size: 1.3rem
-
-/* Floating animation for letters */
-@keyframes floatUp
-    0%
-        transform: translateY(0) scale(1)
-        opacity: 1
-    100%
-        transform: translateY(-100px) scale(0.8)
-        opacity: 0
-
-.floating-letter
-    position: fixed
-    pointer-events: none
-    z-index: 1000
-    font-size: 1.5rem
-    font-weight: bold
-    color: #333
-    animation: floatUp 0.8s ease-out forwards
 
 /* Responsive adjustments */
 @media (max-width: 400px)

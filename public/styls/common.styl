@@ -11,7 +11,8 @@ gamma = #007f00
 delta = #dc7684
 epsilon = #e4ca99
 
-
+// body 
+//     font-family Montserrat ,sans-serif
 .body-liner
     width 100%
     max-width 1280px
@@ -68,4 +69,77 @@ img
 .pad-2
     padding 2rem
 //------games-------------------
+// needs game name box
+// need logo box
 
+.game-name-box
+    margin 4rem auto 0
+    position relative
+    background #fff
+    border 1px solid #fff
+    z-index 60
+
+    width fit-content
+    p  
+        text-align: center
+        margin 0
+        font-weight bold
+        padding 0
+        line-height 1
+        display flex 
+        justify-content center
+        align-items center
+    p.first
+        //background delta //epsilon //gamma - 10%
+        //border 1px solid red
+        font-size 3rem
+        position relative
+        //padding 0 1.5rem .3rem
+        text-shadow: 
+            1px 1px 0px epsilon  - 40%, //darken(epsilon, 40%),
+            2px 2px 0px epsilon  - 50%,
+            3px 3px 0px epsilon  - 60%,
+            4px 4px 0px epsilon  - 70%,
+            5px 5px 5px rgba(0, 0, 0, 0.5)
+        font-family 'Segoe Script', cursive, sans-serif
+        &:before
+            //border 1px solid #fff
+            content 'The'
+            color beta
+            font-size 1.5rem
+            font-weight bold
+            position absolute
+            top .4rem
+            left -1.8rem
+            transform translateX(-50%)
+            width fit-content
+            //height 8px
+            //background: gamma - 20%
+            border-radius 4px
+            z-index 6
+            font-style italic
+p.second
+    font-size 2rem
+
+.aptati
+    font-size: 4rem
+    position: relative
+    display: inline-block
+    position relative
+    border 1px solid #fff
+    //background red
+    filter: blur(2px)
+   
+    // &:after
+    //     content: attr(data-text)
+    //     position: absolute
+    //     top: 100%
+    //     left: 0
+    //     transform: scaleY(-1)
+    //     opacity: 0.3
+    //     background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%)
+    //     -webkit-background-clip: text
+    //     background-clip: text
+    //     filter: blur(2px)
+    //     z-index 6
+ 

@@ -5,6 +5,9 @@ include ../mixins/responsive-grid-mixin.pug
 
 block content
     .games-wrap
+        .game-name-box 
+            span.span-1 APTATI 
+            span.span-2 GAMES
         h1 Aptati Games List
 
         +responsiveGrid("380px", 3, "1rem", "grid-item grid-item-card-link")
@@ -15,3 +18,4 @@ block content
                     loading="lazy"
                     decoding="async"
                 )
+

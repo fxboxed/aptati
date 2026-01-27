@@ -1,10 +1,17 @@
 extends ../layouts/main-layout
 
 block content
+    .game-name-box 
+        P.first WORD
+  
+
     .game-wrap  
-        h1 The Word
-        p.attempts Remaining: <span id="remaining">6</span>
-        p.message#message
+
+        .game-info
+            p.previous-word Yesterday's word: <span id="yesterdays-word"></span>
+            //- p Only one word per day.
+            //- p.attempts#attempts-info 
+            //- p.message#message
         .word-grid
             each row in [0,1,2,3,4,5]
                 .tile-row(data-row=row)

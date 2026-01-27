@@ -1,7 +1,6 @@
 import express from 'express';
 const router = express.Router();
 
-
 // Games list
 router.get('/', (req, res) => {
   res.render('games', {
@@ -20,6 +19,5 @@ router.get('/the-word', (req, res) => {
     user: req.user || null
   });
 });
-
 
 export default router;

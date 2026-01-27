@@ -3,77 +3,28 @@ extends ../layouts/main-layout
 block content
     .game-wrap  
         h1 The Word
-        p.attempts Remaining: 6
+        p.attempts Remaining: <span id="remaining">6</span>
+        p.message#message
         .word-grid
-            .tile-row 
-                .tile 
-                .tile 
-                .tile 
-                .tile
-                .tile
-            .tile-row 
-                .tile 
-                .tile 
-                .tile 
-                .tile
-                .tile
-            .tile-row 
-                .tile 
-                .tile 
-                .tile 
-                .tile
-                .tile
-            .tile-row 
-                .tile 
-                .tile 
-                .tile 
-                .tile
-                .tile
-            .tile-row
-                .tile 
-                .tile 
-                .tile 
-                .tile
-                .tile
-            .tile-row 
-                .tile 
-                .tile 
-                .tile 
-                .tile
-                .tile
+            each row in [0,1,2,3,4,5]
+                .tile-row(data-row=row)
+                    each col in [0,1,2,3,4]
+                        .tile(data-row=row data-col=col)
         .keyboard
             .key-row
-                .key Q
-                .key W
-                .key E
-                .key R
-                .key T
-                .key Y
-                .key U
-                .key I
-                .key O
-                .key P
+                each key in ["Q","W","E","R","T","Y","U","I","O","P"]
+                    .key(data-key=key)= key
             .key-row
-                .key A
-                .key S
-                .key D
-                .key F
-                .key G
-                .key H
-                .key J
-                .key K
-                .key L
-            .key-row.last-row
-                
-                .lr Z
-                .lr X
-                .lr C
-                .lr V
-                .lr B
-                .lr N
-                .lr M
-            .key-row.spacer-row 
-                .key.enter Enter
-                .key.spacer Space
-                .key.backspace Back                
+                each key in ["A","S","D","F","G","H","J","K","L"]
+                    .key(data-key=key)= key
+            .key-row.enter-backspace-row
+                .key.enter(data-action="enter") ↵
+                .key(data-key="Z") Z
+                .key(data-key="X") X
+                .key(data-key="C") C
+                .key(data-key="V") V
+                .key(data-key="B") B
+                .key(data-key="N") N
+                .key(data-key="M") M
+                .key.backspace(data-action="backspace") ⌫
     script(src="/js/games/the-word.js" defer)

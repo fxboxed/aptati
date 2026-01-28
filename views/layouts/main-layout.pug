@@ -9,17 +9,18 @@ html(lang="en")
     block head
   //-include ../mixins/game-tile.pug
   body
-
+    img.space-bg(src="/images/space-bg-2.jpeg", alt="")
     .body-liner
       include ../partials/contact-modal.pug
       include ../partials/fixed-nav.pug
-      include ../partials/site-bg-2.pug
+      //- include ../partials/site-bg-2.pug
+
 
 
       main.container
         block content
 
-      include ../partials/footer.pug
+      //- include ../partials/footer.pug
         //- p &copy; #{new Date().getFullYear()} Aptati Games
 
       //-script(src="/js/aptati-consent.js" defer)

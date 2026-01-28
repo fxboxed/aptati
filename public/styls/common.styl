@@ -10,9 +10,26 @@ beta = #a4c9d9
 gamma = #007f00
 delta = #dc7684
 epsilon = #e4ca99
-
-// body 
-//     font-family Montserrat ,sans-serif
+//home/dave/dev/aptati-games/public/images/space-bg-2.jpeg
+body 
+    font-family Montserrat ,sans-serif
+    position relative
+img.space-bg
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    z-index -1
+    pointer-events none
+    overflow hidden
+    object-fit cover
+    opacity .3
+    // img.space-bg
+    //     width 100%
+    //     height 100%
+    //     object-fit cover
+    //     object-position center
 .body-liner
     width 100%
     max-width 1280px
@@ -56,14 +73,18 @@ h1, h2, h3, h4, h5, h6, p
     position relative
 h1 
     color alpha + 80%
-    font-size 2.5rem
+    font-size clamp(2.5rem, 6vw, 4rem)
     margin-bottom 1rem
+    text-transform: uppercase
 img  
     max-width 100%
     height auto
     display block
     width 100%
 // padding 
+.text-left
+    text-align left
+
 .pad-1
     padding 1rem
 .pad-2
@@ -73,53 +94,55 @@ img
 // need logo box
 
 .game-name-box
-    margin 4rem auto 0
+    margin 1rem auto 0
     position relative
-    background #fff
-    border 1px solid #fff
-    z-index 60
+    //background #fff
+    //border 1px solid #fff
+    z-index 6
 
     width fit-content
-    p  
-        text-align: center
-        margin 0
+p.subtitle 
+    font-size 1.5rem
+    font-weight bold
+    color alpha + 50%
+    margin-top 1rem
+    margin-bottom 2rem
+
+p.first
+    //background delta //epsilon //gamma - 10%
+    //border 1px solid red
+    font-size 2.5rem
+    position relative
+    //border 1px solid red
+    width fit-content
+    margin 0 auto
+    //padding 0 1.5rem .3rem
+    text-shadow: 
+        1px 1px 0px epsilon  - 40%, //darken(epsilon, 40%),
+        2px 2px 0px epsilon  - 50%,
+        3px 3px 0px epsilon  - 60%,
+        4px 4px 0px epsilon  - 70%,
+        5px 5px 5px rgba(0, 0, 0, 0.5)
+    font-family 'Segoe Script', cursive, sans-serif
+    &:before
+        //border 1px solid #fff
+        content 'The'
+        color beta
+        font-size 1.5rem
         font-weight bold
-        padding 0
-        line-height 1
-        display flex 
-        justify-content center
-        align-items center
-    p.first
-        //background delta //epsilon //gamma - 10%
-        //border 1px solid red
-        font-size 3rem
-        position relative
-        //padding 0 1.5rem .3rem
-        text-shadow: 
-            1px 1px 0px epsilon  - 40%, //darken(epsilon, 40%),
-            2px 2px 0px epsilon  - 50%,
-            3px 3px 0px epsilon  - 60%,
-            4px 4px 0px epsilon  - 70%,
-            5px 5px 5px rgba(0, 0, 0, 0.5)
-        font-family 'Segoe Script', cursive, sans-serif
-        &:before
-            //border 1px solid #fff
-            content 'The'
-            color beta
-            font-size 1.5rem
-            font-weight bold
-            position absolute
-            top .4rem
-            left -1.8rem
-            transform translateX(-50%)
-            width fit-content
-            //height 8px
-            //background: gamma - 20%
-            border-radius 4px
-            z-index 6
-            font-style italic
-p.second
-    font-size 2rem
+        position absolute
+        top .6rem
+        left -1.2rem
+        transform translateX(-50%)
+        width fit-content
+        //height 8px
+        //background: gamma - 20%
+        border-radius 4px
+        z-index 6
+        font-style italic
+p.first.index-page
+    margin-left 2rem
+    
 
 .aptati
     font-size: 4rem

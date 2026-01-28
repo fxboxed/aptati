@@ -1,0 +1,230 @@
+// space-bg.styl
+// Requires color vars in scope: background, alpha
+// Uses ONLY background + alpha (and alpha +/- %). No rgba(background, *). No mix(). No new vars.
+
+.space-bg
+  position relative
+  width 100%
+  aspect-ratio 16 / 9
+  overflow hidden
+  border-radius 18px
+
+  // keep it dark (assumes `background` is already a dark color)
+  background-color background
+
+  // subtle "alive" haze, still dark
+  background-image \
+    radial-gradient(circle at 40% 60%, rgba(alpha - 80%, .12) 0 18%, rgba(alpha - 80%, 0) 55%, background 78%), \
+    radial-gradient(circle at 78% 22%, rgba(alpha - 80%, .08) 0 10%, rgba(alpha - 80%, 0) 46%, background 76%)
+  background-repeat no-repeat
+  background-size cover
+
+  animation space-breathe 18s ease-in-out infinite
+
+// ---------------------------------------------
+// Stars (2 layers, mostly static)
+// ---------------------------------------------
+.space-bg > .stars
+  position absolute
+  inset -12%
+  pointer-events none
+  background-repeat repeat
+  will-change opacity
+  animation twinkle 7s ease-in-out infinite
+
+.space-bg > .stars--far
+  opacity .70
+  filter blur(.25px)
+  background-size 360px 360px
+  background-image \
+    radial-gradient(circle at 28px 46px,   rgba(alpha - 60%, .18) 0 1px, rgba(alpha - 80%, 0) 2px), \
+    radial-gradient(circle at 112px 84px,  rgba(alpha - 60%, .14) 0 1px, rgba(alpha - 80%, 0) 2px), \
+    radial-gradient(circle at 210px 64px,  rgba(alpha - 60%, .12) 0 1px, rgba(alpha - 80%, 0) 2px), \
+    radial-gradient(circle at 70px 238px,  rgba(alpha - 60%, .10) 0 1px, rgba(alpha - 80%, 0) 2px), \
+    radial-gradient(circle at 288px 202px, rgba(alpha - 60%, .16) 0 1px, rgba(alpha - 80%, 0) 2px), \
+    radial-gradient(circle at 168px 294px, rgba(alpha - 60%, .09) 0 1px, rgba(alpha - 80%, 0) 2px)
+
+.space-bg > .stars--near
+  opacity .85
+  background-size 260px 260px
+  background-image \
+    radial-gradient(circle at 22px 28px,   rgba(alpha, .26) 0 1.2px, rgba(alpha - 80%, 0) 3px), \
+    radial-gradient(circle at 152px 40px,  rgba(alpha, .22) 0 1.1px, rgba(alpha - 80%, 0) 3px), \
+    radial-gradient(circle at 88px 108px,  rgba(alpha, .20) 0 1.0px, rgba(alpha - 80%, 0) 3px), \
+    radial-gradient(circle at 36px 154px,  rgba(alpha, .18) 0 1.0px, rgba(alpha - 80%, 0) 3px), \
+    radial-gradient(circle at 210px 190px, rgba(alpha, .24) 0 1.1px, rgba(alpha - 80%, 0) 3px)
+
+// ---------------------------------------------
+// Orbit guides (solar system vibe, no motion)
+// ---------------------------------------------
+.space-bg > .orbits
+  position absolute
+  inset -10%
+  pointer-events none
+  opacity .40
+  filter blur(.25px)
+  background-repeat no-repeat
+  background-image \
+    radial-gradient(ellipse at 18% 58%, rgba(alpha - 80%, 0) 0 46%, rgba(alpha - 60%, .10) 47%, rgba(alpha - 80%, 0) 48%), \
+    radial-gradient(ellipse at 20% 58%, rgba(alpha - 80%, 0) 0 56%, rgba(alpha - 60%, .08) 57%, rgba(alpha - 80%, 0) 58%), \
+    radial-gradient(ellipse at 22% 58%, rgba(alpha - 80%, 0) 0 66%, rgba(alpha - 60%, .07) 67%, rgba(alpha - 80%, 0) 68%), \
+    radial-gradient(ellipse at 24% 58%, rgba(alpha - 80%, 0) 0 76%, rgba(alpha - 60%, .06) 77%, rgba(alpha - 80%, 0) 78%)
+
+// ---------------------------------------------
+// Planets base (spherical, not eggy)
+// ---------------------------------------------
+.space-bg > .planet
+  position absolute
+  border-radius 50%
+  transform translateZ(0)
+  box-shadow 0 0 18px rgba(alpha - 80%, .10)
+
+  // Sphere shading: highlight -> mid -> terminator -> back to background
+  background-image \
+    radial-gradient(circle at 32% 28%,
+      rgba(alpha + 20%, .34) 0 16%,
+      rgba(alpha, .20) 34%,
+      rgba(alpha - 60%, .16) 54%,
+      rgba(alpha - 80%, .08) 66%,
+      background 96%), \
+    radial-gradient(circle at 68% 62%,
+      rgba(alpha - 80%, .10) 0 60%,
+      background 92%)
+
+.space-bg > .planet:after
+  content ""
+  position absolute
+  inset -6%
+  border-radius 50%
+  pointer-events none
+  background-image radial-gradient(circle at 40% 35%, rgba(alpha, .10) 0 42%, rgba(alpha - 80%, 0) 70%)
+
+// ---------------------------------------------
+// Sun + planets positions (solar system line)
+// ---------------------------------------------
+.space-bg > .sun
+  width 14%
+  height 14%
+  left 8%
+  top 50%
+  transform translateY(-50%)
+  background-image \
+    radial-gradient(circle at 38% 35%,
+      rgba(alpha + 20%, .92) 0 24%,
+      rgba(alpha, .56) 46%,
+      rgba(alpha - 60%, .22) 72%,
+      background 96%)
+  box-shadow 0 0 72px rgba(alpha, .20)
+  animation sun-pulse 10s ease-in-out infinite
+
+.space-bg > .mercury
+  width 2.2%
+  height 2.2%
+  left 24%
+  top 50%
+  transform translateY(-50%)
+  opacity .62
+
+.space-bg > .venus
+  width 3.6%
+  height 3.6%
+  left 30%
+  top 52%
+  transform translateY(-50%)
+  opacity .72
+
+.space-bg > .earth
+  width 3.9%
+  height 3.9%
+  left 37%
+  top 48%
+  transform translateY(-50%)
+  opacity .78
+
+.space-bg > .mars
+  width 3.0%
+  height 3.0%
+  left 44%
+  top 53%
+  transform translateY(-50%)
+  opacity .68
+
+.space-bg > .jupiter
+  width 9.2%
+  height 9.2%
+  left 54%
+  top 50%
+  transform translateY(-50%)
+  opacity .82
+  box-shadow 0 0 34px rgba(alpha - 60%, .12)
+
+.space-bg > .saturn
+  width 7.8%
+  height 7.8%
+  left 66%
+  top 49%
+  transform translateY(-50%)
+  opacity .78
+
+.space-bg > .saturn:before
+  content ""
+  position absolute
+  left -36%
+  top 40%
+  width 172%
+  height 34%
+  border-radius 50%
+  transform rotate(-14deg)
+  pointer-events none
+  background-image \
+    radial-gradient(ellipse at center,
+      rgba(alpha - 80%, 0) 0 38%,
+      rgba(alpha, .16) 41%,
+      rgba(alpha - 60%, .10) 50%,
+      rgba(alpha - 80%, 0) 56%)
+  filter blur(.2px)
+
+.space-bg > .uranus
+  width 5.2%
+  height 5.2%
+  left 78%
+  top 52%
+  transform translateY(-50%)
+  opacity .64
+
+.space-bg > .neptune
+  width 5.0%
+  height 5.0%
+  left 88%
+  top 48%
+  transform translateY(-50%)
+  opacity .60
+
+.space-bg > .pluto
+  width 1.7%
+  height 1.7%
+  left 95%
+  top 54%
+  transform translateY(-50%)
+  opacity .52
+
+// ---------------------------------------------
+// Animations (gentle only)
+// ---------------------------------------------
+@keyframes twinkle
+  0%, 100%
+    opacity .92
+  50%
+    opacity .78
+
+@keyframes space-breathe
+  0%, 100%
+    filter brightness(1)
+  50%
+    filter brightness(1.02)
+
+@keyframes sun-pulse
+  0%, 100%
+    box-shadow 0 0 72px rgba(alpha, .20)
+  50%
+    box-shadow 0 0 86px rgba(alpha, .24)

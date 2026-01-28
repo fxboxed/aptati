@@ -1,0 +1,31 @@
+.games-wrap
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(280px, 1fr))
+    gap 2rem
+    margin 2rem 0
+    //border 1px solid #fff
+.tile-wrap
+    position relative
+    max-width 400px //400 on smaller screens
+    margin 0 auto
+    border 6px solid rgba(beta, .2)
+    border-radius 12px
+    box-shadow 0 4px 8px rgba(0, 0, 0, 0.3)
+
+
+@media (min-width 660px) and (orientation landscape)
+    .tile-wrap
+        max-width 300px
+.game-tile-text
+    position absolute
+    bottom 0
+    width 100%
+    //background rgba(0, 0, 0, 0.5)
+    color #fff
+    text-align center
+    padding .5rem 0
+    z-index 500000
+    h3  
+        font-size: 2rem
+        font-weight bold
+        

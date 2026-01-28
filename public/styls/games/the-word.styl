@@ -11,24 +11,26 @@ epsilon = #e4ca99
     //border: 2px solid rgba(alpha, 0.4)
     min-height: 750px
     position: relative
-    background: darken(beta, 80%)
+    //background: darken(beta, 80%)
     border-radius: 1rem
-    padding-top: 1.2rem
+    //padding-top: 1.2rem
     width: 100%
 
     h1 
         text-align: center
         line-height: 1
-        margin-bottom: 0.5rem
+        //border 1px solid rgba(alpha, 0.4)
+        //margin-bottom: 0.5rem
     
     .game-info
-        background: darken(beta, 80%)
+        //background: darken(beta, 80%)
         text-align: center
+        //border: 1px solid rgba(alpha, 0.4)
         margin-bottom: 1rem
         
         p
             margin: 0.3rem 0
-            font-size: 0.9rem
+            font-size: 1rem
             font-weight: bold
         
         .previous-word
@@ -44,7 +46,7 @@ epsilon = #e4ca99
             color: delta
 
 .word-grid
-    background: darken(beta, 80%)
+    //background: darken(beta, 80%)
     display: flex
     flex-direction: column
     gap: 0.5rem
@@ -60,7 +62,7 @@ epsilon = #e4ca99
     position relative
 
 .tile
-    background: beta
+    background: rgba(beta, 0.2)
     height: auto
     aspect-ratio: 1 / 1
     display: flex
@@ -73,7 +75,7 @@ epsilon = #e4ca99
     border: 2px solid rgba(alpha, 0.4)
     border-radius: 4px
     transition: all 0.3s ease
-    color: alpha
+    color: beta
 
     &.filled
         animation: pop 0.1s ease
@@ -114,7 +116,7 @@ epsilon = #e4ca99
     flex-direction: column
     gap: 0.5rem
     padding: 1rem 0.5rem
-    background: darken(beta, 80%)
+    //background: darken(beta, 80%)
     width: 100%
     box-sizing: border-box
 
@@ -126,7 +128,7 @@ epsilon = #e4ca99
         justify-content: center
 
         .key
-            background: darken(beta, 40%)
+            background: rgba(beta, .2)//  darken(beta, 40%)
             border-radius: 4px
             flex: 1
             height: 50px
@@ -138,7 +140,7 @@ epsilon = #e4ca99
             text-transform: uppercase
             cursor: pointer
             user-select: none
-            color: #fff
+            color: beta
             transition: all 0.2s ease
             min-width: 0
 

@@ -5,17 +5,52 @@ include ../mixins/responsive-grid-mixin.pug
 
 block content
     .games-wrap
-        .game-name-box 
-            span.span-1 APTATI 
-            span.span-2 GAMES
-        h1 Aptati Games List
-
-        +responsiveGrid("380px", 3, "1rem", "grid-item grid-item-card-link")
-            a(href="/games/the-word")
-                img(
-                    src="/images/tiles/word-tile_1200x1200.webp"
-                    alt="The Word Game"
-                    loading="lazy"
-                    decoding="async"
-                )
-
+        //- h1 Aptati Games List
+        .tile-wrap
+            +responsiveGrid("380px", 3, "1rem", "grid-item grid-item-card-link")
+                a(href="/games/the-word")
+                    img(
+                        src="/images/tiles/tile-1_400x400.webp"
+                        alt="The Word Game"
+                        loading="lazy"
+                        decoding="async"
+                    )
+            .game-tile-text
+                p.first Word
+                p Test your vocabulary and word skills in this exciting daily challenge!
+        .tile-wrap
+            +responsiveGrid("380px", 3, "1rem", "grid-item grid-item-card-link")
+                a(href="/games/the-word")
+                    img(
+                        src="/images/tiles/tile-2_400x400.webp"
+                        alt="The Word Game"
+                        loading="lazy"
+                        decoding="async"
+                    )
+            .game-tile-text
+                p.first Coming Soon
+                p The quick brown fox jumps over the lazy dog.
+        .tile-wrap
+            +responsiveGrid("380px", 3, "1rem", "grid-item grid-item-card-link")
+                a(href="/games/the-word")
+                    img(
+                        src="/images/tiles/tile-3_400x400.webp"
+                        alt="The Word Game"
+                        loading="lazy"
+                        decoding="async"
+                    )
+            .game-tile-text
+                p.first Coming Soon
+                p The quick brown fox jumps over the lazy dog.
+        .tile-wrap
+            +responsiveGrid("380px", 3, "1rem", "grid-item grid-item-card-link")
+                a(href="/games/the-word")
+                    img(
+                        src="/images/tiles/tile-4_400x400.webp"
+                        alt="The Word Game"
+                        loading="lazy"
+                        decoding="async"
+                    )
+            .game-tile-text
+                p.first Coming Soon
+                p The quick brown fox jumps over the lazy dog.

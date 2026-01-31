@@ -3,4 +3,3 @@ node_modules/
 *.log
 .DS_Store
 
-# Ignore compiled CSS if you are compiling Stylus separately

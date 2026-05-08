@@ -1,0 +1,287 @@
+
+.index-header-wrap
+    position relative
+    //display flex
+    flex-direction column
+    align-items center
+    justify-content center
+    //gap 2rem
+    // grid-column 1/-1
+    // grid-row 1/2
+    //max-width 360px
+    width 100%
+    position relative
+    overflow hidden
+    z-index 1
+    margin 0rem auto
+    width 100%
+    //border 1px solid white
+    //border 1px solid rgba(alpha, .16)
+    //border-radius 14px
+    //padding 1.5rem 2rem
+
+
+
+// p.page-subtitle, p.page-subtitle-2
+//     color alpha + 80% //- 80%
+//     text-align center
+//     grid-column 1/-1
+//     grid-row 1/2
+//     position relative
+//     z-index 1000
+//     align-self end
+//     //padding 1rem
+//     font-size 1.1rem
+//     font-weight bold
+//     text-transform uppercase
+// p.page-subtitle-2
+//     font-size 1.3rem
+//     color delta - 20%
+// .index-header
+//     backdrop-filter: blur(10px)
+//     padding 1.5rem 2rem
+//     h3 
+//         color delta
+
+.site-info
+    position relative
+    margin 0rem auto 1rem
+    padding 1rem
+    display grid
+    justify-content center
+    align-items center
+    grid-template-columns: 1fr
+    grid-template-rows: 1fr
+    transform perspective(1200px) rotateX(14deg)
+    transform-origin center center
+    //box-shadow 0 18px 32px rgba(0,0,0,.24)
+    &::before
+        content ''
+        position absolute
+        left 0
+        right 0
+        bottom -12px
+        height 18px
+        background rgba(0,0,0,.22)
+        //filter blur(22px)
+        border-radius 50%
+    margin 0rem auto 1rem
+    padding 1rem
+    display grid
+    justify-content center
+    align-items center
+    grid-template-columns: 1fr
+    grid-template-rows: 1fr
+    // transform perspective(1200px) rotateX(14deg)
+    // transform-origin center center -12px
+    //height 18px
+    background rgba(0,0,0,.22)
+    //filter blur(22px)
+    border-radius 50%
+// .site-info-hero
+//     background red
+//dummy list behind grid to give blur
+//---- p-site-info-------------------------
+.p-site-info
+    position absolute
+    left 0
+    right 0
+    top 0
+    bottom 0
+    display flex
+    flex-direction column
+    gap .7rem
+    padding 0
+    margin 0
+    filter blur(2px)
+    opacity .4
+    margin 2rem auto
+
+
+.p-site-info-item
+    overflow hidden
+    height 20%
+    width 100%
+    background grey
+    filter blur(12px)
+
+
+.p-site-info-item-1
+    //background rgba(alpha,.6)
+    //transform rotate(-10deg)
+    background linear-gradient(90deg, rgba(alpha,.01) 30%, rgba(alpha,.6))
+    border-right 4px solid alpha + 10%
+    transform skew(-6deg) rotate(12deg)
+    border-radius 30%
+
+    &::before
+        background alpha
+        border-radius 3px
+        box-shadow 20px 0 0 alpha, 10px 10px 0 alpha
+        width 4px
+        height 4px
+.item-1
+    width 40%
+    top 0 
+    left 0
+
+    //background linear-gradient(90deg, rgba(alpha,.01) 30%, rgba(alpha,.6))
+    border-right 4px solid alpha + 10%
+    transform skew(-6deg) rotate(12deg)
+    border-radius 30%
+
+    &::before
+        border-radius 3px
+        box-shadow 20px 0 0 alpha, 10px 10px 0 alpha
+        width 4px
+        height 4px  
+.p-site-info-item-2, .item-2
+    background linear-gradient(90deg, rgba(beta,.01), rgba(beta,.5))
+    border-right 4px solid beta
+    transform skew(-4deg) rotate(-6deg)
+    &::before
+        width 18px
+        height 18px
+        border 3px solid beta
+        border-radius 50%
+        box-sizing border-box
+.p-site-info-item-3, .item-3
+    background linear-gradient(90deg, rgba(alpha,.1), rgba(beta,.6))
+    border-right 4px solid gamma
+    border-radius 30%
+    // transform skew(-6deg) rotate(-6deg)
+    // transform skew(-6deg) rotate(-4deg)
+    // &::before
+    //     width 0
+    //     height 0
+    //     border-left 9px solid transparent
+    //     border-right 9px solid transparent
+    //     border-bottom 16px solid gamma
+    //     background transparent
+.p-site-info-item-4, .item-4
+    background linear-gradient(90deg, rgba(delta,.01), rgba(delta,.6))
+    border-right 4px solid delta
+    transform skew(-357deg,0) rotate(-357deg)
+    &::before
+        width 16px
+        height 16px
+        background delta
+.p-site-info-item-5, .item-5
+    background linear-gradient(90deg, rgba(epsilon,.01), rgba(epsilon,.5))
+    border-right 4px solid epsilon
+    color alpha + 60%
+    transform skew(6deg) rotate(-356deg)
+    &::before
+        width 18px
+        height 18px
+        //background epsilon
+        border-radius 50% 50% 50% 0
+        transform translateY(-50%) rotate(-45deg)
+
+
+
+ul.site-info-ul
+    //clip-path: polygon(6% 1%, 94% 0, 100% 100%, 0% 100%);
+
+    //clip-path: polygon(0 0, 100% 1%, 100% 99%, 0% 100%);
+    list-style none
+    display flex
+    flex-direction column
+    gap .7rem
+    font-size .9rem
+    margin 0
+    padding 0
+    position relative
+    z-index 1
+
+
+    li
+        color alpha + 60%
+        position relative
+        padding .7rem .9rem .7rem 2.4rem
+        background rgba(255,255,255,.04)
+      
+        border 1px solid rgba(255,255,255,.08)
+        border-radius .7rem
+        line-height 1.4
+        //overflow hidden
+        &::before
+            content ''
+            position absolute
+            left .75rem
+            top 50%
+            transform translateY(-50%)
+            width 16px
+            height 16px
+
+        &::after
+            content ''
+            position absolute
+            left 0
+            top 0
+            right 0
+            bottom 0
+            border 1px solid rgba(255,255,255,.08)
+            //border-radius .7rem
+            width 100%
+            height 100%
+            //background linear-gradient(90deg, rgba(0,0,0, .8), rgba(0,0,0, .04))
+            //border-radius 50%   
+    li.alpha
+        background linear-gradient(90deg, rgba(alpha,.01) 30%, rgba(alpha,.6))
+        border-right 4px solid alpha + 10%
+        transform skew(-6deg) rotate(-6deg)
+
+        &::before
+            background alpha
+            border-radius 3px
+            box-shadow 20px 0 0 alpha, 10px 10px 0 alpha
+            width 4px
+            height 4px
+
+    li.beta
+        background linear-gradient(90deg, rgba(beta,.01), rgba(beta,.5))
+        border-right 4px solid beta
+        transform skew(-5deg) rotate(-5deg)
+        &::before
+            width 18px
+            height 18px
+            border 3px solid beta
+            border-radius 50%
+            box-sizing border-box
+
+    li.gamma
+        background linear-gradient(90deg, rgba(gamma,.1), rgba(gamma,.6))
+        border-right 4px solid gamma
+        transform skew(-4deg) rotate(-4deg)
+        // transform skew(-6deg) rotate(-4deg)
+        &::before
+            width 0
+            height 0
+            border-left 9px solid transparent
+            border-right 9px solid transparent
+            border-bottom 16px solid gamma
+            background transparent
+
+    li.delta
+        background linear-gradient(90deg, rgba(delta,.01), rgba(delta,.6))
+        border-right 4px solid delta
+        transform skew(-3deg) rotate(-3deg)
+        &::before
+            width 16px
+            height 16px
+            background delta
+            //clip-path polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%)
+    li.epsilon
+        background linear-gradient(90deg, rgba(epsilon,.01), rgba(epsilon,.5))
+        border-right 4px solid epsilon
+        color alpha + 60%
+        icon
+            color #fff
+        transform skew(-2deg) rotate(-2deg)
+        &::before
+            width 18px
+            height 18px
+            background epsilon
+            border-radius 50% 50% 50% 0
+            transform translateY(-50%) rotate(-45deg)

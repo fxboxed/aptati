@@ -1,0 +1,42 @@
+extends ../layouts/main-layout
+block content
+    .game-block.mg-top-1
+        p.sb-word-hint Form words that use the central letter
+    .game-block.mg-top-1.mg-btm-1
+        .sb-scores
+            span.sb-score Current Score: <span id="sb-current-score">0 </span>
+            span.sb-max-score  Max Score: <span id="sb-max-score">0</span>
+
+    .game-block.block-2
+        .honeycomb-grid#sb-honeycomb-grid
+            button.honeycomb-btn.center(data-position="3" data-letter="") 
+            button.honeycomb-btn.honeycomb-btn-1(data-position="0" data-letter="")
+            button.honeycomb-btn.honeycomb-btn-2(data-position="1" data-letter="")
+            button.honeycomb-btn.honeycomb-btn-3(data-position="2" data-letter="")
+            button.honeycomb-btn.honeycomb-btn-4(data-position="4" data-letter="")
+            button.honeycomb-btn.honeycomb-btn-5(data-position="5" data-letter="")
+            button.honeycomb-btn.honeycomb-btn-6(data-position="6" data-letter="")
+    .game-block.mg-top-2.mg-btm-2
+        h4.txt-center.mg-btm-05 FORMED WORDS 
+        .found-words.custom-scroller.scroller
+            //- h4.mg-btm-1.txt-center Formed Words
+
+            #sb-word-list.pad-btm-1              
+                span line 1
+                span line 2
+                span line 3
+                span line 4
+                span line 5
+                span line 6
+                span line 7
+                span line 8
+                span line 9
+                span line 10
+                span line 11
+                span line 12
+                span line 13
+                span line 14
+                span line 15
+                span line 16
+                span line 17
+                span line 18

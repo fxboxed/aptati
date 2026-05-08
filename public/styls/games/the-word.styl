@@ -1,0 +1,160 @@
+// alpha = #2d7f9d
+// beta = #FACE68
+// gamma = #007f00
+// delta = #dc7684
+// epsilon = #896C6C 
+
+.word-grid
+    display: flex
+    flex-direction: column
+    gap:6px
+    width: 100%
+    max-width 90%
+    height: fit-content
+    padding: 0.4rem
+    margin 0 auto
+    //border 1px solid #fff
+
+    .tile-row
+        display flex
+        gap 6px
+        width 100%
+        position relative
+
+    .tile
+        //background:rgba(beta, 0.2)
+        height: 3rem //auto
+        aspect-ratio: 1 / 1
+        width 2.4rem !important
+        display: flex
+        flex: 1
+        gap 1rem
+        justify-content: center
+        align-items: center
+        font-size: 1.8rem
+        font-weight: bold
+        text-transform: uppercase
+        border: 2px solid rgba(alpha, 0.4)
+        border-radius: 4px
+        transition: all 0.3s ease
+        color: alpha + 50%
+
+        &.filled
+            animation: pop 0.1s ease
+        
+        &.correct
+            background: gamma - 60%
+            //border-color: gamma
+        
+        &.present
+            background: beta - 70%//epsilon - 40%
+            //border-color: epsilon
+            //color alpha - 40%
+            //color alpha
+        
+        &.incorrect
+            background: delta - 80%
+            //border-color: delta
+            
+        
+        &.shake
+            animation: shake 0.5s ease
+
+@keyframes pop
+    0% 
+        transform: scale(1)
+    50% 
+        transform: scale(1.1)
+    100% 
+        transform: scale(1)
+
+@keyframes shake
+    0%, 100% 
+        transform: translateX(0)
+    10%, 30%, 50%, 70%, 90% 
+        transform: translateX(-5px)
+    20%, 40%, 60%, 80% 
+        transform: translateX(5px)
+
+.keyboard
+    display: flex
+    flex-direction: column
+    gap: 0.4rem
+    padding: .1rem 0.4rem
+    width: 100%
+    box-sizing: border-box
+
+
+
+
+    .key-row
+        display: flex
+        gap: 0.1rem
+        width: 100%
+        position: relative
+        justify-content: center
+
+        .key
+            //background: rgba(beta, .2)
+            border 1px solid alpha - 40%
+            border-radius: 4px
+            flex: 1
+            height: 36px
+            display: flex
+            justify-content: center
+            align-items: center
+            font-size: 1.1rem
+            font-weight: bold
+            text-transform: uppercase
+            cursor: pointer
+            user-select: none
+            color: beta
+            transition: all 0.2s ease
+            
+
+
+            color alpha + 50%
+
+            &:hover
+                opacity: 0.9
+            
+            &:active
+                transform: scale(0.95)
+            
+            &.correct
+                background: gamma - 60%
+            
+            &.present
+                background: beta - 70%
+                color alpha + 50%
+            
+            &.incorrect
+                background: delta - 80%
+            
+            &.enter
+                background: darken(gamma, 60%)
+                flex: 1.5
+                text-transform: none
+                font-size: 1.3rem
+            
+            &.backspace
+                background: darken(delta, 60%)
+                flex: 1.2
+                text-transform: none
+                font-size: 1.1rem
+    
+    .enter-backspace-row
+        gap: 0.1rem
+        
+        .key
+            min-height: 44px
+            height 40px
+            font-size: 1rem
+            
+            &:not(.enter):not(.backspace)
+                flex: 1
+                font-size: 1rem
+            
+            &.enter, &.backspace
+                flex: 1.1
+                font-size: 1.2rem

@@ -1,0 +1,12 @@
+//- 
+    mixin consumed by main-layout.pug to render header buttons in the game pages.
+    The mixin takes three parameters: restart, newGame, and answers, which are the IDs for the respective buttons. This allows each game page to specify its own button IDs for event handling.
+    It assigns an ID to each game's respective buttons so that the buttons can be targeted for event listeners in the client-side JavaScript for each game.
+mixin headerBtn(restart, newGame, answers)
+    .game-block.header-btns-block
+        .header-btns
+            button.header-btn.header-btn-1(id=restart) RESTART
+            button.header-btn.header-btn-2(id=newGame) NEW GAME
+            button.header-btn.header-btn-3 ANSWER
+            .dropdown(id=dropdown) 
+                .answers(id=answers)

@@ -1,0 +1,34 @@
+.header-btns
+    display flex
+    gap .4rem
+    width 100%
+    justify-content space-between
+    position relative
+    //border 1px solid red
+  button.header-btn
+    background linear-gradient(90deg, rgba(alpha,.01) 30%, rgba(alpha,.6))
+    border-right 4px solid alpha + 10%
+    flex-grow 1
+    white-space nowrap
+    border 1px solid alpha - 40%
+.dropdown
+  position absolute
+  top .1rem
+  left 0
+  border 1px solid alpha - 40%
+  transform scale(1, 0)
+  transition all .3s ease
+  transform-origin top  
+  z-index 10
+  &::after
+    content 'X'
+    position absolute
+    top .5rem
+    right .5rem
+    font-size 2rem
+.header-btn-3:focus + .dropdown
+    background: alpha - 50%
+    width 100%
+    height 36rem
+    transform scale(1, 1)
+

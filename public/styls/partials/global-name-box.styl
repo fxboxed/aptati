@@ -1,0 +1,44 @@
+.global-name-box
+    width fit-content
+    min-width 8rem
+    width fit-content //100%
+    height 2.5rem
+    //margin .8rem // auto
+    margin 1rem 
+    display flex
+    flex-direction: column
+    align-items left
+    justify-content start
+    position relative
+    left 0
+    padding 0
+
+    &::before          
+    &::after
+        position absolute
+        content ''
+
+    &::before
+        width 12px
+        //top 50%
+        height 2.2rem //75%
+        bottom - .2rem
+        //transform: translateY(-50%)
+        left - .9rem
+        //top 0
+        background linear-gradient(to right,alpha 0%, alpha 1px, transparent 1px, transparent 2px, beta 2px, beta 3px, transparent 3px, transparent 4px, gamma 4px, gamma 6px, transparent 6px, transparent 8px, delta 8px, delta 10px, transparent 10px, transparent 12px, epsilon 12px, epsilon 14px, transparent 14px, transparent 16px)
+    &::after
+        width 4rem
+        bottom 0rem
+        height  6px //1rem
+        left - 1.2rem
+        background linear-gradient(to bottom,alpha 0%, alpha 1px,  beta 1px, beta 2px, gamma 2px, gamma 3px,  delta 3px, delta 4px,epsilon 4px, epsilon 5px)
+.subtitle
+    color alpha + 20%
+    text-align right
+    margin-left 3.4rem
+    font-size 1.2rem
+    span 
+        color delta + 20%
+        font-weight bold
+// header and footer buttons

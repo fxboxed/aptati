@@ -1,0 +1,11 @@
+//- 
+    mixin consumed by main-layout.pug to render footer buttons in the game pages.
+    The mixin takes three parameters: shuffle, clear, and submit, which are the IDs for the respective buttons. This allows each game page to specify its own button IDs for event handling.
+    It assigns an ID to each game's respective buttons so that the buttons can be targeted for event listeners in the client-side JavaScript for each game.
+mixin footerBtn(shuffle, clear, submit)
+    .game-block.footer-btns-block
+        .footer-btns
+            button.footer-btn.footer-btn-1(id=shuffle) SHUFFLE
+            button.footer-btn.footer-btn-2(id=clear) DEL / CLEAR
+            button.footer-btn.footer-btn-3(id=submit) SUBMIT
+

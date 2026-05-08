@@ -1,0 +1,138 @@
+.side-nav
+    position: absolute
+    top: - 1rem
+    left: 0
+    right 0
+    //width: 400px //100% !important
+    height: 50px
+    display: flex
+    align-items: center
+    border-bottom 1px solid alpha //- 60%
+    //padding: 0 20px
+    z-index: 100
+
+.header-liner
+    display flex
+    align-items center
+    justify-content space-between
+    align-items center
+    width 390px
+    //max-width 420px
+    height 50px
+    margin 0rem auto 0
+    //background green
+    padding-top 1rem
+    nav.navbar
+        display flex
+        align-items center
+        justify-content space-between
+        width 100%
+        //background red
+        //max-width 420px
+button.side-nav-toggle
+    //background none
+    position absolute
+    top .9rem
+    right .6rem
+    border none
+    cursor pointer
+    display flex
+    flex-direction column
+    justify-content space-between
+    align-items center
+    width 2.5rem
+    height 2.5rem
+    z-index 1
+    margin-left auto
+    //background blue
+    .bar
+        height 20%
+        width 84%
+        background alpha
+        &:nth-child(2)
+            width 100%
+button.close-side-nav
+    //background none
+    position absolute
+    top 0rem
+    right .2rem
+    border none
+    cursor pointer
+    display flex
+    flex-direction column
+    justify-content space-between
+    align-items center
+    width 1.5rem
+    height 1.5rem
+    z-index 1
+    i.fas.fa-xmark
+        font-size 2rem
+        color alpha !important
+ul.nav-bar-ul
+    display flex
+    flex-direction column
+    align-items center
+    justify-content: right
+    gap .5rem
+    list-style none
+    margin 0
+    background alpha - 80%
+    position absolute
+    transition all 0.3s ease    
+    left 0
+    top 1.5rem
+    z-index 110
+    bottom 1.5rem
+    padding 5rem 1rem
+    transform scale(1,0)
+    transform-origin: top
+    //display none
+    width 100%
+    height 702px // 100%
+    background alpha - 60%
+    li   
+        border-bottom 1px solid alpha - 40%
+        padding .4rem
+    li.nav-item a, .contact-btn#contactToggle 
+        color alpha
+        font-size 1.2rem
+        font-weight bold
+        text-decoration none
+        position relative
+        z-index 2
+        //border-bottom 1px solid alpha - 40%
+    .contact-btn#contactToggle
+        padding 0
+        margin 0
+    li.list-heading
+        color alpha + 70%
+        font-weight bold
+        display block
+        text-transform: uppercase
+        background alpha - 40%
+        padding .4rem 2rem
+        border none //-bottom 1px solid alpha - 40%
+        
+    &::after
+        content ""
+        position absolute
+        top 4rem
+        left 1.5rem
+        right 1.5rem
+        bottom 2rem
+        //width calc(100% - 2rem)
+        //height calc(100% - 2rem)
+        border 1px solid alpha - 40%
+        z-index 01
+a.logo 
+    //border 1px solid #fff
+    color alpha 
+    font-weight bold
+    line-height 1
+    height 100%
+
+// HIDE / SHOW NAV
+ul.nav-bar-ul.side-nav-open
+    transform scale(1)
+    display flex
+    //background green

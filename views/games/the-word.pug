@@ -1,0 +1,26 @@
+extends ../layouts/main-layout
+block content
+    .game-block            
+        .word-grid
+            each row in [0,1,2,3,4,5]
+                .tile-row(data-row=row)
+                    each col in [0,1,2,3,4]
+                        .tile(data-row=row data-col=col)
+    .game-block
+        .keyboard
+            .key-row
+                each key in ["Q","W","E","R","T","Y","U","I","O","P"]
+                    .key(data-key=key)= key
+            .key-row
+                each key in ["A","S","D","F","G","H","J","K","L"]
+                    .key(data-key=key)= key
+            .key-row.enter-backspace-row
+                .key.enter(data-action="enter") ↵
+                .key(data-key="Z") Z
+                .key(data-key="X") X
+                .key(data-key="C") C
+                .key(data-key="V") V
+                .key(data-key="B") B
+                .key(data-key="N") N
+                .key(data-key="M") M
+                .key.backspace(data-action="backspace") ⌫

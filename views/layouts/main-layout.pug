@@ -1,0 +1,68 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+
+    title Aptati Games - #{title || 'Daily challenges'}
+
+    meta(
+      name="description"
+      content=description || "Play daily word games and more at Aptati Games. Challenge yourself with our collection of fun and engaging games."
+    )
+    meta(
+      name="keywords"
+      content=keywords || "word games, daily games, puzzle games, online games, word puzzle"
+    )
+
+    meta(property="og:type" content="website")
+    meta(property="og:site_name" content="Aptati Games")
+    meta(property="og:title" content=ogTitle || title || "Aptati Games - Daily Word Games")
+    meta(property="og:description" content=ogDescription || description || "Play daily word games at Aptati Games")
+
+    - const defaultImageVersion = Date.now()
+    meta(property="og:image" content=ogImage || `${baseUrl}/images/og/default-og.webp?v=${defaultImageVersion}`)
+    meta(property="og:image:width" content="1200")
+    meta(property="og:image:height" content="630")
+    meta(property="og:image:type" content="image/webp")
+    meta(property="og:url" content=ogUrl || baseUrl || "/")
+
+    meta(name="twitter:card" content="summary_large_image")
+    meta(name="twitter:title" content=ogTitle || title || "Aptati Games - Daily Word Games")
+    meta(name="twitter:description" content=ogDescription || description || "Play daily word games at Aptati Games")
+    meta(name="twitter:image" content=ogImage || `${baseUrl}/images/og/default-og.webp?v=${defaultImageVersion}`)
+
+    link(rel="stylesheet" href="/css/main.css")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css")
+    block head
+      include ../mixins/header-btn-mixin.pug
+      include ../mixins/footer-btn-mixin.pug
+      include ../mixins/game-messages-mixin.pug
+  body
+    //- img.space-bg(src="/images/og/site-og.webp", alt="")
+    .body-liner
+      button.side-nav-toggle(type="button" aria-label="Toggle navigation")
+        span.bar
+        span.bar
+        span.bar
+      main.game-blocks
+        .game-block
+          include ../partials/contact-modal.pug
+          include ../partials/side-nav.pug
+        .game-block.mg-btm-2
+          .global-name-box
+            h1.page-title= title 
+            p.subtitle <span>By Aptati:</span> The Word Gamer
+        if currentPage !== 'APTATI'               
+          +headerBtn(restart, newGame, answers)
+        block content
+        if currentPage !== 'APTATI'         
+          .game-block 
+            +gameMsg(gameMessage)
+          .game-block 
+            if currentPage !== 'APTATI' 
+              +footerBtn(shuffle, clear, submit)
+
+        script(src="/js/contact-modal.js" defer)
+        script(src="/js/toggle-nav.js" defer)
+        block scripts

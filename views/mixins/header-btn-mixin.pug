@@ -4,9 +4,10 @@
     It assigns an ID to each game's respective buttons so that the buttons can be targeted for event listeners in the client-side JavaScript for each game.
 mixin headerBtn(restart, newGame, answers)
     .game-block.header-btns-block
+        P.answer-reveal Click "END GAME" to reveal the answers
         .header-btns
             button.header-btn.header-btn-1(id=restart) RESTART
             button.header-btn.header-btn-2(id=newGame) NEW GAME
-            button.header-btn.header-btn-3 ANSWER
+            button.header-btn.header-btn-3(id=endGame) END GAME
             .dropdown(id=dropdown) 
                 .answers(id=answers)

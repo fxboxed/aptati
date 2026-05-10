@@ -27,26 +27,22 @@
         border 1px solid alpha - 40%
         border-radius: 8px
         width 120px
-.solution-item 
-    color alpha + 50%
-    font-size .9rem
-.game-info
-    text-align: center
-    border 1px solid #fff //transparent
-    height 3rem
+// .solution-item 
+//     color alpha + 50%
+//     font-size .9rem
+// .game-info
+//     text-align: center
+//     border 1px solid #fff
+//     height 3rem
 
-    p
-        margin: 0.3rem 0
-        font-size: 1rem
-        font-weight: bold
+//     p
+//         margin: 0.3rem 0
+//         font-size: 1rem
+//         font-weight: bold
     
 .score, .max-score
     color: alpha + 60%
     margin-bottom 0.5rem
-
-.message
-    min-height: 1.5rem
-    color: delta
 
 /* Honeycomb grid */
 .honeycomb-grid
@@ -63,7 +59,7 @@
 .honeycomb-btn
     width: 75px
     height: 75px
-    background: alpha - 70%
+    background: rgba(delta, .2)
     border none
     font-size: 1.8rem
     font-weight: bold
@@ -77,13 +73,13 @@
     -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)
     
     &:hover
-        background: rgba(beta, 0.4)
+        background: rgba(epsilon, 0.4)
         transform: scale(1.02)
     &:active
         transform: scale(0.98)
     
     &.center
-        background: rgba(delta, 0.3)
+        background: rgba(epsilon, 0.6)
         border none
         color: alpha + 80%
 
@@ -109,76 +105,55 @@ button.honeycomb-btn.honeycomb-btn-6
     grid-column 4/6
     grid-row 7/11
 
+.sb-your-words
+    //border 1px solid red
+    text-align center
 
-
-/* Found words */
-.found-words
-    //background alpha //- 70%
+#sb-word-list
+    //padding: 1rem
     width 100%
-    //max-height 100px
-    //border 1px solid alpha - 40%
-    color alpha + 40%
-    //display flex
-    //flex-direction column
-    //align-items center
-    overflow-x hidden
+    overflow-y scroll
+    //overflow-x hidden
+    border 1px solid alpha - 40%
+    //background alpha - 60%
+    height 100px
+    display flex
+    flex-wrap wrap
+    gap .4rem
+    span 
+        background alpha - 70%
+        padding .2rem .4rem
+        font-size .9rem
+        flex-grow 1
+    button 
+        padding: .2rem 1rem
+    h4 
+        color alpha + 80%
+        margin  0.4rem 0
+        font-size .9rem
+        border-bottom 1px solid alpha - 50%
 
-    height 80px
-
-    position relative
-
-    #sb-word-list
-        //padding: 1rem
-        width 100%
-        overflow-y scroll
-        overflow-x hidden
-        //border 1px solid alpha - 40%
-        //background alpha - 60%
-        display flex
-        flex-wrap wrap
-        gap .4rem
-        span 
-            background alpha - 70%
-            padding .2rem .4rem
-            font-size .9rem
-            flex-grow 1
-        button 
-            padding: .2rem 1rem
-        h4 
-            color alpha + 80%
-            margin  0.4rem 0
-            font-size .9rem
-            border-bottom 1px solid alpha - 50%
-
-        p
-            margin: 0 0 0.3rem
-            font-size: 0.9rem
-            text-transform: uppercase
-        .word-group-items
-            display: flex
-            flex-wrap: wrap
-            gap: 0.4rem
-        .word-tag
-            //background: rgba(beta, 0.1)
-            padding: 0.2rem 0.4rem
-            border-radius: 6px
-            font-size: .9rem
-            color alpha + 50%
-            //border: 1px solid rgba(alpha, 0.3)
-            &.pangram
-                background: rgba(epsilon, 0.3)
-                color: epsilon
-                font-weight: bold
+    p
+        margin: 0 0 0.3rem
+        font-size: 0.9rem
+        text-transform: uppercase
+    .word-group-items
+        display: flex
+        flex-wrap: wrap
+        gap: 0.4rem
+    .word-tag
+        //background: rgba(beta, 0.1)
+        padding: 0.2rem 0.4rem
+        border-radius: 6px
+        font-size: .9rem
+        color alpha + 50%
+        //border: 1px solid rgba(alpha, 0.3)
+        &.pangram
+            background: rgba(epsilon, 0.3)
+            color: epsilon
+            font-weight: bold
 // ---------------one offs--------------------
-// #sb-word-input
-//     background alpha - 40%
-//     border 1px solid alpha - 40%
-//     color alpha + 60%
-//     width 100%
-//     padding .5rem
-//     font-size 1rem
-//     border-radius 4px
-//     text-align center
+
 p.sb-word-hint
     color alpha + 60%
     font-size 1rem
@@ -192,9 +167,3 @@ p.sb-word-hint
     align-items center
     justify-content center
     gap 2rem    
-
-// #sb-word-input
-//     padding: 0.5rem 1rem
-//     font-size: 1rem
-//     border none //2px solid red
-//     text-align center

@@ -1,0 +1,229 @@
+// alpha = #2d7f9d
+// beta = #a4c9d9
+// gamma = #007f00
+// delta = #dc7684
+// epsilon = #e4ca99
+
+
+
+    .game-info
+        text-align: center
+        //background yellow
+        //border 1px solid #fff //transparent
+        height fit-content
+        //position relative
+
+    .wg-found-categories
+        //border 1px solid #fff
+        //white-space: nowrap
+        color beta
+        display flex
+        flex-wrap wrap
+        align-items start
+        justify-content left
+        //margin-top 1rem
+        //height 2rem
+        //height 6.5rem
+        gap .5rem
+        padding .5rem
+        width 100%
+        //padding 1rem
+        position relative
+
+        .found-category 
+            //background: bg-alpha-30
+            //border: 1px solid rgba(45, 127, 157, 0.3);
+            //border-radius: 6px;
+            padding: 0.3rem 3rem
+            text-align: center;
+            font-size: 0.9rem;
+            //color red //alpha -20 
+.wg-toggle
+    background: transparent
+    border 1px solid rgba(alpha, 0.5)
+    border-radius: 6px
+    padding: 0.5rem 1rem
+    font-size: 0.9rem
+    cursor pointer
+    transition: all 0.2s ease
+    width fit-content //90%
+    color alpha + 60%
+    font-weight bold
+    &:hover
+        background: rgba(alpha, 0.5)
+    &:focus
+        transform: scale(0)
+.words-grid
+    display flex
+    flex-wrap wrap
+    grid-template-columns: repeat(4, 1fr)
+    gap: 0.5rem
+    color: beta
+    //font-size 1rem
+    //margin 0rem auto 1.5rem
+    width 100%
+    //position relative
+    //z-index 0
+
+    button.word-tile
+        border 1px solid rgba(beta, 0.30)
+        //background: red //alpha - 80%
+        cursor pointer
+        padding: 0.5rem 1rem
+        width fit-content // 100%
+        font-size: 0.7rem
+        transition: all 0.3s ease
+        min-width 22%
+        flex 1
+
+
+        &.selected
+            background: rgba(beta, 0.1)
+            backdrop-filter: blur(10px)
+            -webkit-backdrop-filter: blur(10px) /* Safari support */
+
+            //font-size .9rem
+
+// .wg-show-answer
+//     color  #fff
+//     cursor pointer
+
+.wg-answer-1, .wg-answer-2, .wg-answer-3, .wg-answer-4
+    border 1px solid rgba(alpha, 0.5)
+    border-radius: 6px
+    padding: 0.5rem
+    text-align: center
+    min-height: 2rem
+    display flex
+    align-items center
+    justify-content center
+    //transition: background-color 0.3s ease;   /* only background color fades */
+    pointer-events none
+.wg-answer-1, .wg-found-categories
+
+    background: rgba(alpha, 0.2)
+
+.wg-answer-2, .wg-found-categories 
+    background: rgba(gamma, 0.2)
+
+.wg-answer-3, .wg-found-categories 
+    background: rgba(epsilon, 0.2)
+
+.wg-answer-4, .wg-found-categories 
+
+    background: rgba(delta, 0.2)
+
+
+.wg-found-categories
+    .wg-answer-1
+    .wg-answer-2
+    .wg-answer-3
+    .wg-answer-4
+        font-size 0.9rem
+        //background #000
+        padding .1rem .3rem
+// .wg-input-controls
+//     display: flex
+//     gap: 0.5rem
+//     width 100%
+//     margin auto
+//override bg added by js 
+#wg-found-categories
+    background transparent
+    button
+        flex: 1
+        //padding: 0.7rem
+        border: none
+        border-radius: 6px
+        font-size: .9rem
+        cursor: pointer
+        transition: all 0.2s ease
+        text-transform: uppercase
+        color: beta
+        border: 1px solid rgba(alpha, 0.5)
+        position relative
+        //z-index 0
+        //background: rgba(alpha, 0.3)
+        &:hover
+            background: rgba(alpha, 0.5)
+        &:active
+            transform: scale(0.95)
+
+
+#wg-found-categories.wg-found-categories
+    padding 1rem
+    background alpha - 70%
+    min-height 6rem
+    width 90%
+    margin 0 auto
+
+p.wg-categories-found
+    background transparent
+    //border light-border
+    text-transform: uppercase
+    width 90% // fit-content
+    padding .4rem 1.5rem
+    position relative
+    //top - 1rem //2.5rem
+    //left 50%
+    //transform translateX(-50%)
+    font-size: .9rem
+    color alpha + 60% //beta
+    font-weight normal
+    text-align center
+    margin auto
+#wg-toggle.wg-toggle
+    background transparent
+    border 1px solid alpha - 50%
+// #wg-categories-list    
+//     display flex
+//     flex-wrap wrap
+//     align-items: start
+//     justify-content: left
+//     top - 2rem
+//     gap .6rem
+//     //background red
+//     margin 0rem 0
+//     padding 1rem 1rem 4rem 1rem
+//     &::after
+//         content: "CLOSE"
+//         position absolute
+//         bottom 1rem
+//         left 50%
+//         transform translateX(-50%)
+//         border 1px solid alpha - 50%
+//         font-weight normal
+//         color alpha + 60%
+//         padding: 0.3rem 1rem
+//         border-radius: 6px
+//         cursor pointer
+//         transition: all 0.2s ease
+//         font-size: 0.9rem
+//     span 
+//         border-radius: 6px
+//         padding: 0.3rem .8rem
+//         font-size: 0.8rem
+
+
+    //opacity .7
+p.message,#wg-message
+    //min-height: 2rem
+    //background bg-delta-30
+    //border light-border
+    position absolute
+    top - 1rem
+    //bottom 2rem
+    //bottom -1rem
+    padding .6rem
+    left 50%
+    transform translateX(-50%)
+    transition all .3s ease
+    height 2rem
+    color: delta
+
+    text-transform: uppercase
+    transition all .3s ease
+    display flex
+    align-items center
+    justify-content center
+    width 100%

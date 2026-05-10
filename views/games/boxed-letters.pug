@@ -1,8 +1,31 @@
 extends ../layouts/main-layout
-block content
-    .game-block
-        //- h4= title
-        //- h4= restart
-        //- h4= newGame
-        //- h4= answers
-        //- h4= dropdown
+block content 
+    .game-block.mg-top-2.mg-btm-1-5
+        .guide.txt-left 
+            p.guide-p First word can begin with any letter. After which the next word must start with the last letter of the previous word
+    .game-block.mg-top-1.mg-btm-1
+        p.used-unused.txt-center <span class='used-letters'> Used letters </span> <span class='dot'></span> <span class='unused-letters'> Unused letters </span>
+    .game-block.bl-game-block.flex.pos-rel
+        //- .box-container
+        .found-words
+            .bl-words-used-box#bl-words-used-box
+                //- show current number of words used
+                p.words-used-title Words Used 
+                //-  show list of words used
+                #bl-word-list 
+                //- a respectable number of words to use all the letters
+                p.solve-in-words Solve in: <span id="bl-todays-best">(0)</span> Word(s) or less 
+        .side.top
+            //- letters for the top side
+            each letter, idx in ['', '', '']
+                .letter-btn(data-letter=letter) A
+                    
+
+        .side.left
+            //- letters for the left side
+            each letter, idx in ['', '', '']
+                .letter-btn(data-letter=letter)= letter
+        .side.right
+            //- letters for the right side
+            each letter, idx in ['', '', '']
+                .letter-btn(data-letter=letter)= letter

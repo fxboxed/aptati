@@ -1,0 +1,141 @@
+
+.bl-game-block
+    width 90% !important
+    margin 1rem auto
+    p
+        font-size .9rem
+.box-container
+    width: 100%
+    max-width 85%
+    margin: 1rem auto 0rem
+    display: flex
+    justify-content: space-between
+    align-items: start
+    flex-wrap: wrap
+
+    .bl-words-used-box
+        position absolute
+        left: 50%
+        transform translate(-50%, -50%)
+        background: rgba(alpha, 0.1)
+        height 10.4rem
+        width: 65%
+        flex 1
+        z-index: 5
+        text-align center
+        border: 1px solid rgba(alpha, 0.3)
+        border-radius: 8px
+        padding: 0.5rem
+
+.side
+    display: flex
+    justify-content: center
+    position relative
+    &.top
+        position absolute
+        top 0
+        left 50%
+        transform translate(-50%,0)
+        order: 1
+        margin 0 auto
+        margin-bottom: 1rem
+        gap: 0.5rem
+        height fit-content
+    &.left
+        width: auto
+        order: 2
+        flex-direction: column
+        gap: 0.5rem
+        margin-top 4rem
+        position absolute 
+        top 0
+        left 0
+    &.right
+        width: auto
+        order: 3
+        flex-direction: column
+        margin-top 4rem
+        gap: 0.5rem
+
+.letter-btn
+    width: 48px
+    max-width: 48px
+    height: 48px
+    position relative
+    z-index 0
+    background: rgba(delta, 0.1)// rgba(beta, 0.2)
+    border 1px solid rgba(beta, .2)
+    border-radius: 8px
+    font-size: 1.5rem
+    font-weight: normal // bold
+    color: beta + 20%
+    cursor: pointer
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: all 0.2s
+    &:hover
+        background: rgba(delta, 0.4)
+        transform: scale(1.02)
+//.letter-used
+    //background rgba(beta, 0.5)
+    //opacity .5
+.bl-words-used-box
+    width 100%
+p.words-used-title
+    margin .4rem auto !important
+    //color red
+// categories used so far
+.found-words
+    margin .2rem 0 0
+    padding 0
+    width 65% !important
+    height  10rem !important
+    //border 1px solid blue
+    top 4rem
+    position absolute
+    display flex
+    //padding .4rem
+    //flex-wrap: wrap
+    gap 1rem
+    bottom 0 //- 4rem
+    left 50%
+    transform translate(-50%, 0)
+    .solve-in-words
+        margin .4rem auto
+        //margin-bottom .2rem !important
+
+    p,span
+        text-align: center
+        font-size: 1rem
+        font-weight: normal
+        margin 0
+        background transparent
+        //color alpha
+    #bl-word-list
+        background:rgba(alpha, 0.1)
+        //border 1px solid green
+        display flex
+        flex-wrap: wrap
+        justify-content: center
+        align-items start
+        gap: 0.4rem
+        //border: 1px solid rgba(alpha, 0.3)
+        border-radius: 4px
+        padding: 0.5rem
+        height 6rem !important
+        //max-height: 90px
+        margin 0 auto !important
+        //overflow-y: auto
+        width 100% !important //calc(100% - 2rem)
+        .word-item
+            display: flex
+            align-items: center
+            justify-content: center
+            //background: rgba(beta, 0.2)
+            padding: 0.2rem 0.8rem
+            margin: 0.2rem
+            height 1.2rem
+            //border-radius: 12px
+            font-size: 0.8rem
+            color: beta

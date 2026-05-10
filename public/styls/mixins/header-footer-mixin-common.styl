@@ -1,0 +1,40 @@
+.header-btns, .footer-bt
+    display flex
+    gap .6rem
+    width 100%
+    justify-content space-between
+    position relative
+    //border 1px solid red
+  button.header-btn, button.footer-btn
+    background linear-gradient(90deg, rgba(alpha,.01) 30%, rgba(alpha,.3))
+    //border-right 4px solid alpha + 10%
+    flex-grow 1
+    white-space nowrap
+    border 1px solid alpha - 40%
+    position relative
+    border-radius 1rem
+    &::after
+      content ''
+      position absolute
+      top 0
+      left 0
+      width 100%
+      height 100%
+      border-right 4px solid alpha - 10%
+      border-top 1px solid alpha - 20%
+      //border-right 4px solid alpha + 10%
+      border-radius 1rem
+    &:nth-child(1)
+      color beta
+      &::after
+        background  linear-gradient(60deg, rgba(beta, .2) 70%, rgba(beta, .08))  //rgba(gamma, .1)
+    &:nth-child(2)
+      color gamma
+      &::after
+        //border-right 4px solid alpha + 10%
+        background  linear-gradient(60deg, rgba(gamma, .2) 70%, rgba(gamma, .08))  //rgba(gamma, .1)
+    &:nth-child(3)
+      color delta
+      &::after
+        //border-right 4px solid alpha + 10%
+        background  linear-gradient(60deg, rgba(delta, .2) 70%, rgba(delta, .08))  //rgba(gamma, .1)

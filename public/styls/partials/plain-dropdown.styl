@@ -1,0 +1,58 @@
+.plain-dropdown-wrap
+    margin-top 0
+    width 100%
+
+    button
+        margin 0 auto
+        display block
+        background alpha - 80%
+        color alpha + 20%
+        transform: scale(1,1)
+        transition all 0.2s
+        border none
+        outline none
+        padding .2rem 2rem
+        height 2.4rem
+    section 
+        transform scale(1,0)
+        transform-origin top
+        transition all 0.2s
+        position absolute
+        top 0rem
+        left 0
+        //border 1px solid alpha - 60%
+        display flex
+        //flex-direction column
+        align-items start
+        justify-content left
+        flex-wrap wrap
+        gap .4rem
+        background alpha - 80%
+        //min-height 8rem
+        width 100% //380px
+        border-radius 4px
+        padding 1rem
+        padding-top 2.2rem
+        height fit-content
+        min-height 3rem
+        &::after
+            content 'CLOSE'
+            position absolute
+            top .8rem
+            font-size 1.1rem
+            left 50%
+            transform translateX(-50%)
+        span 
+            padding .4rem 1rem
+            background alpha - 70%
+            color alpha + 60%
+            border-radius 4px
+            margin .2rem
+            flex-grow 1
+    button:focus ~ section
+        transform scale(1,1)
+        //height 5rem
+        z-index 1
+        width 100%
+        //border 2px solid red
+        background alpha - 80%

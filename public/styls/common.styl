@@ -18,9 +18,26 @@ h1, h2, h3, h4, h5, h6
     text-transform: uppercase
     font-weight 400
     font-size 1rem
-    color alpha + 20%
+    color alpha + 80%
 h1 
     font-size 1.4rem
+p
+    color alpha + 80%
+p.used-unused
+    display flex
+    gap 1rem
+    justify-content center
+    align-items center
+    //border 1px solid #fff
+    .used-letters
+        color gamma
+    .unused-letters
+        color beta
+.dot
+    width 8px
+    height 8px
+    border-radius 50%
+    background alpha + 20%
 p.subtitle 
     line-height 1
     top -.4rem
@@ -46,13 +63,18 @@ p.subtitle
 .light-border
     border 1px solid rgba(alpha, .16)
 
-.game-message
-    font-size 1.1rem
-    color alpha + 20%
-    padding .4rem
-    text-align center
-    background alpha - 55%
 
+
+.guide
+
+    padding 0 .5rem
+    border-left 6px solid epsilon - 40%
+    //box-shadow 0 2px 4px rgba(alpha, 0.3) inset
+    p.guide-p
+        text-transform normal !important
+        color epsilon - 40%
+        //font-size .6rem
+            //color red
 
 .pos-rel
     position relative

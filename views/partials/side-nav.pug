@@ -1,13 +1,10 @@
 
-
-
 .header-liner.side-nav-liner
   nav.navbar
     if currentPage !== 'APTATI'
-      a.logo(href="/") APTATI
-    
+        a.logo(href="/") APTATI
+    //-   a.logo(href="/") APTATI
     ul.nav-bar-ul
-
       li.nav-item 
         a.nav-link(href="/") Home
       if isAuthed
@@ -32,7 +29,7 @@
           i.fas.fa-xmark
       li.list-heading Games
       li.nav-item 
-        a(href="/games/the-word") The Word
+        a(href="/games/word-scramble") Word Scramble
       li.nav-item
         a(href="/games/spell-bug") Spell Bug
       li.nav-item

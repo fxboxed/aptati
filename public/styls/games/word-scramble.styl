@@ -11,9 +11,8 @@
     width: 100%
     max-width 90%
     height: fit-content
-    padding: 0.4rem
+    //padding: 0.4rem
     margin 0 auto
-    //border 1px solid #fff
 
     .tile-row
         display flex
@@ -22,7 +21,6 @@
         position relative
 
     .tile
-        //background:rgba(beta, 0.2)
         height: 3rem //auto
         aspect-ratio: 1 / 1
         width 2.4rem !important
@@ -38,43 +36,7 @@
         border-radius: 4px
         transition: all 0.3s ease
         color: alpha + 50%
-
-        &.filled
-            animation: pop 0.1s ease
-        
-        &.correct
-            background: gamma - 60%
-            //border-color: gamma
-        
-        &.present
-            background: beta - 70%//epsilon - 40%
-            //border-color: epsilon
-            //color alpha - 40%
-            //color alpha
-        
-        &.incorrect
-            background: delta - 80%
-            //border-color: delta
             
-        
-        &.shake
-            animation: shake 0.5s ease
-
-@keyframes pop
-    0% 
-        transform: scale(1)
-    50% 
-        transform: scale(1.1)
-    100% 
-        transform: scale(1)
-
-@keyframes shake
-    0%, 100% 
-        transform: translateX(0)
-    10%, 30%, 50%, 70%, 90% 
-        transform: translateX(-5px)
-    20%, 40%, 60%, 80% 
-        transform: translateX(5px)
 
 .keyboard
     display: flex
@@ -109,28 +71,7 @@
             cursor: pointer
             user-select: none
             color: beta
-            transition: all 0.2s ease
-            
-
-
-            color alpha + 50%
-
-            &:hover
-                opacity: 0.9
-            
-            &:active
-                transform: scale(0.95)
-            
-            &.correct
-                background: gamma - 60%
-            
-            &.present
-                background: beta - 70%
-                color alpha + 50%
-            
-            &.incorrect
-                background: delta - 80%
-            
+            transition: all 0.2s ease            
             &.enter
                 background: darken(gamma, 60%)
                 flex: 1.5

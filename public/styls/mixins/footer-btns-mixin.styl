@@ -4,6 +4,7 @@
     width 100%
     justify-content space-between
     position relative
+
     //border 1px solid red
   button.footer-btn
     background linear-gradient(90deg, rgba(alpha,.01) 30%, rgba(alpha,.6))
@@ -16,4 +17,31 @@
 //     width 100%
     //height 36rem
     //transform scale(1, 1)
+.game-footer
+    display grid
+    grid-template-columns 1fr
+    grid-template-rows 1fr
+    justify-content:  center
+    align-items center
+    margin-bottom - 1rem
+.game-message
+    color alpha + 80%
+    font-size 1rem
+    text-align center
+    grid-column 1 / 2
+    grid-row 1 / 2
+    transform scale(1, 0)
+    transition all .3s ease
+    transform-origin top
+
+.footer-btns
+    grid-column 1 / 2
+    grid-row 1 / 2
+    transform scale(1, 1)
+    transition all .3s ease
+    transform-origin top
+.game-message.active-message
+    transform scale(1, 1)
+.footer-btns.active-message
+    transform scale(1, 0)
 

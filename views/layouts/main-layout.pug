@@ -49,17 +49,20 @@ html(lang="en")
         .game-block
           include ../partials/contact-modal.pug
           include ../partials/side-nav.pug
+        .game-block 
+          .global-name-box 
+            if currentPage == 'APTATI' 
+              h1 Aptati Games
+            else
+              h1.page-title= title 
         .game-block.mg-btm-1
-          .global-name-box
-            h1.page-title= title 
-            p.subtitle <span>By Aptati:</span> The Word Gamer
-        if currentPage !== 'APTATI'               
-          +headerBtn(restart, newGame, answers)
+          if currentPage !== 'APTATI'               
+            +headerBtn(restart, newGame, answers)
         block content
         if currentPage !== 'APTATI'         
+          //- .game-block 
+          //-   +gameMsg(gameMessage)
           .game-block 
-            +gameMsg(gameMessage)
-          .game-block.mg-top-1 
             if currentPage !== 'APTATI' 
               +footerBtn(shuffle, clear, submit)
 

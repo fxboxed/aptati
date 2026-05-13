@@ -27,19 +27,23 @@
         border 1px solid alpha - 40%
         border-radius: 8px
         width 120px
-// .solution-item 
-//     color alpha + 50%
-//     font-size .9rem
-// .game-info
-//     text-align: center
-//     border 1px solid #fff
-//     height 3rem
-
-//     p
-//         margin: 0.3rem 0
-//         font-size: 1rem
-//         font-weight: bold
-    
+input#sb-word-form
+    padding .4rem
+    font-size 1rem
+    border 1px solid alpha - 40%
+    background alpha - 60%
+    display flex
+    align-items center
+    justify-content center
+    width 90%
+    color alpha + 80% !important
+    text-align center
+.sb-scores
+    display flex
+    //background red
+    align-items center
+    justify-content center
+    gap 2rem     
 .score, .max-score
     color: alpha + 60%
     margin-bottom 0.5rem
@@ -82,7 +86,6 @@
         background: rgba(epsilon, 0.6)
         border none
         color: alpha + 80%
-
 button.honeycomb-btn.center
     grid-column 3/5
     grid-row 4/8
@@ -105,9 +108,6 @@ button.honeycomb-btn.honeycomb-btn-6
     grid-column 4/6
     grid-row 7/11
 
-.sb-your-words
-    //border 1px solid red
-    text-align center
 
 #sb-word-list
     //padding: 1rem
@@ -116,13 +116,13 @@ button.honeycomb-btn.honeycomb-btn-6
     //overflow-x hidden
     border 1px solid alpha - 40%
     //background alpha - 60%
-    height 100px
+    height 9rem
     display flex
     flex-wrap wrap
     gap .4rem
     span 
         background alpha - 70%
-        padding .2rem .4rem
+        padding .1rem .4rem
         font-size .9rem
         flex-grow 1
     button 
@@ -154,16 +154,11 @@ button.honeycomb-btn.honeycomb-btn-6
             font-weight: bold
 // ---------------one offs--------------------
 
-p.sb-word-hint
-    color alpha + 60%
-    font-size 1rem
-    text-align center
+// p.hint
+//     color epsilon 
+//     font-size 1rem
+//     text-align center
 // #sb-current-score, #sb-max-score
 //     color alpha + 60%
 //     font-size 1rem  
-.sb-scores
-    display flex
-    //flex-direction: column
-    align-items center
-    justify-content center
-    gap 2rem    
+   

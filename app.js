@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 });
 import boxedLettersRoute from './routes/games/boxed-letters.route.js';
 import spellBugRoute from './routes/games/spell-bug.route.js';
-import theWordRoute from './routes/games/the-word.route.js';
+import wordScrambleRoute from './routes/games/word-scramble.route.js';
 import wordGroupsRoute from './routes/games/word-groups.route.js';
 
 // testing contact form route
@@ -45,7 +45,7 @@ app.use(passport.session());
 
 app.use(boxedLettersRoute);
 app.use(spellBugRoute);
-app.use(theWordRoute);
+app.use(wordScrambleRoute);
 app.use(wordGroupsRoute);
 
 app.listen(port, () => {

@@ -1,13 +1,13 @@
 extends ../layouts/main-layout
 block content
     .game-block            
-        .word-grid
+        .word-grid#ws-word-grid
             each row in [0,1,2,3,4,5]
                 .tile-row(data-row=row)
                     each col in [0,1,2,3,4]
                         .tile(data-row=row data-col=col)
     .game-block
-        .keyboard
+        .keyboard#ws-keyboard
             .key-row
                 each key in ["Q","W","E","R","T","Y","U","I","O","P"]
                     .key(data-key=key)= key

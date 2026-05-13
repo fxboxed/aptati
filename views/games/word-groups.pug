@@ -3,9 +3,9 @@ block content
     .game-block.mg-top-1.mg-btm-1 
         .plain-dropdown-wrap
             //- shows the below section when focused
-            //- dropdown mechanism is done with css only, no js involved. the section is hidden by default and shown when the button is in focus. the categories will be loaded with the game and displayed in the section below.
-            button.toggle-btn.wg-toggle#wg-toggle THIS GAME'S CATEGORIES
-            section#wg-categories-list 
+            //- dropdown mechanism is done with css only, no js involved. the section is hidden by default and shown when the button is in focus. 
+            button.toggle-btn.wg-toggle#wg-toggle VIEW THIS GAME'S CATEGORIES
+            section#wg-categories-list.pad-1 
                 span span 1 
                 span span 2
                 span span 3
@@ -13,10 +13,15 @@ block content
                 span span 5
                 span span 6
             //- the 4 categories will be loaded with the game and displayed when the above button is in focus. there is no js involve in this dropdown mechanism.each category will be in its own span generated with js and added to the above section
-    .game-block 
+    .game-block.pad-1 
         #wg-found-categories.wg-found-categories
-        //- categories found will appear here in their own span
-        //- p.wg-categories-found Categories found: <span id="wg-categories-found-count">0</span>/4  
+            p cats found
+        //- categories found will appear here  
     .game-block.mg-top-1.mg-btm-1
-        .words-grid#wg-words-grid
-        //- the grid of words will be generated here with js. each word will be a button that can be clicked to select/deselect. the selected words will be checked against the categories to see if they belong to any of them. if they do, they will be added to the found categories section above and removed from the grid. the game ends when all 4 categories are found or when the player gives up.
+        .words-grid#wg-words-grid.pad-1
+            h3 word groups
+        //- the grid of words will be generated here with js. each word will be a button that can be clicked to select/deselect. 
+    //- Aditional features to add:
+    //- from the start of the game each category will be asigned a class. I will use this to colour the category and the words that belong to it. when a category is complete, the words that belong to it will be asigned the same class as their category. While some versions of the game remove words from the grid when the categories are complete, I will keep them in the grid and assign the same class as the parent category to them
+    //-  YOU ADD THE CLASS ONLY. I WILL DO THE REST OF THE WORK WITH CSS. 
+    //- I will provide the classes to be added to the categories and words. you just add the class to the category and the words that belong to it.

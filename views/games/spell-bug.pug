@@ -1,13 +1,10 @@
 extends ../layouts/main-layout
 block content
     .game-block.mg-top-1
-        p.sb-word-hint Form words that use the central letter
-    .game-block.mg-top-1.mg-btm-1
-        .sb-scores
-            span.sb-score Current Score: <span id="sb-current-score">0 </span>
-            span.sb-max-score  Max Score: <span id="sb-max-score">0</span>
+        //- this will show the word as it is being formed and removed once it is submitted.
+        input.sb-word-form#sb-word-form.mg-1-auto(placeholder="Form words that use the central letter")
 
-    .game-block.block-2
+    .game-block.block-2.honey-come-block
         .honeycomb-grid#sb-honeycomb-grid
             button.honeycomb-btn.center(data-position="3" data-letter="") 
             button.honeycomb-btn.honeycomb-btn-1(data-position="0" data-letter="")
@@ -16,26 +13,13 @@ block content
             button.honeycomb-btn.honeycomb-btn-4(data-position="4" data-letter="")
             button.honeycomb-btn.honeycomb-btn-5(data-position="5" data-letter="")
             button.honeycomb-btn.honeycomb-btn-6(data-position="6" data-letter="")
-    .game-block.mg-top-2.mg-btm-2
-        .sb-your-words.mg-btm-05 YOUR WORDS 
-        #sb-word-list.pad-btm-1              
-            span line 1
-            span line 2
-            span line 3
-            span line 4
-            span line 5
-            span line 6
-            span line 7
-            span line 8
-            span line 9
-            span line 10
-            span line 11
-            span line 12
-            span line 13
-            span line 14
-            span line 15
-            span line 16
-            span line 17
-            span line 18
-            span line 19
-            span line 20
+            //- The honeycomb grid consists of a central button and six surrounding buttons, each representing a letter. The data attributes store the position and letter for each button, which can be used for game logic and event handling in the client-side JavaScript. Clicking a button will either add the letter to the current word being formed or remove it if it's already selected, allowing players to create words by selecting letters from the honeycomb grid.
+    .game-block.mg-top-05
+    .sb-scores
+        span.sb-score Current Score: <span id="sb-current-score">0 </span>
+        span.sb-max-score  Max Score: <span id="sb-max-score">0</span>
+    .game-block.mg-top-1.mg-btm-1
+        #sb-word-list.pad-btm-1
+            //- this placehoder will not show once a valid word is entered             
+            p.hint.sb-valid-words-placeholder.pad-2 Your valid words will appear here. Letters can be used multiple times.
+                

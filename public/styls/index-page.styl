@@ -15,33 +15,9 @@
     z-index 1
     margin 0rem auto
     width 100%
-    //border 1px solid white
-    //border 1px solid rgba(alpha, .16)
-    //border-radius 14px
-    //padding 1.5rem 2rem
 
 
 
-// p.page-subtitle, p.page-subtitle-2
-//     color alpha + 80% //- 80%
-//     text-align center
-//     grid-column 1/-1
-//     grid-row 1/2
-//     position relative
-//     z-index 1000
-//     align-self end
-//     //padding 1rem
-//     font-size 1.1rem
-//     font-weight bold
-//     text-transform uppercase
-// p.page-subtitle-2
-//     font-size 1.3rem
-//     color delta - 20%
-// .index-header
-//     backdrop-filter: blur(10px)
-//     padding 1.5rem 2rem
-//     h3 
-//         color delta
 
 .site-info
     position relative
@@ -75,14 +51,14 @@
     // transform perspective(1200px) rotateX(14deg)
     // transform-origin center center -12px
     //height 18px
-    background rgba(0,0,0,.22)
+    //background rgba(0,0,0,.22)
     //filter blur(22px)
-    border-radius 50%
+    //border-radius 50%
 // .site-info-hero
 //     background red
 //dummy list behind grid to give blur
 //---- p-site-info-------------------------
-.p-site-info
+.p-site-info, .item
     position absolute
     left 0
     right 0
@@ -102,11 +78,11 @@
     overflow hidden
     height 20%
     width 100%
-    background grey
     filter blur(12px)
 
 
-.p-site-info-item-1
+
+.p-site-info-item-1, .item-1
     //background rgba(alpha,.6)
     //transform rotate(-10deg)
     background linear-gradient(90deg, rgba(alpha,.01) 30%, rgba(alpha,.6))
@@ -114,16 +90,16 @@
     transform skew(-6deg) rotate(12deg)
     border-radius 30%
 
+
+
+
     &::before
         background alpha
         border-radius 3px
         box-shadow 20px 0 0 alpha, 10px 10px 0 alpha
         width 4px
         height 4px
-.item-1
-    width 40%
-    top 0 
-    left 0
+
 
     //background linear-gradient(90deg, rgba(alpha,.01) 30%, rgba(alpha,.6))
     border-right 4px solid alpha + 10%
@@ -149,15 +125,7 @@
     background linear-gradient(90deg, rgba(alpha,.1), rgba(beta,.6))
     border-right 4px solid gamma
     border-radius 30%
-    // transform skew(-6deg) rotate(-6deg)
-    // transform skew(-6deg) rotate(-4deg)
-    // &::before
-    //     width 0
-    //     height 0
-    //     border-left 9px solid transparent
-    //     border-right 9px solid transparent
-    //     border-bottom 16px solid gamma
-    //     background transparent
+
 .p-site-info-item-4, .item-4
     background linear-gradient(90deg, rgba(delta,.01), rgba(delta,.6))
     border-right 4px solid delta
@@ -169,8 +137,6 @@
 .p-site-info-item-5, .item-5
     background linear-gradient(90deg, rgba(epsilon,.01), rgba(epsilon,.5))
     border-right 4px solid epsilon
-    color alpha + 60%
-    transform skew(6deg) rotate(-356deg)
     &::before
         width 18px
         height 18px
@@ -188,7 +154,8 @@ ul.site-info-ul
     display flex
     flex-direction column
     gap .7rem
-    font-size .9rem
+    font-size 1rem
+
     margin 0
     padding 0
     position relative
@@ -231,6 +198,8 @@ ul.site-info-ul
         background linear-gradient(90deg, rgba(alpha,.01) 30%, rgba(alpha,.6))
         border-right 4px solid alpha + 10%
         transform skew(-6deg) rotate(-6deg)
+        color alpha + 80%
+        font-size 1.1rem
 
         &::before
             background alpha
@@ -243,6 +212,8 @@ ul.site-info-ul
         background linear-gradient(90deg, rgba(beta,.01), rgba(beta,.5))
         border-right 4px solid beta
         transform skew(-5deg) rotate(-5deg)
+        color beta + 70%
+        font-size 1.1rem
         &::before
             width 18px
             height 18px
@@ -255,6 +226,8 @@ ul.site-info-ul
         border-right 4px solid gamma
         transform skew(-4deg) rotate(-4deg)
         // transform skew(-6deg) rotate(-4deg)
+        color gamma + 70%
+        font-size 1.1rem
         &::before
             width 0
             height 0
@@ -262,11 +235,13 @@ ul.site-info-ul
             border-right 9px solid transparent
             border-bottom 16px solid gamma
             background transparent
-
+            //font-size 1.2rem
     li.delta
         background linear-gradient(90deg, rgba(delta,.01), rgba(delta,.6))
         border-right 4px solid delta
         transform skew(-3deg) rotate(-3deg)
+        color delta + 70%
+        font-size 1.1rem
         &::before
             width 16px
             height 16px
@@ -275,9 +250,10 @@ ul.site-info-ul
     li.epsilon
         background linear-gradient(90deg, rgba(epsilon,.01), rgba(epsilon,.5))
         border-right 4px solid epsilon
-        color alpha + 60%
-        icon
-            color #fff
+        color epsilon + 70%
+        font-size 1.1rem
+        // icon
+        //     color #fff
         transform skew(-2deg) rotate(-2deg)
         &::before
             width 18px

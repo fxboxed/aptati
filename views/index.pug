@@ -1,6 +1,6 @@
 extends ./layouts/main-layout
 block content
-    .game-block.mg-btm-3.mg-top-2
+    .game-block.mg-btm-1.mg-top-2
         .index-header-wrap
             h3.word-blocks.word-blocks-lg 
             span.blocks-wrap
@@ -16,6 +16,12 @@ block content
                 span.word-block.word-block-1.md-block l
                 span.word-block.word-block-2.md-block e
                 span.word-block.word-block-3.md-block s
+            p.word-blocks-biline Word games for the 21st century
+    .game-block.mg-btm-2 
+        .custom-hr 
+            span.span-1 
+            span.span-2 At A Glance
+            span.span-3
     .game-block.mg-btm-2 
         ul.site-info-ul.clip-front-to-backs.site-info-ul-2
             li.alpha A variety of word games to challenge your vocabulary and word-guessing skills.
@@ -23,36 +29,45 @@ block content
             li.gamma Unlimited attempts. Restart the same game as often as you like.
             li.delta Sleek and intuitive design for a seamless gaming experience.
             li.epsilon No membership required., regardless of how many games you play.
+    .game-block.mg-btm-1
+        .custom-hr 
+            span.span-1 
+            span.span-2 Featured Games
+            span.span-3
     .game-block 
         .responsive-grid
-            a.responsive-grid-item(href="/games/word-scramble")
-                .img
-                    img(src="/images/1x1/word-scramble-1x1.webp", alt="Preview image for Word Scramble")
-                .txt
+            a.responsive-grid-item.link-1(href="/games/word-scramble")
+                .letters.letters-1
+                    h4.index-letters <span>W</span><span>S</span>
+                    //- img(src="/images/1x1/word-scramble-1x1.webp", alt="Preview image for Word Scramble")
+                .txt.txt-left
                     h3 Word Scramble
                     p.card-para A six-letter word game that tests your vocabulary and word-guessing skills.
                     span.card-link Play now
 
-            a.responsive-grid-item(href="/games/spelling-bee")
-                .img
-                    img(src="/images/1x1/spell-bug-1x1.webp", alt="Preview image for Spell Bug")
+            a.responsive-grid-item.link-2(href="/games/spell-bug")
+                .letters.letters-2
+                    h4.index-letters <span>S</span><span>B</span>
+                    //- img(src="/images/1x1/spell-bug-1x1.webp", alt="Preview image for Spell Bug")
                 .txt
                     h3 Spell Bug
                     p.card-para Build words from a set of letters, always including one required letter.
                     span.card-link Play now
 
-            a.responsive-grid-item(href="/games/word-groups")
-                .img
-                    img(src="/images/1x1/word-groups-1x1.webp", alt="Preview image for Word Groups")
+            a.responsive-grid-item.link-3(href="/games/cluster-quest")
+                .letters.letters-3
+                    h4.index-letters <span>C</span><span>Q</span>
+                    //- img(src="/images/1x1/cluster-quest-1x1.webp", alt="Preview image for Cluster Quest")
                 .txt
-                    h3 Word Groups
-                    p.card-para Sort related words into groups based on shared meanings, themes, or categories.
+                    h3 Cluster Quest
+                    p.card-para Solve word puzzles by finding clusters of related words.
                     span.card-link Play now
 
-            a.responsive-grid-item(href="/games/boxed-letters")
-                .img
-                    img(src="/images/1x1/letter-boxes-1x1.webp", alt="Preview image for Letter Boxes")
+            a.responsive-grid-item.link-4(href="/games/letter-link")
+                .letters.letters-4
+                    h4.index-letters <span>L</span><span>L</span>
+                    //- img(src="/images/1x1/letter-link-1x1.webp", alt="Preview image for Letter Link")
                 .txt
-                    h3 Letter Boxes
+                    h3 Letter Link
                     p.card-para Form words by linking letters within a grid while following the puzzle rules.
                     span.card-link Play now

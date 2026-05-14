@@ -12,10 +12,10 @@ app.use(express.static('public'));
 app.get('/', (req, res) => {
   res.render('index', { title: 'Word challenges', currentPage: 'APTATI' });
 });
-import boxedLettersRoute from './routes/games/boxed-letters.route.js';
+import letterLinkRoute from './routes/games/letter-link.route.js';
 import spellBugRoute from './routes/games/spell-bug.route.js';
 import wordScrambleRoute from './routes/games/word-scramble.route.js';
-import wordGroupsRoute from './routes/games/word-groups.route.js';
+import clusterQuestRoute from './routes/games/cluster-quest.route.js';
 
 // testing contact form route
 // const GOOGLE_CLIENT_ID = String(process.env.GOOGLE_CLIENT_ID || "").trim();
@@ -43,10 +43,10 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(boxedLettersRoute);
+app.use(letterLinkRoute);
 app.use(spellBugRoute);
 app.use(wordScrambleRoute);
-app.use(wordGroupsRoute);
+app.use(clusterQuestRoute);
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);

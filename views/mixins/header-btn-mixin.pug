@@ -9,4 +9,12 @@ mixin headerBtn(restart, newGame, answers)
             button.header-btn.header-btn-1(id=restart) RESTART
             button.header-btn.header-btn-2(id=newGame) NEW GAME
             button.header-btn.header-btn-3(id=endGame) FINISHED
-        P.answer-reveal.mg-top-1.hint Click "FINISHED" to reveal the answers
+        if currentPage != 'Letter Link'
+            P.answer-reveal.mg-top-1 Click "FINISHED" to reveal the answers
+        if currentPage == 'Letter Link'
+            //- the word being constructed will appear in the placeholder
+            input.ll-constructor#ll-constructor(type="text" placeholder="Click Finished to reveal the optimal answers below" disabled)
+            p.ll-answers-title 3 optimum answers w
+            .ll-answers#ll-answers
+                
+            .ll-word-constructor#ll-word-constructor.mg-top-1

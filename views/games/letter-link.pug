@@ -1,0 +1,36 @@
+extends ../layouts/main-layout
+block content 
+
+    .game-block.mg-1-auto
+        p.used-unused.txt-center <span class='used-letters'> Used letters </span> <span class='dot'></span> <span class='unused-letters'> Unused letters </span>
+    .game-block.ll-game-block.mg-1-auto
+        //- .found-words //- show list of words used so far
+        .ll-words-used-box#ll-words-used-box
+            p.words-used-title Words Used 
+            //-  show list of words used
+            #ll-word-list 
+                p.guide-p Use all letters to complete the game. After the first word, the next words must start with the last letter of the previous.
+            //- a respectable number of words to use all the letters
+            p.solve-in-words Solve in: <span id="ll-todays-best">(0)</span> Word(s) or less 
+        //- letters used will have a class added to them
+        .ll-side.top
+            //- letters for the top side
+            each letter, idx in ['', '', '']
+                .letter-btn(data-letter=letter) A
+        .ll-side.left
+            //- letters for the left side
+            each letter, idx in ['', '', '']
+                .letter-btn(data-letter=letter)= letter
+        .ll-side.right
+            //- letters for the right side
+            each letter, idx in ['', '', '']
+                .letter-btn(data-letter=letter)= letter
+        .ll-side.bottom
+            //- letters for the bottom side
+            each letter, idx in ['', '', '']
+                .letter-btn(data-letter=letter) A
+    //- this game is a version of Letter Boxed by the New York Tmes. the current name of "boxed letters" is bland. Suggest creative / intuative names
+
+      //- this game is a version of Letter Boxed by the New York Tmes. the current name of "boxed letters" is bland. Suggest creative / intuative names
+      //- Possible names: "Letter Loop", "Word Chain", "AlphaBox", "Chain Letters", "Letter Link", "Boxed Words", "Letter Maze", "Word Box", "Letter Circle", "Boxed Chain", "Word Loop", "Alpha Loop", "Letter Web", "Boxed Letters Challenge"
+      

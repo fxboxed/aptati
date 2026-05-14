@@ -8,38 +8,50 @@
     gap .2rem
     margin 0
     width 100%
-
+p.word-blocks-biline 
+    font-size 1.2rem
+    color alpha
+    font-weight bold
+    justify-self right
 .word-block
     text-transform: uppercase
-    font-size 5.7rem
+    font-size 5.5rem
     font-weight bold
     padding  5px
     color alpha - 75%
     border none //4px solid
     margin-bottom 2px
     flex 1
-    //border-radius 30%
+    border 1px solid
+    border-radius 30%
     //filter blur(1px)
 .word-block-1
     //color alpha
     //background alpha - 40%
-    border-color alpha + 20%
-    background alpha //linear-gradient(90deg, rgba(alpha,.01) 30%, rgba(alpha,.6))
+    border-color alpha - 40%
+    background linear-gradient(120deg, rgba(alpha,.01) 30%, rgba(alpha,.3))
+    color alpha
+    border-right 4px solid alpha
     //border-right 4px solid alpha + 10%
 
 .word-block-2
     //color beta
-    background beta - 40%
-
+    //background beta - 40%
+    background linear-gradient(120deg, rgba(beta,.01) 30%, rgba(beta,.3))
+    border-right 4px solid beta
+    color beta
     //background beta //linear-gradient(90deg, rgba(beta,.01), rgba(beta,.5))
     //border-right 4px solid beta
 .word-block-3
-    background gamma //- 40%
-    border-color gamma //+ 20%
-    //color gamma
+    background linear-gradient(120deg, rgba(gamma,.01) 30%, rgba(gamma,.5))
+    border-right 4px solid gamma
+    color gamma
 .word-block-4
-    border-color delta 
-    background delta
+    // border-color delta 
+    // background delta
+    background linear-gradient(120deg, rgba(delta,.01) 30%, rgba(delta,.5))
+    border-right 4px solid delta
+    color delta
 .word-block-5
     //color epsilon
     background epsilon - 40%

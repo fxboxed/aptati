@@ -1,0 +1,133 @@
+
+
+
+.responsive-grid
+  display grid
+  grid-template-columns repeat(auto-fit, minmax(340px, 1fr))
+  gap 1rem
+  margin 2rem auto
+  position relative
+  // transform perspective(1200px) rotateX(-14deg)
+  // transform-origin center center
+
+  .responsive-grid-item
+    display grid
+    grid-template-columns 112px 1fr
+    gap .9rem
+    //align-items stretch
+    min-height 112px
+    padding .8rem
+    text-decoration none
+    background linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02))
+    border 1px solid rgba(alpha, .16)
+    border-radius 14px
+    box-shadow 0 8px 24px rgba(0,0,0,.12)
+    transition transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease
+    position relative
+    //overflow hidden
+
+    .txt
+      //display flex
+      //flex-direction column
+      min-width 14.5rem
+      margin-left 6.5rem
+      font-size 1.1rem !important
+    h3
+      margin 0 0 .2rem
+      font-size 1rem
+      line-height 1.2
+      font-weight 700
+      letter-spacing .01em
+      color alpha
+      text-transform uppercase
+
+    p.card-para
+      margin 0
+      font-size 1rem
+      line-height 1.2
+      text-transform none
+      text-align left
+
+    .card-link
+      margin-top .7rem
+      margin-left auto
+      margin-right 0
+      font-size 1rem
+      font-weight 600
+      letter-spacing .01em
+      color alpha
+      display inline-block
+      position absolute
+      right 1rem 
+      bottom .6rem
+      &::after
+        content ' →'
+// .responsive-grid-item.item-1
+//   background linear-gradient(120deg, rgba(alpha,.01) 30%, rgba(alpha,.6))
+.letters 
+    position absolute
+    left .6rem
+    //right 0
+    top 50%
+    transform translateY(-50%)
+    //bottom 0
+    display flex
+
+    gap .7rem
+    padding 0
+    margin 0
+    width 6rem
+    height 6rem
+    border-radius 10px
+    //font-size 1.8rem !important
+    overflow hidden
+    //background red //rgba(alpha, .08)
+    display flex  
+    align-items center
+    justify-content center
+    // box-shadow inset 0 0 0 1px rgba(255,255,255,.06)
+    
+
+    span  
+      font-size 3.4rem
+      font-weight 800
+      display inline-block
+.letters-1
+    background linear-gradient(120deg, rgba(alpha,.01) 30%, rgba(alpha,.6))
+    border-right 4px solid alpha
+        
+.letters-2
+    background linear-gradient(120deg, rgba(beta,.01) 30%, rgba(beta,.5))
+    border-right 4px solid beta
+    h4  
+      span 
+        color beta
+    &::before
+        width 18px
+        height 18px
+        border 3px solid beta
+        border-radius 50%
+
+.letters-3
+    background linear-gradient(120deg, rgba(gamma,.01) 30%, rgba(gamma,.5))
+    border-right 4px solid gamma
+    h4 
+      span 
+        color gamma
+    &::before
+        width 18px
+        height 18px
+        border 3px solid gamma
+        border-radius 50%
+
+
+.letters-4
+    background linear-gradient(120deg, rgba(delta,.01) 30%, rgba(delta,.5))
+    border-right 4px solid delta
+    h4 
+      span 
+        color delta 
+    &::before
+        width 18px
+        height 18px
+        border 3px solid delta

@@ -112,7 +112,7 @@ ul.nav-bar-ul
     height 45rem
     background alpha //linear-gradient(90deg, rgba(alpha) 30%, rgba(alpha + 40%))
     &::before
-        background  linear-gradient(60deg, rgba(epsilon, .6) 70%, rgba(epsilon, .44)) 
+        background linear-gradient(90deg, rgba(epsilon,.01), rgba(epsilon,.5))
         content ''
         position absolute
         z-index -1
@@ -132,12 +132,12 @@ ul.nav-bar-ul
     //     z-index 2 !important
 
     li   
-        border-bottom 1px solid epsilon - 40%
+        border-bottom 1px solid epsilon - 10%
         padding .4rem
     a, li.nav-item a, .contact-btn#contactToggle 
-        color epsilon - 40% !important
+        color epsilon - 20% !important
         font-size 1.2rem
-        font-weight bold
+        font-weight normal
         text-decoration none
         position relative
         z-index 200
@@ -147,12 +147,12 @@ ul.nav-bar-ul
         margin 0
     li.list-heading
         color alpha + 70%
-        font-weight bold
+        //font-weight bold
         display block
         text-transform: uppercase
-        background epsilon - 40%
+        //background epsilon - 40%
         padding .4rem 2rem
-        border none //-bottom 1px solid alpha - 40%
+        border 1px solid epsilon - 20%
         
     &::after
         content ""

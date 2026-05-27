@@ -14,12 +14,12 @@ block content
                 span span 6
             //- the 4 categories will be loaded with the game and displayed when the above button is in focus. there is no js involve in this dropdown mechanism.each category will be in its own span generated with js and added to the above section
     .game-block.pad-1 
+        p.mg-btm-05 Categories Found <span id="cq-categories-found-count">0</span>/4
         #cq-found-categories.cq-found-categories
-            p cats found
         //- categories found will appear here  
     .game-block.mg-top-1.mg-btm-1
         .words-grid#cq-words-grid.pad-1
-            h3 word groups
+            h3 Word Groups
         //- the grid of words will be generated here with js. each word will be a button that can be clicked to select/deselect. 
     //- Aditional features to add:
     //- from the start of the game each category will be asigned a class. I will use this to colour the category and the words that belong to it. when a category is complete, the words that belong to it will be asigned the same class as their category. While some versions of the game remove words from the grid when the categories are complete, I will keep them in the grid and assign the same class as the parent category to them

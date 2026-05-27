@@ -1,3 +1,11 @@
+.header-nav-controls
+    //border 1px solid red
+    display flex    
+    gap 1rem
+    align-items center
+    justify-content space-between
+    padding .4rem
+    border-bottom 1px solid rgba(alpha, .2)
 .side-nav
     position: absolute
     top: - 1rem
@@ -7,7 +15,6 @@
     height: 50px
     display: flex
     align-items: center
-    //border-bottom 1px solid alpha //- 60%
     //padding: 0 20px
     z-index: 100
   
@@ -19,8 +26,8 @@
     align-items center
     width 100% //380px
     //max-width 420px
-    height 50px
-    margin 1rem auto 0
+    //height 50px
+    //margin 1rem auto 0
     //background green
     //padding-top 1rem
     nav.navbar
@@ -28,48 +35,45 @@
         align-items center
         justify-content space-between
         width 100%
-        background linear-gradient(90deg, rgba(alpha,.01) 30%, rgba(alpha,.3))
+        // linear-gradient(90deg, rgba(alpha,.01) 30%, rgba(alpha,.3))
         height 100%
-        border-radius: 1rem
-        a   
-            color epsilon
-            height fit-content
-            z-index 2
-        &::after
-            background  linear-gradient(60deg, rgba(epsilon, .2) 70%, rgba(epsilon, .08)) 
-            content ''
-            position absolute
-            top 0
-            left 50%
-            transform translateX(-50%)
-            width 98%
-            height 100%
-            //border-left 4px solid epsilon - 70%
-            border-right 4px solid epsilon - 10%
-            border-top 1px solid epsilon - 20%
-            border-radius: 1rem
+        //border-radius: 1rem
+
+
 button.side-nav-toggle
     //background none
-    position absolute
-    top 1.2rem
-    right 1.3rem
-    border none
+    //position relative // absolute
+    top 0.5rem
+    right 1.5rem
+    //border 1px solid red //alpha - 40%
+    //border-radius 50%
+    //background epsilon - 60%
     cursor pointer
     display flex
     flex-direction column
     justify-content space-between
-    align-items center
+    align-items left // center
     width 2.5rem
-    height 2.5rem
+    height 2rem
     z-index 1
     ///margin-left auto
     //background blue
     .bar
         height 20%
-        width 84%
-        background epsilon
+        //width 88%
+        //display none
+        background alpha  + 40% // 
+        margin-left 0
+        margin-right auto
+        &:nth-child(1)
+            width 80%
+            background delta
         &:nth-child(2)
+            background delta
             width 100%
+        &:nth-child(3)
+            background gamma
+            width 60%
 button.close-side-nav
     //background none
     position absolute
@@ -86,94 +90,92 @@ button.close-side-nav
     z-index 1
     i.fas.fa-xmark
         font-size 2rem
-        color epsilon - 40% !important
+        color alpha + 60% !important
         position absolute
         z-index 1400
         //display none
-ul.nav-bar-ul
-    display flex
+.nav-bar-ul
+    display block !important //block  !important
+    flex-wrap wrap
     flex-direction column
-    align-items center
-    justify-content: right
-    gap .5rem
-    list-style none
     margin 0
-    position absolute
-    transition all 0.3s ease    
-    left 0
-    top 0rem
+    position absolute 
+    left 1rem
+    right 1rem
+    top 1.2rem
     z-index 10
     bottom 1rem
+    border-radius 1rem
     padding 5rem 1rem
-    transform scale(1,0)
-    transform-origin: top
+    //transform scale(1, 0)
+    transition: all .3s ease-in-out
+    transform-origin: top left
     //display none
-    width 100%
-    height 45rem
-    background alpha //linear-gradient(90deg, rgba(alpha) 30%, rgba(alpha + 40%))
-    &::before
-        background linear-gradient(90deg, rgba(epsilon,.01), rgba(epsilon,.5))
-        content ''
-        position absolute
-        z-index -1
-        top 0 // -15rem
-        left 0 //50%
-        //transform translateX(-50%)
-        width 100%
-        height 100%
-
-    // &::after  
-    //     content "X" 
-    //     position absolute
-    //     top 1.2rem
-    //     right 1.3rem
-    //     font-size 5rem
-    //     color red //epsilon !important
-    //     z-index 2 !important
-
+    list-style none
+    //width 100%
+    height 36rem
+    background rgba(0,0,0, .2)
     li   
-        border-bottom 1px solid epsilon - 10%
-        padding .4rem
-    a, li.nav-item a, .contact-btn#contactToggle 
-        color epsilon - 20% !important
-        font-size 1.2rem
-        font-weight normal
-        text-decoration none
-        position relative
-        z-index 200
-        //border-bottom 1px solid alpha - 40%
+        //border 1px solid green //alpha - 40%// #
+        flex 1
+        padding .1rem
+        //-width 12
+        margin 0 auto //rem
+        width 80% // 14rem
+        overflow hidden
+        line-height 1
+        height fit-content
+    a   
+        width 100%
+        justify-content: left
+        //text-decoration underline
+        border-bottom 1px solid rgba(alpha + 60%, .2)
+        color alpha + 80%
+        text-align left !important
+    .custom-hr  
+        span.span-2  
+            color alpha + 60%
+            font-size 1.2rem
+
+     
     .contact-btn#contactToggle
         padding 0
         margin 0
     li.list-heading
-        color alpha + 70%
+        //color alpha + 70%
+        margin .6rem auto 0
         //font-weight bold
+        text-align center
         display block
         text-transform: uppercase
         //background epsilon - 40%
-        padding .4rem 2rem
-        border 1px solid epsilon - 20%
+        padding .1rem 2rem
+        border none
+        //flex 1
+        //border-bottom 1px solid alpha + 60%
         
-    &::after
-        content ""
-        position absolute
-        top 4rem
-        left 1.5rem
-        right 1.5rem
-        bottom 2rem
-        //width calc(100% - 2rem)
-        //height calc(100% - 2rem)
-        border 1px solid epsilon - 40%
-        z-index 01
+    // &::after
+    //     content ""
+    //     position absolute
+    //     top 4rem
+    //     left 1.5rem
+    //     right 1.5rem
+    //     bottom 2rem
+    //     //width calc(100% - 2rem)
+    //     //height calc(100% - 2rem)
+    //     //border 1px solid epsilon - 40%
+    //     z-index 01
+
 a.logo 
     //border 1px solid #fff
     color alpha 
     font-weight bold
     line-height 1
-    height 100%
+    height 2rem //100%
+    
 
 // HIDE / SHOW NAV
 ul.nav-bar-ul.side-nav-open
-    transform scale(1)
+    transform scale(1, 1)
     display flex
     //background green

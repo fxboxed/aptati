@@ -1,36 +1,43 @@
 // Always visible fixed button
-#contactToggle
+//#contactToggle
 
-    background transparent //alpha + 10%
-    border none
-    //border-radius 50px
-    //box-shadow 0 4px 8px rgba(0,0,0,0.3)
-    //color alpha + 80%
-    height 100%
-    cursor pointer
     //font-size 1rem
-    padding .6rem .8rem // 12px 18px
+    //padding .6rem .8rem // 12px 18px
     //display none
+.contact-btn#contactToggle 
+    //background red !important
+    //border 1px solid alpha - 40%
+    height 2.2rem !important
+    width 6rem
+    //position absolute 
+    //right 4rem
+    top 1rem
+    z-index 10
+    margin-left auto
+    margin-right 0
 
 #contactModal
     align-items start //center
-    background alpha - 80% //rgba(alpha, .8)
+    //background red //rgba(alpha + 99%, .01)
     border-radius 8px
-    box-shadow 0 4px 20px rgba(0, 0, 0, 0.5)
+    //box-shadow 0 4px 20px rgba(0, 0, 0, 0.5)
     display flex
-    height 100% //100vh //100% //90%
+    // 40rem // 100% //100vh //100% //90%
     justify-content center
     left 0
     right 0
     padding 4rem 1rem 2rem
     position  absolute
+    //border 2px solid #
+    transform scale(1, 0)
+    //transform-origin: top center
 
 
-    transform scale(0, 0) 
+    //transform scale(0, 0) 
     margin 0 auto
     transition: all .3s ease-in-out //, opacity 0.3s ease-in-out
-    width 424px // 100vw //100% //90%
-    z-index 110000
+    //width 424px // 100vw //100% //90%
+    //z-index 110000
 
     .modal-liner
         //background alpha - 60%
@@ -40,9 +47,9 @@
         //width 10rem
         //height 10rem
     form
-        //background alpha - 40%
+        background rgba(0,0,0, .1)
         padding 1rem
-        h2  
+        h3  
             //color alpha + 80%
             font-size 1.5rem
             margin-bottom 1rem
@@ -51,7 +58,7 @@
 #contactModal.show
     opacity 1
     transform scale(1, 1) 
-    transform-origin: top center;
+    transform-origin: top;
     transition: all .3s ease-in-out
     //display block
     //ransform: translateX(500px) rotate(15deg);
@@ -63,10 +70,10 @@
 // Form elements
 #contactModal input,
 #contactModal textarea
-    background alpha - 75%  //+40%
-    border none 
+    background rgba(0,0,0, .1) //transparent
+    border 1px solid rgba(255, 255, 255, 0.2) //alpha - 40% 
     border-radius 4px
-    color alpha + 90%
+    color alpha + 95%
     font-size 14px
     margin-bottom 10px
     outline none
@@ -80,10 +87,12 @@
     margin 0 auto
     width fit-content
     button.send-email
-        background: rgba(gamma, 0.3)
+        //: blue // rgba(gamma, 0.3)
+        color gamma 
+        border 1px solid rgba(gamma, .8)
         &:hover
             background: rgba(gamma, 0.5)
-    button#closeMmodal
+    button#closeModal
         background: rgba(delta, 0.3)
 
         &:hover
@@ -94,13 +103,13 @@
     //background red //alpha - 10%
     //border none
     border-radius 4px
-    color alpha + 80%
+    //color beta //alpha + 80%
     cursor pointer
     //font-size 1rem
     font-weight bold
     outline none
-    padding 12px 3rem
-    border 1px solid rgba(beta, .3)
+    padding .3rem 3rem
+    //border 1px solid rgba(beta, .3)
     text-transform: uppercase
     //width 100%
     //padding: 0.5rem
@@ -116,7 +125,7 @@
 #contactModal input::placeholder,
 #contactModal textarea::placeholder
     color alpha + 90%
-    opacity 0.7
+    //opacity 0.9
 ///////////////////////////////////
 #toastMessage
   position absolute

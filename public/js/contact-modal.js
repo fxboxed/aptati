@@ -73,3 +73,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+// also change order of contact modal 
+// contactToggle.addEventListener("click", () => {
+//     const contactBodyLiner = document.querySelector(".contact-body-liner");
+//     contact
+// });

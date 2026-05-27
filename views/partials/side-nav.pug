@@ -1,9 +1,8 @@
-
+//- Side Navigation Partial - Used across multiple pages for consistent navigation experience
 .header-liner.side-nav-liner
   nav.navbar
-    if currentPage !== 'APTATI'
-        a.logo(href="/") APTATI
-    //-   a.logo(href="/") APTATI
+
+    
     ul.nav-bar-ul
       li.nav-item 
         a.nav-link(href="/") Home
@@ -14,20 +13,23 @@
             a.nav-link.btn-3d(href="/dashboard")
               span.user-icon 👤
               span.user-text Dashboard
-        
         li.nav-item
-          form.logout-form(method="post" action="/auth/logout")
-            button.logout-btn.btn-3d(type="submit") Logout
+          a.logout-btn.btn-3d(href=logoutUrl || "/auth/logout") Logout
       else
         li.nav-item
           a.nav-link.login-link.btn-3d(href="/auth/google") Login
       
-      li.nav-item
-        button#contactToggle.contact-btn(type="button") Contact
+
       li.nav-item
         button#close-side-nav.close-side-nav(type="button")
           i.fas.fa-xmark
-      li.list-heading Games
+          
+      
+      li.nav-item
+        .custom-hr.mg-top-2.mg-btm-2 
+          span.span-1 
+          span.span-2 Featured Games
+          span.span-3
       li.nav-item 
         a(href="/games/word-scramble") Word Scramble
       li.nav-item
@@ -36,5 +38,3 @@
         a(href="/games/cluster-quest") Cluster Quest
       li.nav-item
         a(href="/games/letter-link") Letter Link
-//-script(src="/js/nav-toggle.js")
-//-script(src="/js/contact-modal.js" defer)

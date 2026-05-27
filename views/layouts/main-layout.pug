@@ -40,31 +40,49 @@ html(lang="en")
       include ../mixins/game-messages-mixin.pug
   body
     //- img.space-bg(src="/images/og/site-og.webp", alt="")
-    .body-liner
-      button.side-nav-toggle(type="button" aria-label="Toggle navigation")
-        span.bar
-        span.bar
-        span.bar
-      main.game-blocks
-        .game-block
-          include ../partials/contact-modal.pug
-          include ../partials/side-nav.pug
-        .game-block 
-          .global-name-box 
-            if currentPage == 'APTATI' 
-              h1 Aptati Games
-            else
-              h1.page-title= title 
-        .game-block.mg-btm-1
-          if currentPage !== 'APTATI'               
-            +headerBtn(restart, newGame, answers)
-        block content
-        if currentPage !== 'APTATI'         
-          //- .game-block 
-          //-   +gameMsg(gameMessage)
-          .game-block 
-            if currentPage !== 'APTATI' 
-              +footerBtn(shuffle, clear, submit)
+        include ../partials/side-nav.pug
+    
+
+    .body-liner-grid
+      include ../partials/contact-modal.pug
+      .body-liner.blur-body-liner
+        include ../partials/side-nav.pug 
+      .body-liner.main-body-liner
+        .header-nav-controls
+          //- if currentPage !== 'APTATI'
+          //- a.logo(href="/") APTATI
+          a.logo-circles(href="/")
+            .circle.circle-1
+            .circle.circle-2
+            .circle.circle-3
+          button#contactToggle.contact-btn(type="button") Contact
+          button.side-nav-toggle(type="button" aria-label="Toggle navigation")
+            span.bar
+            span.bar
+            span.bar
+        main.game-blocks 
+          .game-block.mg-top-1.mg-btm-1
+            .game-name-wrap 
+              if currentPage == 'APTATI' 
+                h1.game-name.txt-center 
+                  span Aptati Word Games hub
+              else
+                //- h1.txt-center.game-name.page-title= title 
+                h1.txt-center.game-name.page-title
+                  span.left the aptati
+                  span.span-enter= title
+                  span.span-right Game
+          //- hr.plain-hr.mg-btm-05
+          .game-block
+            if currentPage !== 'APTATI'               
+              +headerBtn(restart, newGame, answers)
+          block content
+          if currentPage !== 'APTATI'         
+            //- .game-block 
+            //-   +gameMsg(gameMessage)
+            .game-block 
+              if currentPage !== 'APTATI' 
+                +footerBtn(shuffle, clear, submit)
 
         script(src="/js/contact-modal.js" defer)
         script(src="/js/toggle-nav.js" defer)

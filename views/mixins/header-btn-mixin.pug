@@ -1,23 +1,23 @@
 //- 
     mixin consumed by main-layout.pug to render header buttons in the game pages.
-    The mixin takes three parameters: restart, newGame, and answers, which are the IDs for the respective buttons. This allows each game page to specify its own button IDs for event handling.
+    The mixin takes two parameters: restart, and answers, which are the IDs for the respective buttons. This allows each game page to specify its own button IDs for event handling.
     It assigns an ID to each game's respective buttons so that the buttons can be targeted for event listeners in the client-side JavaScript for each game.
-mixin headerBtn(restart, newGame, endGame)
+mixin headerBtn(restart, answersBtn, answersDropdown)
     .game-block.header-btns-block.mg-btm-1
         .header-btns
-            button.header-btn.header-btn-1(id=restart) RESTART
-            button.header-btn.header-btn-2(id=newGame) NEW GAME
-            //-  The following button will be enabled and the 6 optimal solutions will be revealed when the user clicks "End Game".
-            if currentPage == 'Letter Link' || currentPage == 'Spell Bug'
-                button.header-btn.header-btn-3(id=endGame) ANSWERS & END GAME
-                .dropdown(id-=endGame)
-                    h3 answers
-            else  
-                button.header-btn.header-btn-3(id=endGame) END GAME & Answers
-        //- if currentPage != 'Letter Link'
-            p.answer-reveal.mg-top-05 Click "END GAME" to reveal the answers
-        //- stying for letter link appears on letter-link.styl and is different from the other games, so it is not included on this mixin's styl sheet.   
+            if title != "Category Catch"
+                button.header-btn.header-btn-1(id=restart) RESTART
+                button.header-btn.header-btn-2(id=answersBtn) ANSWERS & NEW GAME
+                section.dropdown(id=answersDropdown)
+                //- Answers will be inserted here when the game begins. The section is hidden until the user clicks the ANSWERS & NEW GAME button. Then upon the button losing focus, a new game will commence.`
+            else 
+                //-  for the category catch game
+                //- once the answers-btnn is clicked all placeholders will be completed and the game frozen
+                button.header-btn.header-btn-2(id=answersBtn) ANSWERS
+                //- new game is started by clicking this button
+                button.header-btn.header-btn-1(id=newGame) NEW GAME
+        //- put on game page
         if currentPage == 'Letter Link'
-            //- the word being constructed will appear in the 
+            //- the word being constructed will appear in the... 
             input.ll-word-constructor.mg-top-1(type="text" id=wordConstructor placeholder="Use all letters to complete the game." disabled) 
             .ll-answers#ll-answers

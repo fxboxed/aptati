@@ -1,41 +1,34 @@
+//public/styls/main-layout.styl
 body 
     display flex
     align-items center
     justify-content center
     min-height 100vh
-    background alpha - 80% //rgba(alpha, .8)
+    background alpha - 80% 
 .body-liner-grid
     display grid
     grid-template-columns: 1fr
     grid-template-rows 1fr
-    //border 1px solid red
+
 .body-liner
     grid-column 1/2
     grid-row 1/ 2
     width 26.5rem
-    //margin-top 2rem
     max-width 100%
     position relative
-    //border 1px solid red
-    //background alpha - 75%
     transition: all .3s ease-in-out
     height 48rem
     overflow-x hidden
 // body liner is not removed it is overlaid with 
 .nav-body-liner
     order 4
-    //background green //alpha - 75%
     z-index 1
 .main-body-liner 
     transform scale(1,1)    
     background alpha - 75%
 .contact-body-liner
-    //order 4
-    //background pink
     z-index 2
-    //transform scale(1,0)
-    //background-color: rgba(255, 255, 255, 0.3); /* Transparency is required */
-    //-filter: blur(10px);
+
     &::before
         content ""
         position absolute
@@ -43,44 +36,30 @@ body
         left 0
         right 0
         bottom 0
-        background-color: rgba(0,0,0,0.3) //rgba(255, 255, 255, 0.3); /* Transparency is required */
+        background-color: rgba(0,0,0,0.3) 
         backdrop-filter: blur(8px);
         z-index - 2
 .blur-body-liner
     order 1
-    //opacity .5
     display flex
     justify-content center
     align-items center
-    //transition  all 0.5s 
     transform scale(1, 0)
-
     background-color: rgba(0,0,0,0.3); /* Transparency is required */
     backdrop-filter: blur(10px);
-    // -webkit-backdrop-filter: blur(10px); /* Safari support */
 .blur-body-liner.blur-active
     order 1
-    //background pink
-    //opacity .5
-    //transition all 0.5s ease
     transform scale(1, 1)
     z-index 0
 .game-blocks
     width 100%
     max-width 90%
-    //display flex
-    //flex-wrap wrap
     justify-content center
     align-items start
-    //gap 2rem
     margin 0rem auto
-    //background pink
-    //margin 0 auto
-    //padding 20px
 .game-block
     position relative
     width 100%
-    //border 1px solid red
     height fit-content
 .game-block.header-btns-block
     width 100%

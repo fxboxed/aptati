@@ -2,7 +2,7 @@ import 'dotenv/config';
 import express from 'express';
 import session from 'express-session';
 import passport from 'passport';
-import mongoose from 'mongoose'; // Added for your database validation hooks
+import mongoose from 'mongoose';
 
 const app = express();
 const port = 3000;
@@ -27,7 +27,6 @@ app.use(session({
     secure: isProduction,
     httpOnly: true,
     sameSite: 'lax',
-    // Allows sharing logins seamlessly with pro.aptati.com in production
     domain: isProduction ? '.aptati.com' : undefined
   }
 }));
@@ -37,7 +36,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // GLOBAL VARIABLE INJECTION MIDDLEWARE
-// This makes sure 'isAuthed' and 'user' flow down into your side-nav partial cleanly!
 app.use((req, res, next) => {
   res.locals.isAuthed = req.isAuthenticated();
   res.locals.user = req.user || null;
@@ -56,23 +54,29 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/aptati')
 app.get('/', (req, res) => {
   res.render('index', { title: 'Word challenges', currentPage: 'APTATI' });
 });
-
-// YOUR ORIGINAL WORKING GAME ROUTE IMPORTS (Perfectly Restored)
+// app.get("/games/category-catch", (req, res) => {
+//   res.render('games/category-catch', { title: 'Category Catch', currentPage: 'Category Catch' });
+// });
+// WORKING GAME ROUTE IMPORTS
 import letterLinkRoute from './routes/games/letter-link.route.js';
 import spellBugRoute from './routes/games/spell-bug.route.js';
-import wordScrambleRoute from './routes/games/word-scramble.route.js';
+import wordStackRoute from './routes/games/word-stack.route.js';
 import clusterQuestRoute from './routes/games/cluster-quest.route.js';
+import categoryCatchRoute from './routes/games/category-catch.route.js';
+import gameRoutes from './routes/game.routes.js';
 
 // NEW ROUTE IMPORTS (Auth system & premium dashboards)
 import contactRouter from './routes/contact.route.js';
 import authRouter from './routes/authRoutes.js'; 
 import dashboardRouter from './routes/dashboard.route.js';
 
-// MOUNT ALL ROUTERS
+// MOUNT ALL ROUTERS MATCHING ORIGINAL FLAT MAP SCHEMA
 app.use(letterLinkRoute);
 app.use(spellBugRoute);
-app.use(wordScrambleRoute);
+app.use(wordStackRoute);
 app.use(clusterQuestRoute);
+app.use(categoryCatchRoute);
+app.use('/api/games', gameRoutes);
 
 app.use(contactRouter);
 app.use(authRouter);

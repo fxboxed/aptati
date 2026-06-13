@@ -1,0 +1,28 @@
+extends ../layouts/main-layout
+block content
+        .game-block.mg-top-2.mg-btm-2
+            .cc-categories
+                h3 Find These Categories
+                .category-1.pad-05
+                    h4 4 x 
+                        span(id=ccCategory_1) [cat 1]
+                    p 1. 
+                        span(id=ccCategory_1_word_1) [cat 1 word 1]
+                    p 2. 
+                        span(id=ccCategory_1_word_2) [cat 1 word 2]
+                    p 3.  
+                        span(id=ccCategory_1_word_3) [cat 1 word 3]
+                    p 4. 
+                        span(id=ccCategory_1_word_4) [cat 1 word 4]
+                    //- inject 4 words that belong to category 1 here. each word will be in its own span generated with js and added to this section. the words will be hidden by default and shown when the category is complete. 
+                .category-2.pad-05
+                    h4 1 x 
+                        span(id=ccCategory_2) [cat 2]
+                    p 1. 
+                        span(id=ccCategory_2_word_1) [cat 2 word 1]
+                    //- inject the word that belongs to category 2 here. it will be in its
+        .game-block.mg-top-05.mg-btm-1
+            .cc-tiles
+                for i in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24, 25]
+                    .cc-tile(id=`cc-tile-${i}`)
+        

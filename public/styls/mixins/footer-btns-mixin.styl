@@ -21,27 +21,38 @@
     display grid
     grid-template-columns 1fr
     grid-template-rows 1fr
-    justify-content:  center
+    justify-content center
     align-items center
-    margin-bottom - 1rem
+    margin-bottom -1rem
+
 .game-message
     color alpha + 80%
+    border 1px solid alpha - 40%
     font-size 1rem
     text-align center
     grid-column 1 / 2
     grid-row 1 / 2
-    transform scale(1, 0)
+    transform scale(1, 0) // Hidden by default
     transition all .3s ease
-    transform-origin top
+    transform-origin center
+    visibility hidden
+
+    &.active-state
+        transform scale(1, 1) // Visible when active
+        visibility visible
 
 .footer-btns
     grid-column 1 / 2
     grid-row 1 / 2
-    transform scale(1, 1)
+    display flex
+    justify-content center
+    align-items center
+    gap 0.5rem
+    transform scale(1, 1) // Visible by default
     transition all .3s ease
-    transform-origin top
-.game-message.active-message
-    transform scale(1, 1)
-.footer-btns.active-message
-    transform scale(1, 0)
+    transform-origin center
+    visibility visible
 
+    &.hidden-state
+        transform scale(1, 0) // Collapses away when a message triggers
+        visibility hidden

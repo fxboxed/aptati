@@ -1,5 +1,6 @@
 doctype html
 html(lang="en")
+  //- views/layouts/main-layout.pug
   head
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
@@ -39,9 +40,7 @@ html(lang="en")
       include ../mixins/footer-btn-mixin.pug
       include ../mixins/game-messages-mixin.pug
   body
-    //- img.space-bg(src="/images/og/site-og.webp", alt="")
-        include ../partials/side-nav.pug
-    
+
 
     .body-liner-grid
       include ../partials/contact-modal.pug
@@ -49,8 +48,6 @@ html(lang="en")
         include ../partials/side-nav.pug 
       .body-liner.main-body-liner
         .header-nav-controls
-          //- if currentPage !== 'APTATI'
-          //- a.logo(href="/") APTATI
           a.logo-circles(href="/")
             .circle.circle-1
             .circle.circle-2
@@ -67,19 +64,16 @@ html(lang="en")
                 h1.game-name.txt-center 
                   span Aptati Word Games hub
               else
-                //- h1.txt-center.game-name.page-title= title 
+ 
                 h1.txt-center.game-name.page-title
                   span.left the aptati
                   span.span-enter= title
                   span.span-right Game
-          //- hr.plain-hr.mg-btm-05
           .game-block
             if currentPage !== 'APTATI'               
-              +headerBtn(restart, newGame, answers)
+              +headerBtn(restart, answersBtn, answersDropdown)
           block content
           if currentPage !== 'APTATI'         
-            //- .game-block 
-            //-   +gameMsg(gameMessage)
             .game-block 
               if currentPage !== 'APTATI' 
                 +footerBtn(shuffle, clear, submit)

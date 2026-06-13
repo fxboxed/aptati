@@ -1,4 +1,8 @@
 extends ../layouts/main-layout
+//-  Pug view 
+//- for word-stack game, which is similar to wordle. The player has 6 attempts to guess a 5 letter word. After each guess, the letters will be have a class added to indicate if they are in the correct position (ws-correct), in the word but in the wrong position (ws-present), or not in the word at all (ws-incorrect). The player can use the on-screen keyboard or their physical keyboard to make guesses. The game will also have a restart button and an answers button that reveals the correct word and optimal solutions when clicked. The game will be responsive and visually appealing, with smooth animations and transitions.
+//- the answer will be provide in a span
+//- 
 block content
     .game-block            
         .word-grid#ws-word-grid
@@ -24,3 +28,4 @@ block content
                 .key(data-key="N") N
                 .key(data-key="M") M
                 .key.backspace(data-action="backspace") ⌫
+    script(src="/js/games/word-stack/index.js" defer)

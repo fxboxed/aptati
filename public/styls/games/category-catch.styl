@@ -1,0 +1,71 @@
+.cc-tiles 
+    display: grid
+    flex-wrap: wrap
+    justify-content: center
+    grid-template-columns: repeat(5, 15%)
+    gap: 1%
+    width 90%
+    margin 0 auto
+    //height fit-content
+    .cc-tile 
+        width: 100% //16.6666%
+        aspect-ratio 1 / 1
+        //height: 100% // 3rem //16.6666%
+        background-color: rgba(alpha .2)
+
+        display: flex
+        align-items: center
+        justify-content: center
+        font-size: 1.5rem
+        cursor: pointer
+        border-radius: .5rem
+        transition: background-color 0.3s ease
+.cc-word-constructor // .cc-words-found
+    display block
+    width: 90%
+    padding: .5rem
+    font-size: 1rem
+    text-align center
+    border: 1px solid #ccc
+    border-radius: 4px
+    margin 0 auto
+    margin-bottom: .5rem
+    resize: none
+// pseudo placeholder for .cc-words-found
+.cc-categories
+    display grid
+    grid-template-columns: repeat(2, 1fr)
+    justify-content center
+    gap .6rem
+
+    h3
+        grid-column 1 / -1
+        grid-row 1
+        text-align center
+        color alpha + 40%
+        //margin-bottom 1rem
+    .category-1, .category-2
+        min-height 5rem
+        background rgba(alpha .1)
+        display flex
+        flex-direction column
+        align-items start
+        justify-content start
+        border-radius .5rem
+        gap .4rem
+        h4
+            font-size 1rem
+            margin 0
+            text-align center
+            color alpha + 40%
+            align-self center
+            span
+                font-size 1rem
+                font-weight bold
+        p   
+            color alpha + 40%
+            font-size .9rem
+
+// js added classes
+.cc-current-word
+    color gamma + 80%

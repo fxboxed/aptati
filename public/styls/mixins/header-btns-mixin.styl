@@ -1,10 +1,10 @@
 
-.answer-reveal
-    font-size 1rem
-    color alpha + 60%
-    text-align center
-    margin-bottom 0 //.6rem
-    border 1px solid alpha - 40%
+// .answer-reveal
+//     font-size 1rem
+//     color alpha + 60%
+//     text-align center
+//     margin-bottom 0 //.6rem
+//     border 1px solid alpha - 40%
 .dropdown
   position absolute
   top 0rem
@@ -15,7 +15,7 @@
   transform scale(1, 0)
   transition all .3s ease
   transform-origin top  
-  z-index 10
+  z-index 1000
   &::after
     content 'X'
     position absolute
@@ -33,7 +33,8 @@
     height 100%
     background-color: rgba(0,0,0,0.3) //rgba(255, 255, 255, 0.3); /* Transparency is required */
     backdrop-filter: blur(8px);
-.header-btn-3:focus + .dropdown
+    z-index -1
+.header-btn-2:focus + .dropdown
     //background: alpha - 50%
     //width 100%
     height 37rem

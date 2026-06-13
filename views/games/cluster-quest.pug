@@ -5,21 +5,20 @@ block content
             //- shows the below section when focused
             //- dropdown mechanism is done with css only, no js involved. the section is hidden by default and shown when the button is in focus. 
             button.toggle-btn.cq-toggle#cq-toggle VIEW THIS GAME'S CATEGORIES
-            section#cq-categories-list.pad-1 
-                span span 1 
-                span span 2
-                span span 3
-                span span 4
-                span span 5
-                span span 6
-            //- the 4 categories will be loaded with the game and displayed when the above button is in focus. there is no js involve in this dropdown mechanism.each category will be in its own span generated with js and added to the above section
+            section#cq-categories-list.pad-1       
+            //- the 4 categories will be loaded with the game and displayed when the above button is in focus. there is no js involve in this dropdown mechanism.each category will be in its own span generated with js and added to this section
     .game-block.pad-1 
+        .words-used-wrap.mg-btm-1
+            p.mg-btm-05 Words Used This Attempt
+            .words-this-attempt(id=WordsThisAttempt)
+
         p.mg-btm-05 Categories Found <span id="cq-categories-found-count">0</span>/4
         #cq-found-categories.cq-found-categories
         //- categories found will appear here  
-    .game-block.mg-top-1.mg-btm-1
+    .game-block.mg-top-05.mg-btm-1
+        p.mg-btm-05 Words : Choose 4x4 groups
         .words-grid#cq-words-grid.pad-1
-            h3 Word Groups
+
         //- the grid of words will be generated here with js. each word will be a button that can be clicked to select/deselect. 
     //- Aditional features to add:
     //- from the start of the game each category will be asigned a class. I will use this to colour the category and the words that belong to it. when a category is complete, the words that belong to it will be asigned the same class as their category. While some versions of the game remove words from the grid when the categories are complete, I will keep them in the grid and assign the same class as the parent category to them

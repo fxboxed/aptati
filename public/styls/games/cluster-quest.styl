@@ -129,7 +129,8 @@
 //     margin auto
 //override bg added by js 
 #cq-found-categories
-    background transparent
+    background rgba(theta, 0.1)
+    min-height 3rem
     button
         flex: 1
         //padding: 0.7rem
@@ -150,15 +151,31 @@
             transform: scale(0.95)
 
 
-#cq-found-categories.cq-found-categories
-    padding 1rem
-    background alpha - 70%
-    min-height 6rem
-    width 90%
+// #cq-found-categories.cq-found-categories
+//     padding 1rem
+//     background rgba(theta, 0.1)
+//     min-height 4rem
+//     width 90%
+//     margin 0 auto
+//     overflow hidden
+.words-this-attempt
+    background rgba(theta, 0.1)
+    // 1px solid #fff
+    text-transform: uppercase
+    //width 90% // fit-content
+    padding .4rem 1.5rem
+    position relative
+    //top - 1rem //2.5rem
+    //left 50%
+    //transform translateX(-50%)
+    font-size: 1rem
+    color alpha + 60% //beta
+    font-weight normal
+    text-align center
     margin 0 auto
-
+    min-height 3rem
 p.cq-categories-found
-    background transparent
+    //background transparent
     //border light-border
     text-transform: uppercase
     width 90% // fit-content
@@ -171,12 +188,16 @@ p.cq-categories-found
     color alpha + 60% //beta
     font-weight normal
     text-align center
-    margin auto
+    margin 0 auto
 #cq-toggle.cq-toggle
     background transparent
     border 1px solid alpha - 50%
-.words-grid
-    min-height 8rem
+.words-grid#cq-words-grid
+    min-height 3rem
+    width 90%
+    margin 0 auto
+    background rgba(theta, 0.1)
+    //border 1px solid red //rgba(alpha, 0.5)
 p.message,#cq-message
     position absolute
     top - 1rem

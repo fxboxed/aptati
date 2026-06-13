@@ -1,5 +1,5 @@
 //- 
-    mixin consumed by main-layout.pug to render footer buttons in the game pages.
+    footer-button-mixin consumed by main-layout.pug to render footer buttons in the game pages.
     The mixin takes three parameters: shuffle, clear, and submit, which are the IDs for the respective buttons. This allows each game page to specify its own button IDs for event handling.
     It assigns an ID to each game's respective buttons so that the buttons can be targeted for event listeners in the client-side JavaScript for each game.
 mixin footerBtn(shuffle, clear, submit)
@@ -7,9 +7,10 @@ mixin footerBtn(shuffle, clear, submit)
         .game-footer 
             p.game-message(id=gameMessage) GAME MESSAGE
             .footer-btns(id=footerBtns)
-                button.footer-btn.footer-btn-1(id=shuffle) SHUFFLE
-                if currentPage != "Word Groups"  
+                if title != "Category Catch"
+                    button.footer-btn.footer-btn-1(id=shuffle) SHUFFLE
+                if currentPage != "Word Stack"  
                     button.footer-btn.footer-btn-2(id=clear) CLEAR
                 button.footer-btn.footer-btn-3(id=submit) SUBMIT
             //- game-message and footer buttons will be toggled.
-            //- if game message is shown, footer buttons will be hidden, and vice versa. This is to ensure that the player can only see one of them at a time, and the game message will not be obstructed by the buttons. You will add class and remove depending wether or not there is a game message. The message will show for 3 seconds before then the classes will be removed to show the buttons again. This will be handled in the client-side JavaScript for each game. The game message will and buttons be placed in the same container with 1 column and 1 row. they will be toggled using  transform scale. do not not interfere with this process. Question: will this be local or on the route?
+            //- if game message is shown, footer buttons will be hidden, and vice versa. This is to ensure that the player can only see one of them at a time, and the game message will not be obstructed by the buttons. You will add class and remove depending wether or not there is a game message. The message will show for 3 seconds after then the classes will be removed to show the buttons again. This will be handled in the client-side JavaScript for each game. The game message will and buttons be placed in the same container with 1 column and 1 row. they will be toggled using  transform scale. do not not interfere with this process. Question: will this be local or on the route?

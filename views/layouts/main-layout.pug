@@ -34,7 +34,7 @@ html(lang="en")
     meta(name="twitter:image" content=ogImage || `${baseUrl}/images/og/default-og.webp?v=${defaultImageVersion}`)
 
     link(rel="stylesheet" href="/css/main.css")
-    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css")
+    //link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css")
     block head
       include ../mixins/header-btn-mixin.pug
       include ../mixins/footer-btn-mixin.pug
@@ -76,7 +76,7 @@ html(lang="en")
           if currentPage !== 'APTATI'         
             .game-block 
               if currentPage !== 'APTATI' 
-                +footerBtn(shuffle, clear, submit)
+                +footerBtn(submit)
 
         script(src="/js/contact-modal.js" defer)
         script(src="/js/toggle-nav.js" defer)

@@ -4,6 +4,7 @@
  * =========================================================================
  */
 import express from 'express';
+//nodemailer may have npm breaking changes in major versions, ensure compatibility with your Node.js environment
 import nodemailer from 'nodemailer';
 
 const router = express.Router();

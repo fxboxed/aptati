@@ -1,16 +1,18 @@
 /**
+ *  routes/games/word-stack.route.js
  * =========================================================================
  * WORD STACK INTEGRATED GAME ROUTE & API (routes/games/word-stack.route.js)
  * =========================================================================
  * Dynamically streams 5-letter puzzles across all active lexicon categories
  * with session-based memory to prevent immediate repeats.
  */
+console.log('Word Stack route loaded.');
 import express from 'express';
 import redirectIfPro from '../../middleware/redirectIfPro.js';
 import WordStack from '../../models/WordStack.js';
 
 const router = express.Router();
-
+console.log('Word Stack route loaded.');
 // 1. The Core HTML Page Render Router
 router.get('/games/word-stack', redirectIfPro, async (req, res) => {
   try {
@@ -21,7 +23,7 @@ router.get('/games/word-stack', redirectIfPro, async (req, res) => {
       restart: 'ws-restart-btn', 
       answersBtn: 'ws-open-answers-dropdown-btn', 
       answersDropdown: 'ws-answers-dropdown', 
-      shuffle: 'ws-shuffle-btn', 
+      //shuffle: 'ws-shuffle-btn', 
       clear: 'ws-clear-btn', 
       submit: 'ws-submit-btn', 
       currentPage: 'Word Stack', 
@@ -100,5 +102,5 @@ router.get('/api/games/word-stack/random', async (req, res) => {
   }
 });
 
-// THIS LINE PREVENTS THE CRASH
+//THIS LINE PREVENTS THE CRASH
 export default router;

@@ -1,28 +1,33 @@
-// alpha = #2d7f9d
-// beta = #FACE68
-// gamma = #007f00
-// delta = #dc7684
-// epsilon = #896C6C 
+// =========================================================================
+// COLOR PALETTE DEFINITIONS
+// =========================================================================
+alpha = #2d7f9d
+beta = #FACE68
+gamma = #007f00
+delta = #dc7684
+epsilon = #896C6C
+theta = #d4ac0d // Added missing fallback variable for ws-present
 
+// =========================================================================
+// WORD GRID STYLES
+// =========================================================================
 .word-grid
     display: flex
     flex-direction: column
-    gap:6px
+    gap: 6px
     width: 100%
-    max-width 70%
+    max-width: 70%
     height: fit-content
-    //padding: 0.4rem
-    margin .6rem auto
-    //border 1px solid #fff
+    margin: 0.6rem auto
 
     .tile-row
-        display flex
-        gap 6px
-        width 100%
-        position relative
+        display: flex
+        gap: 6px
+        width: 100%
+        position: relative
 
     .tile
-        height: 2.8rem //auto
+        height: 2.8rem
         aspect-ratio: 1 / 1
         width: 2.4rem !important
         display: flex
@@ -36,19 +41,19 @@
         border: 1px solid rgba(alpha, 0.4)
         border-radius: 4px
         transition: all 0.3s ease
-        color: alpha + 50%
-            
+        background-color: #1a1a1a // Solid dark background default
+        color: lighten(alpha, 60%) // Clean high-contrast neutral text
 
+// =========================================================================
+// KEYBOARD STYLES
+// =========================================================================
 .keyboard
     display: flex
     flex-direction: column
     gap: 0.4rem
-    padding: .1rem 0.4rem
+    padding: 0.1rem 0.4rem
     width: 100%
     box-sizing: border-box
-
-
-
 
     .key-row
         display: flex
@@ -58,8 +63,8 @@
         justify-content: center
 
         .key
-            //background: rgba(beta, .2)
-            border 1px solid alpha - 40%
+            background-color:  #2a2a2a // Solid key background
+            border: 1px solid darken(alpha, 40%)
             border-radius: 4px
             flex: 1
             height: 36px
@@ -71,26 +76,29 @@
             text-transform: uppercase
             cursor: pointer
             user-select: none
-            color: beta
+            color: #ffffff // Crisp white key labels
             transition: all 0.2s ease            
+            
             &.enter
-                background: darken(gamma, 60%)
+                background-color: darken(gamma, 40%)
                 flex: 1.5
                 text-transform: none
                 font-size: 1.3rem
+                color: #ffffff
             
             &.backspace
-                background: darken(delta, 60%)
+                background-color: darken(delta, 40%)
                 flex: 1.2
                 text-transform: none
                 font-size: 1.1rem
+                color: #ffffff
     
     .enter-backspace-row
         gap: 0.1rem
         
         .key
             min-height: 44px
-            height 40px
+            height: 40px
             font-size: 1rem
             
             &:not(.enter):not(.backspace)
@@ -101,21 +109,28 @@
                 flex: 1.1
                 font-size: 1.2rem
 
-// Tempoary classes to be added to the games by JS for styling purposes. Do not style any elements in the JS, only add classes to elements. Do not assign any styles, inline or otherwise.
+// =========================================================================
+// DYNAMIC GAME STATE CLASSES (APPLIED VIA JS)
+// =========================================================================
 .ws-correct
-    background: gamma - 70%
-    color: alpha + 60%
+    background-color: gamma + 20% !important
+    border-color: gamma !important
+    color: #ffffff !important
+
 .ws-present
-    background: theta - 50%
-    color: alpha + 60%
+    background-color: theta - 40% !important
+    border-color: theta !important
+    color: #ffffff !important
+
 .ws-incorrect
-    background: delta - 60%
-    color: alpha + 60%
+    background-color: delta !important // #3a3a3c !important
+    border-color: delta !important
+    color: #fff !important
+
 span.ws-answer
     font-size: 1.2rem
-    color: beta + 20%
-    //margin 
-    width 100%
-    text-align center
-    border 1px solid alpha - 40%
+    color: lighten(beta, 20%)
+    width: 100%
+    text-align: center
+    border: 1px solid darken(alpha, 40%)
     display: inline-block

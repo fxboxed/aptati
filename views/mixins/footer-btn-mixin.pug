@@ -5,8 +5,9 @@
 mixin footerBtn(shuffle, clear, submit)
     .game-block.footer-btns-block
         .game-footer 
-            p.game-message(id=gameMessage) GAME MESSAGE
-            .footer-btns(id=footerBtns)
+            .game-message-wrap
+                //p.game-message(id=gameMessage) GAME MESSAGE
+            //- .footer-btns(id=footerBtns)
                 button.footer-btn.footer-btn-3(id=submit) SUBMIT
             //- game-message and footer buttons will be toggled.
             //- if game message is shown, footer buttons will be hidden, and vice versa. This is to ensure that the player can only see one of them at a time, and the game message will not be obstructed by the buttons. You will add class and remove depending wether or not there is a game message. The message will show for 3 seconds after then the classes will be removed to show the buttons again. This will be handled in the client-side JavaScript for each game. The game message will and buttons be placed in the same container with 1 column and 1 row. they will be toggled using  transform scale. do not not interfere with this process. Question: will this be local or on the route?
@@ -18,6 +19,6 @@ mixin footerBtn(submit)
             p.game-message(id=gameMessage) GAME MESSAGE
             .footer-btns(id=footerBtns)
 
-                button.footer-btn.footer-btn-3(id=submit) SUBMIT
+                //- button.footer-btn.footer-btn-3(id=submit) SUBMIT
             //- game-message and footer buttons will be toggled.
             //- if game message is shown, footer buttons will be hidden, and vice versa. This is to ensure that the player can only see one of them at a time, and the game message will not be obstructed by the buttons. You will add class and remove depending wether or not there is a game message. The message will show for 3 seconds after then the classes will be removed to show the buttons again. This will be handled in the client-side JavaScript for each game. The game message will and buttons be placed in the same container with 1 column and 1 row. they will be toggled using  transform scale. do not not interfere with this process. Question: will this be local or on the route?

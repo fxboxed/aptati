@@ -11,20 +11,21 @@
     //border-right 4px solid alpha + 10%
     flex-grow 1
     white-space nowrap
-    //border 1px solid alpha - 40%
-// .footer-btn-3:focus + .dropdown
-//     background: alpha - 50%
-//     width 100%
-    //height 36rem
-    //transform scale(1, 1)
+
 .game-footer
+    //border 1px solid blue
     display grid
     grid-template-columns 1fr
     grid-template-rows 1fr
+    gap 1rem
     justify-content center
     align-items center
-    margin-bottom -1rem
-
+    min-height 4rem
+    //margin-bottom -1rem
+    .game-message-wrap
+        //border 1px solid red
+        height 6rem
+        width 5rem
 .game-message
     color alpha + 80%
     border 1px solid alpha - 40%
@@ -35,6 +36,7 @@
     transform scale(1, 0) // Hidden by default
     transition all .3s ease
     transform-origin center
+    height 3rem
     visibility hidden
 
     &.active-state

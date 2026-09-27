@@ -31,16 +31,20 @@ router.post('/contact', async (req, res) => {
     }
 
     try {
-        // 4. Create the Mail Carrier configuration engine
-        const transporter = nodemailer.createTransport({
-            host: process.env.SMTP_HOST || 'smtp.gmail.com',
-            port: parseInt(process.env.SMTP_PORT || '465'),
-            secure: true, // true for port 465, false for other ports
-            auth: {
-                user: process.env.SMTP_USER,
-                pass: process.env.SMTP_PASS,
-            },
-        });
+// 4. Create the Mail Carrier configuration engine
+const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST || 'smtp.gmail.com',
+    port: parseInt(process.env.SMTP_PORT || '587', 10),
+    secure: process.env.SMTP_SECURE === 'true', // false for port 587
+    family: 4, // Ensures IPv4 priority across all environments
+    auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+    },
+    tls: {
+        rejectUnauthorized: false
+    }
+});
 
         // 5. Build the aesthetic layout layout for your received inbox message
         const mailOptions = {

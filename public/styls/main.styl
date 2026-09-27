@@ -12,3 +12,68 @@ theta = #c44601
 @require './common'
 
 
+.hmrc-wrap
+    font-family: Arial, sans-serif
+    font-size: 1rem
+    line-height: 1.5
+    max-width: 210mm
+    margin: 0 auto
+    width 100%
+    background #fff // #f4f8fb
+    padding 0rem 3rem
+    min-height 297mm
+    background linear-gradient(to bottom, #fff 297mm, #FFF - 20% 297mm)
+    p 
+        color #0b0c0c
+        margin-bottom 10px
+        font-size .9rem
+    h4
+        margin-bottom 6px
+        text-transform capitalize
+        color #007677
+        font-size 1rem
+.hmrc-header
+    display flex
+    justify-content space-between
+    align-items center
+    margin-top 2rem
+    //border 1px solid #ccc
+    max-height 140px
+    overflow hidden
+    img
+        max-height 200px
+        //border 1px solid #ccc
+.tax-deductables
+    //border 1px solid purple
+    //padding 10px
+    margin-bottom 20px
+    gap 5%
+    display grid
+    grid-template-columns 55% 40%
+    .info-box
+        background #f4f8fb
+        padding 10px
+        border 1px solid #ccc
+        border-radius 4px
+        //width 50%
+        margin-top 20px
+        color #007677
+    .left
+        display flex
+        flex-direction column
+        //border 1px solid green
+        gap 0
+        ul 
+            padding 0
+            display flex
+            flex-direction column
+            //border 1px solid red
+            margin-left 10px
+
+    p.starred
+        color #007677  - 20%
+        font-size 0.8rem
+        margin-top 0px
+        width 100%
+        grid-column 1 / -1
+        font-style italic

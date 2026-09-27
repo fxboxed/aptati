@@ -1,6 +1,9 @@
+
+
 // Load hidden variables from your environment setup file (.env)
 import 'dotenv/config';
-
+//import nodemailer to handle messaging via contact forms
+import nodemailer from 'nodemailer';  
 // Load Express, the engine that powers your web server
 import express from 'express';
 
@@ -18,6 +21,8 @@ import connectDB from './config/db.js';
 
 // Load the Google Sheet automatic syncing task script
 import { syncGoogleSheet } from './scripts/syncSheet.js';
+
+
 
 // Create your main Express web application instance
 const app = express();
@@ -97,7 +102,10 @@ app.use(dashboardRouter);
 app.get('/', (req, res) => {
   res.render('index', { title: 'Word challenges', currentPage: 'APTATI' });
 });
-
+// temp playground
+app.get('/play', (req, res) => {
+  res.render('play', { title: 'Play area'});
+});
 // STARTUP SEQUENCE: Connect Database -> Run Google Sheet Sync -> Start Web Server
 const startServer = async () => {
   try {

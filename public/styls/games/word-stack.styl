@@ -1,12 +1,12 @@
 // =========================================================================
 // COLOR PALETTE DEFINITIONS
 // =========================================================================
-alpha = #2d7f9d
-beta = #FACE68
-gamma = #007f00
-delta = #dc7684
-epsilon = #896C6C
-theta = #d4ac0d // Added missing fallback variable for ws-present
+alpha = #36454F  //charcoal // #000080 // #2d7f9d
+beta = #c19a6b //camel // #FACE68
+gamma = #FFFDD0 // cream #007f00
+delta = #D6B588 // tan#dc7684
+epsilon = #00d062 //#FFFFF0 //ivory
+theta = #660033 //burguundy #d4ac0d // Added missing fallback variable for ws-present
 
 // =========================================================================
 // WORD GRID STYLES
@@ -16,7 +16,7 @@ theta = #d4ac0d // Added missing fallback variable for ws-present
     flex-direction: column
     gap: 6px
     width: 100%
-    max-width: 70%
+    max-width: 80%
     height: fit-content
     margin: 0.6rem auto
 
@@ -38,10 +38,10 @@ theta = #d4ac0d // Added missing fallback variable for ws-present
         font-size: 1.8rem
         font-weight: bold
         text-transform: uppercase
-        border: 1px solid rgba(alpha, 0.4)
+        border: 1px solid beta //rgba(alpha, 0.4)
         border-radius: 4px
         transition: all 0.3s ease
-        background-color: #1a1a1a // Solid dark background default
+        background-color:  alpha //epsilon // red// #1a1a1a // Solid dark background default
         color: lighten(alpha, 60%) // Clean high-contrast neutral text
 
 // =========================================================================
@@ -53,6 +53,8 @@ theta = #d4ac0d // Added missing fallback variable for ws-present
     gap: 0.4rem
     padding: 0.1rem 0.4rem
     width: 100%
+    max-width: 90%
+    margin: 0 auto
     box-sizing: border-box
 
     .key-row
@@ -63,7 +65,7 @@ theta = #d4ac0d // Added missing fallback variable for ws-present
         justify-content: center
 
         .key
-            background-color:  #2a2a2a // Solid key background
+            background-color:  alpha // #2a2a2a // Solid key background
             border: 1px solid darken(alpha, 40%)
             border-radius: 4px
             flex: 1
@@ -76,18 +78,18 @@ theta = #d4ac0d // Added missing fallback variable for ws-present
             text-transform: uppercase
             cursor: pointer
             user-select: none
-            color: #ffffff // Crisp white key labels
+            color: alpha + 90% // #ffffff // Crisp white key labels
             transition: all 0.2s ease            
             
             &.enter
-                background-color: darken(gamma, 40%)
+                background-color: beta - 40% //darken(gamma, 40%)
                 flex: 1.5
                 text-transform: none
-                font-size: 1.3rem
+                font-size: 1.4rem
                 color: #ffffff
             
             &.backspace
-                background-color: darken(delta, 40%)
+                background-color: beta - 40%  //darken(delta, 40%)
                 flex: 1.2
                 text-transform: none
                 font-size: 1.1rem
@@ -113,17 +115,17 @@ theta = #d4ac0d // Added missing fallback variable for ws-present
 // DYNAMIC GAME STATE CLASSES (APPLIED VIA JS)
 // =========================================================================
 .ws-correct
-    background-color: gamma + 20% !important
+    background-color: epsilon - 50% !important //gamma + 20% !important
     border-color: gamma !important
     color: #ffffff !important
 
 .ws-present
-    background-color: theta - 40% !important
+    background-color: delta !important //theta - 40% !important
     border-color: theta !important
     color: #ffffff !important
 
 .ws-incorrect
-    background-color: delta !important // #3a3a3c !important
+    background-color: theta !important // #3a3a3c !important
     border-color: delta !important
     color: #fff !important
 

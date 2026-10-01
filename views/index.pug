@@ -1,22 +1,23 @@
 extends ./layouts/main-layout
+
 block content
-
+    - var currentPage = 'APTATI'
     .game-block 
-    .responsive-grid
-        a.responsive-grid-item.link-1(href="/games/word-stack")
-            .letters.letters-1
-                h4.index-letters <span>W</span><span>S</span>
-                //- img(src="/images/1x1/word-stack-1x1.webp", alt="Preview image for Word Stack")
-                    .custom-hr 
+        .responsive-grid
+            a.responsive-grid-item.link-1(href="/games/word-stack")
+                .letters.letters-1
+                    h4.index-letters <span>W</span><span>S</span>
+                    //- img(src="/images/1x1/word-stack-1x1.webp", alt="Preview image for Word Stack")
+                        .custom-hr 
 
-            .txt.txt-left
-                h1 APTATI WORD STACK CHALLENGE
-                .custom-hr 
-                    span.span-1 
-                    span.span-2
-                    span.span-3
-                p.card-para A five-letter word game that tests your vocabulary and word-guessing skills.
-                span.card-link Play now
+                .txt.txt-left
+                    h1 APTATI WORD STACK CHALLENGE
+                    //- .custom-hr 
+                    //-     span.span-1 
+                    //-     span.span-2
+                    //-     span.span-3
+                    p.card-para A five-letter word game that tests your vocabulary and word-guessing skills.
+                    span.card-link Play now
 
     .game-block.mg-btm-2 
         .custom-hr 
@@ -27,9 +28,7 @@ block content
         ul.site-info-ul.clip-front-to-backs.site-info-ul-2
             //- li.alpha A variety of word games to challenge your vocabulary and word-guessing skills.
             li.beta Unlimited games. Start a new game as often as you like.
-            li.gamma Unlimited attempts. Restart the same game as often as you like.
             li.delta Sleek and intuitive design for a seamless gaming experience.
             li.epsilon No membership required., regardless of how many games you play.
-    .game-block.mg-btm-1
 
 

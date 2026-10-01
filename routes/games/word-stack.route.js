@@ -11,7 +11,7 @@ import express from 'express';
 import redirectIfPro from '../../middleware/redirectIfPro.js';
 import WordStack from '../../models/WordStack.js';
 
-const router = express.Router();
+const router = express.Router();'THE APTATI WORD STACK GAME'
 console.log('Word Stack route loaded.');
 // 1. The Core HTML Page Render Router
 router.get('/games/word-stack', redirectIfPro, async (req, res) => {
@@ -19,7 +19,7 @@ router.get('/games/word-stack', redirectIfPro, async (req, res) => {
     const derivedBaseUrl = `${req.protocol}://${req.get('host')}`;
 
     res.render('games/word-stack', {
-      title: 'Word Stack',
+      title: 'WORD_STACK',
       restart: 'ws-restart-btn', 
       answersBtn: 'ws-open-answers-dropdown-btn', 
       answersDropdown: 'ws-answers-dropdown', 

@@ -30,12 +30,12 @@
   // 2. DOM ELEMENT REGISTRY
   // -------------------------------------------------------------------------
   const DOM = {
-    restartBtn: document.getElementById('ws-restart-btn'),
+    //restartBtn: document.getElementById('ws-restart-btn'),
     answersBtn: document.getElementById('ws-open-answers-dropdown-btn'),
     answersDropdown: document.getElementById('ws-answers-dropdown'),
-    shuffleBtn: document.getElementById('ws-shuffle-btn'),
-    clearBtn: document.getElementById('ws-clear-btn'),
-    submitBtn: document.getElementById('ws-submit-btn'),
+    //shuffleBtn: document.getElementById('ws-shuffle-btn'),
+    //clearBtn: document.getElementById('ws-clear-btn'),
+    //submitBtn: document.getElementById('ws-submit-btn'),
     gridContainer: document.getElementById('ws-word-grid'),
     keyboardContainer: document.getElementById('ws-keyboard'),
     messageDisplay: document.getElementById('ws-message-display')
@@ -84,10 +84,10 @@
     DOM.messageDisplay.textContent = text;
     DOM.messageDisplay.classList.add('active-state');
     
-    const footerBtnsContainer = DOM.shuffleBtn?.parentElement;
-    if (footerBtnsContainer) {
-      footerBtnsContainer.classList.add('hidden-state');
-    }
+    //const footerBtnsContainer = DOM.shuffleBtn?.parentElement;
+    //if (footerBtnsContainer) {
+    //  footerBtnsContainer.classList.add('hidden-state');
+    //}
 
     messageTimeout = setTimeout(() => {
       DOM.messageDisplay.classList.remove('active-state');
@@ -449,23 +449,23 @@
       else if (keyValue) handleLetterInput(keyValue.toUpperCase());
     });
 
-    DOM.submitBtn?.addEventListener('click', submitGuess);
-    DOM.clearBtn?.addEventListener('click', () => {
-      while (gameState.currentTile > 0) {
-        handleBackspace();
-      }
-    });
+    // DOM.submitBtn?.addEventListener('click', submitGuess);
+    // DOM.clearBtn?.addEventListener('click', () => {
+    //   while (gameState.currentTile > 0) {
+    //     handleBackspace();
+    //   }
+    // });
     
     // Force new game on explicit user action
-    DOM.shuffleBtn?.addEventListener('click', async () => {
-      await initializeGameUniverse(true);
-      showGameMessage('SHUFFLED NEW TARGET WORD');
-    });
+    // DOM.shuffleBtn?.addEventListener('click', async () => {
+    //   await initializeGameUniverse(true);
+    //   showGameMessage('SHUFFLED NEW TARGET WORD');
+    // });
 
-    DOM.restartBtn?.addEventListener('click', async () => {
-      await initializeGameUniverse(true); 
-      showGameMessage('GAME RESTARTED');
-    });
+    // DOM.restartBtn?.addEventListener('click', async () => {
+    //   await initializeGameUniverse(true); 
+    //   showGameMessage('GAME RESTARTED');
+    // });
 
     DOM.answersBtn?.addEventListener('blur', () => {
       setTimeout(async () => {

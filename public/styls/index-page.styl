@@ -1,29 +1,29 @@
 
-.index-header-wrap
-    position relative
-    //display flex
-    flex-direction column
-    align-items center
-    justify-content center
-    //gap 2rem
-    // grid-column 1/-1
-    // grid-row 1/2
-    //max-width 360px
-    width 100%
-    position relative
-    overflow hidden
-    z-index 1
-    margin 0rem auto
-    width 100%
-    &::after 
-        content ''
-        position absolute
-        left 0
-        top 0
-        right 0
-        bottom 0
-        //background-color: rgba(0,0,0,0.3) //rgba(255, 255, 255, 0.3); /* Transparency is required */
-        backdrop-filter: blur(2px);
+// .index-header-wrap
+//     position relative
+//     //display flex
+//     flex-direction column
+//     align-items center
+//     justify-content center
+//     //gap 2rem
+//     // grid-column 1/-1
+//     // grid-row 1/2
+//     //max-width 360px
+//     width 100%
+//     position relative
+//     overflow hidden
+//     z-index 1
+//     margin 0rem auto
+//     width 100%
+//     &::after 
+//         content ''
+//         position absolute
+//         left 0
+//         top 0
+//         right 0
+//         bottom 0
+//         //background-color: rgba(0,0,0,0.3) //rgba(255, 255, 255, 0.3); /* Transparency is required */
+//         backdrop-filter: blur(2px);
 
 
 .site-info
@@ -154,11 +154,12 @@ ul.site-info-ul
     flex-direction column
     gap .7rem
     font-size 1rem
-
-    margin 0
+    border 1px solid rgba(255,255,255,1) !important
+    margin 0 auto
     padding 0
     position relative
     z-index 1
+    width 90%
 
 
     li
@@ -202,8 +203,7 @@ ul.site-info-ul
 
         &::before
             background alpha
-            border-radius 3px
-            box-shadow 20px 0 0 alpha, 10px 10px 0 alpha
+            border-radius 3px    //- meta(0 alpha, 10px 10px 0 alpha
             width 4px
             height 4px
 

@@ -15,6 +15,7 @@
     z-index 10
     margin-left auto
     margin-right 0
+    border 1px solid alpha - 40%
 
 #contactModal
     align-items start //center
@@ -31,21 +32,11 @@
     //border 2px solid #
     transform scale(1, 0)
     //transform-origin: top center
-
-
-    //transform scale(0, 0) 
     margin 0 auto
     transition: all .3s ease-in-out //, opacity 0.3s ease-in-out
-    //width 424px // 100vw //100% //90%
+    width 380px !important // 100vw //100% //90%
     //z-index 110000
 
-    .modal-liner
-        //background alpha - 60%
-        //padding 1rem
-        //border 1px solid alph, opacity 0.3s ease-in-outa + 80%
-        //background pink
-        //width 10rem
-        //height 10rem
     form
         background rgba(0,0,0, .1)
         padding 1rem
@@ -126,6 +117,9 @@
 #contactModal textarea::placeholder
     color alpha + 90%
     //opacity 0.9
+.contact-btn#contactToggle
+    padding 0
+    margin 0
 ///////////////////////////////////
 #toastMessage
   position absolute

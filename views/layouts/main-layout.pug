@@ -39,6 +39,7 @@ html(lang="en")
       include ../mixins/header-btn-mixin.pug
       include ../mixins/footer-btn-mixin.pug
       include ../mixins/game-messages-mixin.pug
+     
   body
 
 
@@ -60,10 +61,10 @@ html(lang="en")
         main.game-blocks 
           .game-block.mg-top-1.mg-btm-1
             .game-name-wrap 
-              if currentPage == 'APTATI' 
-                h1.game-name.txt-center 
-                  span Aptati Word Games hub
-              else
+              //- if currentPage == 'APTATI' 
+              //-   h1.game-name.txt-center 
+              //-     span Aptati Word Games hub
+              //- else
  
                 h1.txt-center.game-name.page-title
                   span.left the aptati
@@ -71,7 +72,7 @@ html(lang="en")
                   span.span-right Game
           .game-block
             if currentPage !== 'APTATI'               
-              +headerBtn(restart, answersBtn, answersDropdown)
+              +headerBtn( answersBtn, answersDropdown)
           block content
           if currentPage !== 'APTATI'         
             .game-block 

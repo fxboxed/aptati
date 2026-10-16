@@ -41,7 +41,8 @@ html(lang="en")
       include ../mixins/game-messages-mixin.pug
      
   body
-
+    //- .body-image-wrap
+    //   img.body-image(src="/images/church-bg.jpg" alt="Background Image")
 
     .body-liner-grid
       include ../partials/contact-modal.pug
@@ -59,17 +60,10 @@ html(lang="en")
             span.bar
             span.bar
         main.game-blocks 
+          if currentPage === 'WORD_STACK'
+            h1.game-title THE AMAZING WORD STACK CHALLENGE
           .game-block.mg-top-1.mg-btm-1
-            .game-name-wrap 
-              //- if currentPage == 'APTATI' 
-              //-   h1.game-name.txt-center 
-              //-     span Aptati Word Games hub
-              //- else
- 
-                h1.txt-center.game-name.page-title
-                  span.left the aptati
-                  span.span-enter= title
-                  span.span-right Game
+
           .game-block
             if currentPage !== 'APTATI'               
               +headerBtn( answersBtn, answersDropdown)

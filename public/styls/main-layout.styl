@@ -4,21 +4,38 @@ body
     align-items center
     justify-content center
     min-height 100vh
-    background linear-gradient(theta 3rem,theta - 40% 3rem, beta) 
+    background #36454F //linear-gradient(alpha - 40%, alpha) 
+.body-image-wrap
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    overflow hidden
+
+.body-image
+    width 100%
+    height 100%
+    object-fit cover
+    opacity .06
 .body-liner-grid
     display grid
     grid-template-columns: 1fr
     grid-template-rows 1fr
+    //width 100%
+    //border 1px solid red
+    width 400px
 
 .body-liner
     grid-column 1/2
     grid-row 1/ 2
-    width 25rem
-    max-width 100%
+    width 100%
+    max-width 90%
     position relative
     transition: all .3s ease-in-out
-    height 48rem
-    overflow-x hidden
+    min-height 48rem
+    margin 0 auto
+    //background pink
 // body liner is not removed it is overlaid with 
 .nav-body-liner
     order 4
@@ -47,16 +64,18 @@ body
     transform scale(1, 0)
     background-color: rgba(0,0,0,0.3); /* Transparency is required */
     backdrop-filter: blur(10px);
+    width 100%
 .blur-body-liner.blur-active
     order 1
     transform scale(1, 1)
     z-index 0
 .game-blocks
     width 100%
-    max-width 90%
+    //max-width 90%
     justify-content center
     align-items start
     margin 0rem auto
+    //width 400px
 .game-block
     position relative
     width 100%

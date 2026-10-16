@@ -103,8 +103,8 @@ app.get('/', (req, res) => {
   res.render('index', { title: 'Word challenges', currentPage: 'APTATI' });
 });
 // temp playground
-app.get('/play', (req, res) => {
-  res.render('play', { title: 'Play area'});
+app.get('/heavenly-chats', (req, res) => {
+  res.render('heavenly-chats', { title: 'heavenly Chats', currentPage: 'heavenly-chats' });
 });
 // STARTUP SEQUENCE: Connect Database -> Run Google Sheet Sync -> Start Web Server
 const startServer = async () => {

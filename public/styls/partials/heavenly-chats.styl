@@ -1,0 +1,320 @@
+.slides
+  //border 1px solid #ccc
+  height 800px  
+  width 425px
+  display flex
+  flex-direction column
+  background linear-gradient(to bottom, #446182, #C39191, #446182)
+  //background-image: url('/images/lady-in-black.jpg')
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+  position relative
+  &&:before
+    //content "url('/images/lady-in-black.jpg')"
+    position absolute
+    background-image url('/images/lady-in-black.jpg')
+    opacity 0.1 !important
+    top 0
+    left 0
+    width 100%
+    height 100%
+    background-color rgba(0,0,0,0.3)
+    backdrop-filter blur(8px)
+    z-index -12
+    opacity 0.1
+
+.slide
+  display flex
+  flex-direction column
+  gap 1rem
+  position relative
+  padding-top 2rem
+.card-image, .avatar
+  width 3rem  
+  height 3rem
+  border-radius 50%
+
+.card
+  display flex
+  flex-direction row
+  align-items center
+  gap 1rem
+  padding-left 1rem
+  //border 1px solid #ccc
+  max-width 90%
+  
+  min-height 2.4rem
+.right-card 
+  flex-direction row-reverse
+  margin-left auto
+  margin-right 2rem
+  padding-right 1rem
+  justify-content space-between
+  min-height 2.4rem
+  background alpha //rgba(beta, 0.2)
+  .text-box
+    padding-right 1.5rem
+  p 
+    text-align left
+  img
+    margin - 2.1rem
+    border 5px solid alpha
+.left-card 
+  display flex
+  flex-direction row
+  background theta //rgba(theta, 0.2)
+  margin-left 2rem
+
+  min-height 2rem
+  width fit-content
+  .text-box
+    padding-left 2rem
+    padding-right 1rem
+  img 
+    margin - 2.1rem
+    border 5px solid alpha
+  //border 1px solid #ccc
+.card-footer
+  content ""
+  display flex
+  justify-content center //space-between
+  align-items center
+  //padding 0.5rem 1rem
+  background alpha //- 60%
+  //margin-top auto
+  position absolute
+  bottom 0
+  left 0
+  right 0
+  width 400px
+  p  
+    border 1px solid #ccc
+    margin auto 0
+
+  width 400px
+  z-index 10
+  height 3rem
+.header-box
+  display flex
+  gap 1rem
+  align-items center
+  padding 1rem .5rem
+  background alpha //- 60%
+  height 100%
+  margin-top - .5rem
+  //min-height 5rem
+  h4
+    font-size .9rem
+    s
+      color alpha +80
+      font-size 1.2rem
+    //color alpha + 80%
+  strong
+    font-weight bold
+    font-size 1.5rem
+    color alpha + 90% !important
+p.header-item
+  strong
+    font-weight bold  
+    
+    font-size 1rem
+    color red //alpha + 80% !important
+// .slide
+//   max-width 425px !important
+//   width 100%
+//   max-height 800px
+//   height 800px
+//   //border 6px solid #ccc
+//   margin 0
+//   padding 0
+//   display grid
+//   grid-template-areas "header-box" "card"
+ 
+//   h4
+//     font-size .9rem  !important
+//     color alpha + 80% !important
+// p.header-item
+//   font-size 1rem
+//   color alpha + 80% !important
+//   //margin-top .4rem
+//   strong
+//     font-weight bold
+//     font-size 1.1rem
+//     color alpha + 60% !important
+// .slide
+//   background beta - 50%
+//   border 1px solid #ccc
+//   //padding 10px
+//   padding-left 2.5rem
+//   height fit-content //4.4rem
+//   display flex
+//   align-items center
+//   justify-content left
+// .slide-1, .slide
+
+//   border 1px solid #ccc
+//   border-radius 8px
+//   //overflow hidden
+//   //margin-top 1rem
+//   //
+//   display flex
+//   flex-wrap wrap
+//   gap 1rem
+//   width 400px
+//     //flex-direction column
+// .card-image
+
+//   width 3rem  
+//   height 3rem
+//   border-radius 50%
+//     .text-box
+//       padding 10px
+//       width 400px
+//     .card
+//       grid-area card
+//       display flex
+//       flex-direction row
+// .header-box, .card-image, .card
+//     grid-area header-box
+//   .card-image
+//     grid-area card-image
+//   .card
+//     grid-area card
+// .slide
+//   max-width 425px !important
+//   width 100%
+//   max-height 800px
+//   height 800px
+//   //border 6px solid #ccc
+//   margin 0
+//   padding 0
+//   display grid
+//   grid-template-areas "header-box" "card"
+ 
+//   h4
+//     font-size .9rem  !important
+//     color alpha + 80% !important
+// p.header-item
+//   font-size 1rem
+//   color alpha + 80% !important
+//   //margin-top .4rem
+//   strong
+//     font-weight bold
+//     font-size 1.1rem
+//     color alpha + 60% !important
+// .slide
+//   background beta - 50%
+//   border 1px solid #ccc
+//   //padding 10px
+//   padding-left 2.5rem
+//   height fit-content //4.4rem
+//   display flex
+//   align-items center
+//   justify-content left
+// .slide-1, .slide
+
+//   border 1px solid #ccc
+//   border-radius 8px
+//   //overflow hidden
+//   //margin-top 1rem
+//   //
+//   display flex
+//   flex-wrap wrap
+//   gap 1rem
+//   width 400px
+//     //flex-direction column
+// .card-image
+
+//   width 3rem  
+//   height 3rem
+//   border-radius 50%
+//     .text-box
+//       padding 10px
+//       width 400px
+//     .card
+//       grid-area card
+//       display flex
+//       flex-direction row
+// .header-box .card-image, .card
+//     grid-area header-box
+//   .card-image
+//     grid-area card-image
+//   .card
+//     grid-area card
+//     //border 1px solid #ccc
+//     //padding 10px
+//     //margin-top 10px
+//     height 3rem
+//     width 3rem
+//     display flex
+//     align-items center
+//     justify-content left
+//     gap .6rem
+//     background transparent //alpha
+//     border-radius 8px
+//     .chat-text-box
+//       display flex
+//       flex-direction column
+//       justify-content center
+//     img 
+//       width 54px
+//       height 54px
+//       border-radius 50%
+//       margin-left -2rem
+//       border 3px solid alpha
+// .header-box
+//   width 400px
+// .chat-box-left
+//     //border 1px solid #ccc
+//     padding 10px
+//     //margin-top 10px
+//     width fit-content
+//     height fit-content
+//     //background blue
+//     min-width 320px
+//     min-height 40px
+
+//     //border 1px solid #ccc
+//     //padding 10px
+//     //margin-top 10px
+//     height 3rem
+//     width 3rem
+//     display flex
+//     align-items center
+//     justify-content left
+//     gap .6rem
+//     background transparent //alpha
+//     border-radius 8px
+//     .chat-text-box
+//       display flex
+//       flex-direction column
+//       justify-content center
+//     img 
+//       width 54px
+//       height 54px
+//       border-radius 50%
+//       margin-left -2rem
+//       border 3px solid alpha
+// .header-box
+//   width 400px
+// .chat-box-left
+//     //border 1px solid #ccc
+//     padding 10px
+//     //margin-top 10px
+//     width fit-content
+//     height fit-content
+//     //background blue
+//     min-width 320px
+//     min-height 40px
+
+  // &:after
+  //   content ""
+  //   position absolute
+  //   //bottom -10px
+  //   left 0
+  //   width 2rem
+  //   height 2rem
+  //   border 1px solid orange
+  //   border-radius 50%
+  //   //border-top-color red

@@ -1,34 +1,34 @@
 //- Side Navigation Partial - Used across multiple pages for consistent navigation experience
-.header-liner.side-nav-liner
-  nav.navbar 
-    ul.nav-bar-ul
-      li.nav-item 
-        a.nav-link(href="/") Home
-      if isAuthed
-        //- Only show dashboard link if not on dashboard page
-        if currentPage !== 'dashboard'
-          li.nav-item
-            a.nav-link.btn-3d(href="/dashboard")
-              span.user-icon 👤
-              span.user-text Dashboard
+//- .header-linerx.side-nav-linerx
+nav.navbar 
+  ul.nav-bar-ul
+    li.nav-item 
+      a.nav-link(href="/") Home
+    if isAuthed
+      //- Only show dashboard link if not on dashboard page
+      if currentPage !== 'dashboard'
         li.nav-item
-          a.logout-btn.btn-3d(href=logoutUrl || "/auth/logout") Logout
-      else
-        li.nav-item
-          a.nav-link.login-link.btn-3d(href="/auth/google") Login
-      
+          a.nav-link.btn-3d(href="/dashboard")
+            span.user-icon 👤
+            span.user-text Dashboard
+      li.nav-item
+        a.logout-btn.btn-3d(href=logoutUrl || "/auth/logout") Logout
+    else
+      li.nav-item
+        a.nav-link.login-link.btn-3d(href="/auth/google") Login
+    
 
-      li.nav-item
-        button#close-side-nav.close-side-nav(type="button")
-          i.fas.fa-xmark
-          
-      
-      li.nav-item
-        .custom-hr.mg-top-2.mg-btm-2 
-          span.span-1 
-          span.span-2 Featured Games
-          span.span-3
-      li.nav-item 
-        a(href="/games/word-stack") Word Stack
-      //- li.nav-item
-      //-   a(href="/play") Play
+    li.nav-item
+      button#close-side-nav.close-side-nav(type="button")
+        i.fas.fa-xmark
+        
+    
+    li.nav-item
+      .custom-hr.mg-top-2.mg-btm-2 
+        span.span-1 
+        span.span-2 Featured Games
+        span.span-3
+    li.nav-item 
+      a(href="/games/word-stack") Word Stack
+    li.nav-item
+      a(href="/heavenly-chats") heavenly Chats

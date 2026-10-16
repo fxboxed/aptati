@@ -7,16 +7,27 @@ gamma = #FFFDD0 // cream #007f00
 delta = #D6B588 // tan#dc7684
 epsilon = #00d062 //#FFFFF0 //ivory
 theta = #660033 //burguundy #d4ac0d // Added missing fallback variable for ws-present
+.word-grid, .keyboard, .header-nav-controls, .body-liner-grid, .body-liner
+    border: 1px solid #fff
+
+.body-liner-grid
+    overflow hidden
+    border: 1px solid red
+    
+    max-width 100%
+.body-liner
+    border: 1px solid blue
 
 // =========================================================================
 // WORD GRID STYLES
-// =========================================================================
+//=========================================================================
+
 .word-grid
     display: flex
     flex-direction: column
     gap: 6px
     width: 100%
-    max-width: 80%
+    max-width: 100%
     height: fit-content
     margin: 0.6rem auto
 
@@ -53,7 +64,7 @@ theta = #660033 //burguundy #d4ac0d // Added missing fallback variable for ws-pr
     gap: 0.4rem
     padding: 0.1rem 0.4rem
     width: 100%
-    max-width: 90%
+    max-width: 100%
     margin: 0 auto
     box-sizing: border-box
 

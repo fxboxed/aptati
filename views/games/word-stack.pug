@@ -25,14 +25,14 @@ block content
                     .key(data-key=key)= key
 
             //- Middle alphabetical key row
-            .key-row
+            .key-row.middle-row
                 each key in ["A","S","D","F","G","H","J","K","L"]
                     .key(data-key=key)= key
 
             //- Bottom key row with Enter key, Z-M letters, and Backspace key
             .key-row.enter-backspace-row
                 //- 🎯 FIXED: Re-enabled the Enter key for touch/mouse users
-                .key.enter(data-action="enter") ↵
+                .key.enter(data-action="enter") Enter
                 .key(data-key="Z") Z
                 .key(data-key="X") X
                 .key(data-key="C") C

@@ -7,26 +7,27 @@ gamma = #FFFDD0 // cream #007f00
 delta = #D6B588 // tan#dc7684
 epsilon = #00d062 //#FFFFF0 //ivory
 theta = #660033 //burguundy #d4ac0d // Added missing fallback variable for ws-present
-.word-grid, .keyboard, .header-nav-controls, .body-liner-grid, .body-liner
-    border: 1px solid #fff
+// .word-grid, .keyboard, .header-nav-controls, .body-liner-grid, .body-liner
+//     border: 1px solid #fff
 
 .body-liner-grid
     overflow hidden
-    border: 1px solid red
+    //border: 1px solid red
     width 100%
     padding  1rem 0
-    margin-top 1rem
-    margin-bottom 1rem
+    //margin-top 1rem
+    //margin-bottom 1rem
     
 
     max-width 100%
 .body-liner
-    border: 1px solid blue !important
+    //border: 1px solid blue !important
     max-width 96% !important
     margin-top 1rem
     width 100%
 
-// =========================================================================
+// ======================================
+
 // WORD GRID STYLES
 //=========================================================================
 
@@ -69,68 +70,84 @@ theta = #660033 //burguundy #d4ac0d // Added missing fallback variable for ws-pr
 .keyboard
     display: flex
     flex-direction: column
-    gap: 0.4rem
-    padding: 0.1rem 0.4rem
+    //gap: 0.4rem
+    padding: 0.1rem 0
     width: 100%
     max-width: 100%
-    margin: 0 auto
+    margin: 0 auto !important
     box-sizing: border-box
-
+    row-gap: 0.6rem
+    .key-row.middle-row
+        margin: 0 auto
+        //background green
+        grid-template-columns: repeat(9, 1fr)
     .key-row
-        display: flex
-        gap: 0.1rem
+        display: grid //flex
+        grid-template-columns: repeat(10, 1fr)
+        gap: 0.4rem
+
         width: 100%
         position: relative
         justify-content: center
+        //margin: 0 auto
 
         .key
             background-color:  alpha // #2a2a2a // Solid key background
             border: 1px solid alpha + 20%
-            border-radius: 4px
+            //border-radius: 4px
             flex: 1
-            height: 36px
+            //height: 36px
             display: flex
+            //gap: 0.8rem
             justify-content: center
             align-items: center
-            font-size: 1.1rem
+            font-size: 1.5rem
             font-weight: bold
             text-transform: uppercase
             cursor: pointer
             user-select: none
             color: alpha + 90% // #ffffff // Crisp white key labels
             transition: all 0.2s ease    
-            border-radius 50%
+            //border-radius 50%
+            ratio: 1 / 1
+            width: 100%
+            height: 100%
             
             &.enter
-                background-color: beta - 40% //darken(gamma, 40%)
-                flex: 1.5
+                //background-color: red // beta - 40% //darken(gamma, 40%)
+                //lex: 1.5
+                text-transform: none
+                font-size: 1.2rem
+                color: #ffffff
+                grid-column: 1 / 3
+
+
+            
+            &.backspace
+                background-color: theta  //darken(delta, 40%)
+                flex: 1
                 text-transform: none
                 font-size: 1.4rem
                 color: #ffffff
-            
-            &.backspace
-                background-color: beta - 40%  //darken(delta, 40%)
-                flex: 1.2
-                text-transform: none
-                font-size: 1.1rem
-                color: #ffffff
     
     .enter-backspace-row
-        gap: 0.1rem
+        //gap: 0.3rem
         
         .key
-            min-height: 44px
-            height: 40px
-            font-size: 1rem
+            //font-size: 1.5rem
             
             &:not(.enter):not(.backspace)
-                flex: 1
-                font-size: 1rem
+                //flex: 1
+                font-size: 1.5rem
             
             &.enter, &.backspace
                 flex: 1.1
-                font-size: 1.2rem
-
+                font-size: 1rem
+            &.enter
+                width: 3rem !important
+                background-color: epsilon
+                grid-column: 1/3 !important
+                width: 4.5rem !important
 // =========================================================================
 // DYNAMIC GAME STATE CLASSES (APPLIED VIA JS)
 // =========================================================================

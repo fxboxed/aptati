@@ -1,21 +1,32 @@
 
 extends ./layouts/main-layout
 block head
-  <title>Aptati Games - Play Area</title>
+//- <head>
+//-   <meta charset="UTF-8" />
+//-   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+//-   <title>Aptati Games - Play Area</title>
 
-  <!-- 1. The homepage URL where users will go when they click the image -->
-  <meta property="og:url" content="https://aptati.com/" />
+//-   <!-- Open Graph / Facebook Protocol -->
+//-   <meta property="og:type" content="website" />
+//-   <meta property="og:title" content="Aptati Games - Play Area" />
+//-   <meta property="og:description" content="Discover more on our main site." />
+  
+//-   <!-- 1. The destination URL Facebook opens when the image card is clicked -->
+//-   <meta property="og:url" content="https://aptati.com/" />
 
-  <!-- 2. The URL of the image you want Facebook to display -->
-  <meta property="og:image" content="https://aptati.com/images/church-bg.jpg" />
+//-   <!-- 2. The full-size preview image Facebook displays -->
+//-   <meta property="og:image" content="https://aptati.com/images/church-bg.jpg" />
+//-   <meta property="og:image:secure_url" content="https://aptati.com/images/church-bg.jpg" />
+//-   <meta property="og:image:type" content="image/jpeg" />
+//-   <meta property="og:image:width" content="1200" />
+//-   <meta property="og:image:height" content="630" />
 
-  <!-- 3. Title and description shown under the image preview -->
-  <meta property="og:title" content="Click to visit our homepage!" />
-  <meta property="og:description" content="Discover more on our main site." />
-  <meta property="og:type" content="website" />
-
-  <!-- Optional: Redirect visitors who open this page directly in a browser to your homepage -->
-  <meta http-equiv="refresh" content="0; url=https://aptati.com/" />
+//-   <!-- Twitter Card Fallback (Ensures high-quality cards on Twitter/X too) -->
+//-   <meta name="twitter:card" content="summary_large_image" />
+//-   <meta name="twitter:title" content="Aptati Games - Play Area" />
+//-   <meta name="twitter:description" content="Discover more on our main site." />
+//-   <meta name="twitter:image" content="https://aptati.com/images/church-bg.jpg" />
+</head>
 block content
 
     img#myImage(src="/images/church-bg.jpg" alt="Logo")

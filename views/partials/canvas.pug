@@ -1,0 +1,76 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Aptati Games - Result
+    
+    //- Dynamic Open Graph tags passed from your router
+    meta(property="og:type", content="website")
+    meta(property="og:url", content="https://aptati.com/")
+    meta(property="og:title", content=`${userName}'s Word Stack Score!`)
+    meta(property="og:description", content=`I scored ${userScore} points on Word Stack! Can you beat me?`)
+    meta(property="og:image", content=`https://aptati.com/uploads/result-${resultId}.jpg`)
+    meta(property="og:image:width", content="1200")
+    meta(property="og:image:height", content="630")
+
+  body
+    .game-dashboard
+      h1 Game Complete!
+      p Great job, #{userName}! Your score is #{userScore}.
+
+      //- Share button triggering JS function with dynamic parameters
+      button#shareBtn.btn-primary(
+        type="button",
+        onclick=`handleShare('https://aptati.com/dashboard?id=${resultId}', '${userName}', '${userScore}')`
+      ) Share Result
+
+      //- Visual feedback container for fallback
+      p#shareNotice.notice-text(style="display: none;")
+
+    //- Embedded Client-Side JavaScript
+    script.
+      async function handleShare(shareUrl, name, score) {
+        const shareData = {
+          title: 'Aptati Games - Word Stack',
+          text: `I scored ${score} points on Word Stack! Check out my result:`,
+          url: shareUrl
+        };
+
+        const notice = document.getElementById('shareNotice');
+        const button = document.getElementById('shareBtn');
+
+        // 1. Try Native Web Share API (Mobile devices / modern desktop)
+        if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+          try {
+            await navigator.share(shareData);
+            return; // Successfully shared via native share sheet
+          } catch (err) {
+            // Ignore AbortError (user closed the share window without sharing)
+            if (err.name !== 'AbortError') {
+              console.error('Web Share failed:', err);
+            } else {
+              return;
+            }
+          }
+        }
+
+        // 2. Fallback: Copy URL to Clipboard
+        try {
+          await navigator.clipboard.writeText(shareUrl);
+          
+          // Provide instant visual UI feedback
+          button.innerText = 'Copied Link!';
+          notice.innerText = 'Link copied to clipboard! Paste it into Facebook to post your result card.';
+          notice.style.display = 'block';
+
+          setTimeout(() => {
+            button.innerText = 'Share Result';
+            notice.style.display = 'none';
+          }, 3500);
+
+        } catch (clipErr) {
+          console.error('Clipboard copy failed:', clipErr);
+          alert(`Copy this URL to share: ${shareUrl}`);
+        }
+      }

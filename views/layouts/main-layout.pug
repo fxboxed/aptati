@@ -65,8 +65,8 @@ html(lang="en")
           .game-block.mg-top-1.mg-btm-1
 
           .game-block
-            //- if currentPage !== 'APTATI' || currentPage == 'Play'               
-            //-   +headerBtn( answersBtn, answersDropdown)
+            if currentPage !== 'APTATI'               
+              +headerBtn( answersBtn, answersDropdown)
           block content
           //- if currentPage !== 'APTATI'         
           //-   .game-block 
@@ -75,5 +75,4 @@ html(lang="en")
           .flex-box
         script(src="/js/contact-modal.js" defer)
         script(src="/js/toggle-nav.js" defer)
-        script(src="/js/copy-image-url-to-clipboard.js" defer)
         block scripts

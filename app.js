@@ -104,7 +104,7 @@ app.get('/', (req, res) => {
 });
 // temp playground
 app.get('/play', (req, res) => {
-  res.render('play', { title: 'Play Area', currentPage: 'play' });
+  res.render('play', { title: 'Play', currentPage: 'Play' });
 });
 app.get('/heavenly-chats', (req, res) => {
   res.render('heavenly-chats', { title: 'heavenly Chats', currentPage: 'heavenly-chats' });

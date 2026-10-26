@@ -3,7 +3,8 @@ extends ./layouts/main-layout
 
 block content
 
-    img(src="/images/church-bg.jpg" alt="Logo")
+    img#myImage(src="/images/church-bg.jpg" alt="Logo")
+    button#copyBtn(onclick="copyImageUrl()") Copy Image URL
 
 
 

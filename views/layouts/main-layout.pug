@@ -68,11 +68,11 @@ html(lang="en")
             if currentPage !== 'APTATI'               
               +headerBtn( answersBtn, answersDropdown)
           block content
-          if currentPage !== 'APTATI'         
-            .game-block 
-              if currentPage !== 'APTATI' 
-                +footerBtn(submit)
-
+          //- if currentPage !== 'APTATI'         
+          //-   .game-block 
+          //-     if currentPage !== 'APTATI' 
+          //-       +footerBtn(submit)
+          .flex-box
         script(src="/js/contact-modal.js" defer)
         script(src="/js/toggle-nav.js" defer)
         block scripts

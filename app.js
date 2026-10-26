@@ -103,6 +103,9 @@ app.get('/', (req, res) => {
   res.render('index', { title: 'Word challenges', currentPage: 'APTATI' });
 });
 // temp playground
+app.get('/play', (req, res) => {
+  res.render('play', { title: 'Play Area', currentPage: 'play' });
+});
 app.get('/heavenly-chats', (req, res) => {
   res.render('heavenly-chats', { title: 'heavenly Chats', currentPage: 'heavenly-chats' });
 });

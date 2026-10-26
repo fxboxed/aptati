@@ -1,16 +1,21 @@
 
 extends ./layouts/main-layout
 block head
-    <!-- 1. The URL users are redirected to when clicking the card -->
-    <meta property="og:url" content="https://aptati.com/" />
+  <title>Aptati Games - Play Area</title>
 
-    <!-- 2. The image Facebook will display in the post -->
-    <meta property="og:image" content="https://aptati.com/images/church-bg.jpg" />
+  <!-- 1. The homepage URL where users will go when they click the image -->
+  <meta property="og:url" content="https://aptati.com/" />
 
-    <!-- 3. Title and description shown under the image preview -->
-    <meta property="og:title" content="Aptati Games - Play Area" />
-    <meta property="og:description" content="Play daily word games at Aptati Games." />
-    <meta property="og:type" content="website" />
+  <!-- 2. The URL of the image you want Facebook to display -->
+  <meta property="og:image" content="https://aptati.com/images/church-bg.jpg" />
+
+  <!-- 3. Title and description shown under the image preview -->
+  <meta property="og:title" content="Click to visit our homepage!" />
+  <meta property="og:description" content="Discover more on our main site." />
+  <meta property="og:type" content="website" />
+
+  <!-- Optional: Redirect visitors who open this page directly in a browser to your homepage -->
+  <meta http-equiv="refresh" content="0; url=https://aptati.com/" />
 block content
 
     img#myImage(src="/images/church-bg.jpg" alt="Logo")

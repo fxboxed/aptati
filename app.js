@@ -88,7 +88,7 @@ import gameRoutes from './routes/game.routes.js';       // This houses your game
 import wordStackRoute from './routes/games/word-stack.route.js';
 import contactRouter from './routes/contact.route.js';
 import authRouter from './routes/authRoutes.js'; 
-import dashboardRouter from './routes/dashboard.route.js';
+//import dashboardRouter from './routes/dashboard.route.js';
 
 // MOUNT ROUTE HANDLERS ON THE APP
 //app.use(wordStackRoute);
@@ -96,7 +96,7 @@ app.use('/api/games', gameRoutes);
 app.use(wordStackRoute); // Routes for getting random words and checking typed guesses
 app.use(contactRouter);
 app.use(authRouter);
-app.use(dashboardRouter);
+//app.use(dashboardRouter);
 
 // Main root home page route
 app.get('/', (req, res) => {
@@ -108,6 +108,10 @@ app.get('/play', (req, res) => {
 });
 app.get('/heavenly-chats', (req, res) => {
   res.render('heavenly-chats', { title: 'heavenly Chats', currentPage: 'heavenly-chats' });
+});
+
+app.get('/dashboard', (req, res) => {
+  res.render('dashboard', { title: 'Dashboard', currentPage: 'Dashboard' });
 });
 // STARTUP SEQUENCE: Connect Database -> Run Google Sheet Sync -> Start Web Server
 const startServer = async () => {
